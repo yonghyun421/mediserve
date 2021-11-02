@@ -12,6 +12,7 @@ import Counsel from './pages/QnA/Counsel';
 import Submit from './pages/QnA/Submit';
 import Answer from './pages/QnA/Answer';
 import MoreCounsel from './pages/QnA/MoreCounsel';
+import Prescription from './pages/Prescription/Prescription';
 
 const Routes = () => {
   return (
@@ -29,6 +30,7 @@ const Routes = () => {
         <Route exact path="/submit" component={Submit} />
         <Route exact path="/answer" component={Answer} />
         <Route exact path="/more" component={MoreCounsel} />
+        <Route exact path="/prescription" component={Prescription} />
       </Switch>
     </Router>
   );
