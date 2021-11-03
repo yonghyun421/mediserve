@@ -28,7 +28,7 @@ const MyPageToggle = () => {
                 {isModalOn ? (
                   <CategoryWrapper>
                     {CATEGORY.map(content => (
-                      <CategoryContent>{content}</CategoryContent>
+                      <CategoryContent key={content}>{content}</CategoryContent>
                     ))}
                   </CategoryWrapper>
                 ) : null}

@@ -16,10 +16,10 @@ const CONTENT_IMG = [
 const Feed = () => {
   return (
     <FeedSection>
-      <BackTab></BackTab>
+      <BackTab Na="scalpel" De="M-class" />
       <FeedArea>
         <MyInfo>
-          <DoctorList></DoctorList>
+          <DoctorList />
         </MyInfo>
         <MyInfoDesc>
           <Follow>
@@ -63,7 +63,7 @@ const Feed = () => {
           </VideoSection>
         </FeedBox>
       </FeedArea>
-      <HomeBtn></HomeBtn>
+      <HomeBtn />
     </FeedSection>
   );
 };

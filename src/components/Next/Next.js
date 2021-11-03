@@ -5,7 +5,7 @@ import { ValignTextBottom } from '../ValignTextBottom';
 const Next = () => {
   return (
     <Next1>
-      <Title></Title>
+      <Title />
     </Next1>
   );
 };
