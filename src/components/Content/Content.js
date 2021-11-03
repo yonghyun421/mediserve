@@ -91,7 +91,7 @@ const Content = props => {
 
 export default Content;
 
-const UserInfo = styled.div`
+const UserInfo = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;

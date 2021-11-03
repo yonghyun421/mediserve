@@ -16,7 +16,7 @@ const MyPageToggle = () => {
       {MYPAGE.map((content, idx) => {
         return (
           <MyPageWrapper key={idx}>
-            {CATEGORY[idx] === '커 뮤 니 티' ? (
+            {MYPAGE[idx] === '커 뮤 니 티' ? (
               <>
                 <CommunityWrapper>
                   <CommnunityText>커 뮤 니 티</CommnunityText>
@@ -84,23 +84,23 @@ const MyPage = styled.div`
   text-align: center;
   padding: 10px 5px;
 `;
-const CommunityWrapper = styled.div`
+const CommunityWrapper = styled.ul`
   display: flex;
   justify-content: right;
   padding: 10px 5px;
 `;
-const CommnunityText = styled.div`
+const CommnunityText = styled.li`
   margin-right: 3px;
 `;
 
 const DowndropIcon = styled.img`
   z-index: 9999;
 `;
-const CategoryWrapper = styled.div`
+const CategoryWrapper = styled.ul`
   position: relative;
   height: 145px;
 `;
-const CategoryContent = styled.div`
+const CategoryContent = styled.li`
   float: right;
   width: 94px;
   display: flex;
