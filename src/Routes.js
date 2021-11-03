@@ -5,6 +5,13 @@ import Login from './pages/Login/Login';
 import Nav from './components/Nav/Nav';
 import UploadPage from './pages/UploadPage/UploadPage';
 import MyPage from './pages/MyPage/Mypage';
+import Subject from './pages/QnA/Subject';
+import SubjectDetail from './pages/QnA/SubjectDetail';
+import HomeBtn from './components/HomeBtn';
+import Counsel from './pages/QnA/Counsel';
+import Submit from './pages/QnA/Submit';
+import Answer from './pages/QnA/Answer';
+import MoreCounsel from './pages/QnA/MoreCounsel';
 
 const Routes = () => {
   return (
@@ -15,6 +22,13 @@ const Routes = () => {
         <Route exact path="/upload" component={UploadPage} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/mypage" component={MyPage} />
+        <Route exact path="/subject" component={Subject} />
+        <Route exact path="/detail" component={SubjectDetail} />
+        <Route exact path="/home" component={HomeBtn} />
+        <Route exact path="/counsel" component={Counsel} />
+        <Route exact path="/submit" component={Submit} />
+        <Route exact path="/answer" component={Answer} />
+        <Route exact path="/more" component={MoreCounsel} />
       </Switch>
     </Router>
   );
