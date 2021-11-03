@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const BackTab = () => {
+const BackTab = ({ Na, De }) => {
   return (
     <BackTabSection>
       <BackIcon src="images/backIcon.png" />
       <BackTitle>
-        <Name>scalpel</Name>
-        <Desc>M - class 5</Desc>
+        <Name>{Na}</Name>
+        <Desc>{De}</Desc>
       </BackTitle>
     </BackTabSection>
   );
