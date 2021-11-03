@@ -14,6 +14,7 @@ import Answer from './pages/QnA/Answer';
 import MoreCounsel from './pages/QnA/MoreCounsel';
 import Prescription from './pages/Prescription/Prescription';
 import QnA from './pages/QnA/QnA';
+import Feed from './pages/Feed/Feed';
 
 const Routes = () => {
   return (
@@ -23,6 +24,7 @@ const Routes = () => {
         <Route exact path="/" component={Main} />
         <Route exact path="/upload" component={UploadPage} />
         <Route exact path="/login" component={Login} />
+<<<<<<< HEAD
         <Route exact path="/mypage" component={MyPage} />
         <Route exact path="/subject" component={Subject} />
         <Route exact path="/detail" component={SubjectDetail} />
@@ -33,6 +35,9 @@ const Routes = () => {
         <Route exact path="/more" component={MoreCounsel} />
         <Route exact path="/prescription" component={Prescription} />
         <Route exact path="/qna" component={QnA} />
+=======
+        <Route exact path="/feed" component={Feed} />
+>>>>>>> 79246e3 (전문가 피드 레이아웃 구현)
       </Switch>
     </Router>
   );
