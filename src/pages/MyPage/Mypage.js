@@ -65,7 +65,7 @@ const MyPageWrapper = styled.div`
   font-size: 18px;
   line-height: 16px;
 `;
-const CommunityWrapper = styled.div`
+const CommunityWrapper = styled.ul`
   width: 414px;
   display: flex;
   justify-content: space-between;
@@ -74,7 +74,7 @@ const CommunityWrapper = styled.div`
   border-bottom: 1px solid #c4c4c4;
   padding: 0px 32px;
 `;
-const CommnunityText = styled.div`
+const CommnunityText = styled.li`
   margin-right: 3px;
 `;
 
@@ -88,7 +88,7 @@ const DowndropIconOpen = styled.img`
   height: 10px;
 `;
 
-const MypageContentWrapper = styled.div`
+const MypageContentWrapper = styled.ul`
   display: flex;
   justify-content: space-between;
   height: 52px;
@@ -96,7 +96,7 @@ const MypageContentWrapper = styled.div`
   border-bottom: 1px solid #c4c4c4;
   padding: 0px 32px;
 `;
-const CategoryContent = styled.div`
+const CategoryContent = styled.li`
   display: flex;
   height: 42.2px;
   align-items: center;

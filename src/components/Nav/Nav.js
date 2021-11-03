@@ -30,7 +30,7 @@ const Nav = () => {
 
 export default Nav;
 
-const Wrapper = styled.div`
+const Wrapper = styled.header`
   width: 414px;
   height: 83.76px;
 `;
