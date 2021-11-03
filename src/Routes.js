@@ -15,6 +15,7 @@ import MoreCounsel from './pages/QnA/MoreCounsel';
 import Prescription from './pages/Prescription/Prescription';
 import QnA from './pages/QnA/QnA';
 import Feed from './pages/Feed/Feed';
+import PictureAndQR from './pages/PictureAndQR/PictureAndQR';
 
 const Routes = () => {
   return (
@@ -34,6 +35,7 @@ const Routes = () => {
         <Route exact path="/prescription" component={Prescription} />
         <Route exact path="/qna" component={QnA} />
         <Route exact path="/feed" component={Feed} />
+        <Route exact path="/checkqr" component={PictureAndQR} />
       </Switch>
       <HomeBtn />
     </Router>
