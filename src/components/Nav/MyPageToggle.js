@@ -16,7 +16,7 @@ const MyPageToggle = () => {
       {MYPAGE.map((content, idx) => {
         return (
           <MyPageWrapper key={idx}>
-            {idx === 3 ? (
+            {CATEGORY[idx] === '커 뮤 니 티' ? (
               <>
                 <CommunityWrapper>
                   <CommnunityText>커 뮤 니 티</CommnunityText>
@@ -36,7 +36,7 @@ const MyPageToggle = () => {
             ) : (
               <MyPage>{content}</MyPage>
             )}
-            {idx !== 6 ? <BottomSolid /> : null}
+            {idx !== CATEGORY.length ? <BottomSolid /> : null}
           </MyPageWrapper>
         );
       })}
@@ -131,7 +131,7 @@ const MYPAGE = [
   '내 지 갑',
   'Q&A 답변 확인',
   '포스팅 의뢰 확인',
-  '커 뮤 니 티 ',
+  '커 뮤 니 티',
   '고 객 지 원',
   '설   정',
   '로 그 아 웃',

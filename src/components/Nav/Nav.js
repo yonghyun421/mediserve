@@ -9,10 +9,6 @@ const Nav = () => {
     setIsModalOn(!isModalOn);
   };
 
-  const cancelModal = () => {
-    setIsModalOn(false);
-  };
-
   return (
     <Wrapper>
       <NavTop />
@@ -39,9 +35,9 @@ const Wrapper = styled.div`
   height: 83.76px;
 `;
 const NavTop = styled.div`
-  width: 414px;
   height: 43.76px;
   background-color: #000000;
+  margin-bottom: 9px;
 `;
 const NavBottom = styled.div`
   width: 414px;
@@ -51,10 +47,13 @@ const NavBottom = styled.div`
   align-items: center;
   padding: 10px;
 `;
-const BottomLeft = styled.div``;
-const Rectangle93 = styled.img`
-  width: 169.21px;
+const BottomLeft = styled.div`
+  width: 168.8px;
   height: 44.88px;
+`;
+const Rectangle93 = styled.img`
+  width: 100%;
+  height: 100%;
 `;
 
 const BottomRight = styled.div`

@@ -9,7 +9,7 @@ const ThreedotContent = ({ modalToggle, props }) => {
             <Threedotcontents key={content.id}>
               {content.title}
             </Threedotcontents>
-            {idx !== 3 ? <BottomSolid /> : null}
+            {idx !== THREEDOTCONTENT.length ? <BottomSolid /> : null}
           </>
         );
       })}
