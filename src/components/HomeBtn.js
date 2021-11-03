@@ -26,9 +26,10 @@ const HomeBtn = () => {
 export default HomeBtn;
 
 const Home = styled.div`
-  width: 100%;
+  width: 414px;
   height: 71px;
-  position: relative;
+  position: fixed;
+  bottom: 0;
   margin-top: -6px;
   background-color: black;
 `;

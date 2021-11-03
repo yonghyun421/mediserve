@@ -33,11 +33,13 @@ export default Nav;
 const Wrapper = styled.header`
   width: 414px;
   height: 83.76px;
+  position: sticky;
+  z-index: 99999;
+  top: 0;
 `;
 const NavTop = styled.div`
   height: 43.76px;
   background-color: #000000;
-  margin-bottom: 9px;
 `;
 const NavBottom = styled.div`
   width: 414px;
@@ -46,6 +48,8 @@ const NavBottom = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  background-color: white;
+  padding-top: 10px;
 `;
 const BottomLeft = styled.div`
   width: 168.8px;
