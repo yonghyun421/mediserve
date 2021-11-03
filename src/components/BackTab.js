@@ -6,7 +6,8 @@ const BackTab = () => {
     <BackTabSection>
       <BackIcon src="images/backIcon.png" />
       <BackTitle>
-        <span>병원 문전 약국 찾기</span>
+        <Name>scalpel</Name>
+        <Desc>M - class 5</Desc>
       </BackTitle>
     </BackTabSection>
   );
@@ -31,7 +32,20 @@ const BackIcon = styled.img`
 `;
 
 const BackTitle = styled.div`
+<<<<<<< HEAD
+=======
+  text-align: center;
+  padding: auto 0;
+`;
+
+const Name = styled.h1`
+>>>>>>> 79246e3 (전문가 피드 레이아웃 구현)
   font-size: 30px;
   line-height: 29.7px;
   font-weight: 700;
 `;
+<<<<<<< HEAD
+=======
+
+const Desc = styled.span``;
+>>>>>>> 79246e3 (전문가 피드 레이아웃 구현)
