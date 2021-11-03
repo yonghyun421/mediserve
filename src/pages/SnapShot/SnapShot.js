@@ -1,22 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import MainColorBtn from '../../components/MainColorBtn';
+
 const SnapShot = () => {
+  const [isFinishPic, setisFinishPic] = useState(false);
+
+  const cameraToggle = () => {
+    setisFinishPic(!isFinishPic);
+  };
+
   return (
     <Wrapper>
       <Title>처방전 / QR 코드 촬영</Title>
       <Camera>
-        <BtnWrapper>
-          <MainColorBtn Body="취소" />
-          <Capture src="/images/capture.png" />
-          <MainColorBtn Body="사진첩" />
-        </BtnWrapper>
+        {isFinishPic ? (
+          <BtnWrapper>
+            <MainColorBtn Body="재촬영" />
+            <Capture
+              src="/images/capture.png"
+              onClick={cameraToggle}
+              style={{ visibility: 'hidden' }}
+            />
+            <MainColorBtn Body="보내기" />
+          </BtnWrapper>
+        ) : (
+          <BtnWrapper>
+            <MainColorBtn Body="취소" />
+            <Capture src="/images/capture.png" onClick={cameraToggle} />
+            <MainColorBtn Body="사진첩" />
+          </BtnWrapper>
+        )}
       </Camera>
     </Wrapper>
   );
 };
 
 export default SnapShot;
+
 const Wrapper = styled.div`
   width: 414px;
   height: 896px;

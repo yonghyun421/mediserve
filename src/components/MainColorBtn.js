@@ -14,7 +14,7 @@ const Wrapper = styled.button`
   width: 150px;
   height: 50px;
   background: ${props =>
-    props.Body === '취소'
+    props.Body === '취소' || props.Body === '재촬영'
       ? 'lightgray;'
       : 'linear-gradient(90.1deg, #7ae0cc -2.23%, #47b1d1 99.89%);'};
   border-radius: 20px;

@@ -17,6 +17,7 @@ import QnA from './pages/QnA/QnA';
 import Feed from './pages/Feed/Feed';
 import PictureAndQR from './pages/PictureAndQR/PictureAndQR';
 import SnapShot from './pages/SnapShot/SnapShot';
+import Loading from './pages/SnapShot/Loading';
 
 const Routes = () => {
   return (
@@ -38,7 +39,9 @@ const Routes = () => {
         <Route exact path="/feed" component={Feed} />
         <Route exact path="/checkqr" component={PictureAndQR} />
         <Route exact path="/snapshot" component={SnapShot} />
+        <Route exact path="/loading" component={Loading} />
       </Switch>
+      <div className="header_fixed" style={{ marginBottom: '69px' }} />
       <HomeBtn />
     </Router>
   );
