@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ThreedotContent from '../components/ThreedotContent';
+import ThreedotContent from '../ThreedotContent';
 
 const Profile = ({
   isModalOn,
