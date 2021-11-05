@@ -32,7 +32,7 @@ const BackTitle = styled.div`
 `;
 
 const Name = styled.h1`
-  font-size: ${props => (props.Na === '포스팅 의뢰' ? '37px;' : '30px;')}
+  font-size: ${props => (props.Na === '포스팅 의뢰' ? '37px;' : '30px;')};
   line-height: 29.7px;
   font-weight: 700;
 `;
