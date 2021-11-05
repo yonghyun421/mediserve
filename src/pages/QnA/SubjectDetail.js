@@ -9,6 +9,7 @@ const SubjectDetail = () => {
   return (
     <QnASection>
       <QA>
+        <CaretRight src="images/backIcon.png" />
         <span>Q</span>
         <Span1>&amp;</Span1>
         <span>A (의료)</span>
@@ -16,13 +17,12 @@ const SubjectDetail = () => {
       <Text1>
         <span>흉부외과</span>
       </Text1>
-      <Divide></Divide>
-      <SortBtn></SortBtn>
+      <Divide />
+      <SortBtn />
       <DoctorList />
       <DoctorList />
       <DoctorList />
       <DoctorList />
-      <HomeBtn />
     </QnASection>
   );
 };
@@ -39,12 +39,21 @@ const QnASection = styled.div`
   background-color: white;
 `;
 
+const CaretRight = styled.img`
+  position: absolute;
+  width: 10px;
+  left: 20px;
+`;
+
 const QA = styled.div`
-  letter-spacing: 0;
+  display: flex;
+  align-items: center;
+  padding-top: 35px;
+  padding-bottom: 10px;
   line-height: 22px;
+  letter-spacing: 0;
   white-space: nowrap;
   font-size: 37px;
-  padding-bottom: 10px;
 `;
 
 const Span1 = styled.span`
@@ -66,27 +75,4 @@ const Divide = styled.div`
   height: 2px;
   background-color: #e5e5e5;
   margin: 24px 0;
-`;
-
-const OverlapGroup7 = styled.div`
-  height: 55px;
-  margin-top: 10px;
-  margin-left: 2px;
-  display: flex;
-  padding: 15px 27px;
-  align-items: flex-start;
-  min-width: 200px;
-  background-color: white;
-  border-radius: 20px;
-  box-shadow: 0px 0px 20px #0000001a;
-`;
-
-const OverlapGroup15 = styled.div`
-  height: 20px;
-  width: 139px;
-`;
-
-const OverlapGroup = styled.div`
-  height: 18px;
-  width: 78px;
 `;

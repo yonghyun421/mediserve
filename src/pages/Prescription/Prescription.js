@@ -22,7 +22,6 @@ const Prescription = () => {
           </DescText2>
         </TextBox>
       </PresBox>
-      <HomeBtn />
     </QnASection>
   );
 };

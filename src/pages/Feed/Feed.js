@@ -58,7 +58,6 @@ const Feed = () => {
           </VideoSection>
         </FeedBox>
       </FeedArea>
-      <HomeBtn />
     </FeedSection>
   );
 };
