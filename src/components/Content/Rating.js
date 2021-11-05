@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Profile from './Profile';
 
 const Content = props => {
   const [isModalOn, setIsModalOn] = useState(false);

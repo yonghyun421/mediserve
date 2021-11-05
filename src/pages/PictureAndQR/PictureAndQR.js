@@ -8,7 +8,7 @@ const PictureAndQR = () => {
         <Wraning>! 처방약 수령시에는 실제 처방전을 제출하셔야합니다.</Wraning>
         <GuideTitle> {`<사진 등록 가이드>`} </GuideTitle>
         <GuideContent>
-          <p>1. 저체가 보이도록 찎어주세요.</p>
+          <p>1. 전체가 보이도록 찎어주세요.</p>
           <p>2. 한 번에 한 장씩 촬영해주세요.</p>
         </GuideContent>
         <BtnWrapper>
