@@ -29,7 +29,7 @@ const Main = () => {
         modalToggle={modalToggle}
         isModalOn={isModalOn}
         Name="Scalpel"
-        Class="M-Class"
+        Class="M-class"
         ProfildImg="/images/picture1.png"
         DoctorIconImg="/images/doctor.png"
       />
