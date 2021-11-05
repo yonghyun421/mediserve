@@ -22,13 +22,12 @@ const HomeBtn = () => {
     </Home>
   );
 };
-
 export default HomeBtn;
 
 const Home = styled.div`
   width: 414px;
   height: 71px;
-  position: fixed;
+  position: sticky;
   bottom: 0;
   margin-top: -6px;
   background-color: black;
