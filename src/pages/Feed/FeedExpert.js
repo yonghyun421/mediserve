@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import BackTab from '../../components/BackTab';
 import HomeBtn from '../../components/HomeBtn';
+import DoctorList from '../QnA/DoctorList';
 import Following from '../../components/Following';
 import Content from './Contents';
-import FeedInfo from '../../components/FeedInfo';
 
 const CONTENT_IMG = [
   'images/Rectangle 27.png',
@@ -13,13 +13,13 @@ const CONTENT_IMG = [
   'images/Rectangle 27.png',
 ];
 
-const Feed = () => {
+const FeedExpert = () => {
   return (
     <FeedSection>
-      <BackTab Na="sunny" />
+      <BackTab Na="scalpel" De="M-class" />
       <FeedArea>
         <MyInfo>
-          <FeedInfo />
+          <DoctorList />
         </MyInfo>
         <MyInfoDesc>
           <Follow>
@@ -27,10 +27,15 @@ const Feed = () => {
             <span>팔로워 32</span>
             <span>팔로우 45</span>
           </Follow>
+          <Rating>
+            <span>상담평가 별별별별별</span>
+            <span>전문가평점 95</span>
+          </Rating>
         </MyInfoDesc>
         <ButtonBox>
-          <Following content="팔로잉" grade="ama" />
-          <Following content="포스팅 의뢰" grade="ama" />
+          <Following content="팔로잉" />
+          <Following content="포스팅 의뢰" />
+          <Following content="상담신청" />
         </ButtonBox>
         <FeedHeader>
           <PicTab>
@@ -63,7 +68,7 @@ const Feed = () => {
   );
 };
 
-export default Feed;
+export default FeedExpert;
 
 const FeedSection = styled.div`
   width: 414px;
@@ -88,7 +93,7 @@ const MyInfo = styled.div`
 
 const MyInfoDesc = styled.div`
   width: 100%;
-  padding: 16px 0;
+  height: 58px;
   line-height: 25px;
 `;
 

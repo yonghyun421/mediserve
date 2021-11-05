@@ -24,6 +24,7 @@ import Posting from './pages/Posting/Posting';
 import PostingResult from './pages/Posting/PostingResult';
 import PostingChat from './pages/Posting/PostingChat';
 import Medical from './pages/QnA/Medical';
+import FeedExpert from './pages/Feed/FeedExpert';
 
 const Routes = () => {
   return (
@@ -52,6 +53,7 @@ const Routes = () => {
         <Route exact path="/postingResult" component={PostingResult} />
         <Route exact path="/postingChat" component={PostingChat} />
         <Route exact path="/medical" component={Medical} />
+        <Route exact path="/feedex" component={FeedExpert} />
       </Switch>
       {/* <div className="header_fixed" style={{ marginBottom: '69px' }} /> */}
       <HomeBtn />
