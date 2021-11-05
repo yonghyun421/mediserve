@@ -18,6 +18,8 @@ import Feed from './pages/Feed/Feed';
 import PictureAndQR from './pages/PictureAndQR/PictureAndQR';
 import SnapShot from './pages/SnapShot/SnapShot';
 import Loading from './pages/SnapShot/Loading';
+import Find from './pages/Find/Find';
+import FindHospital from './pages/Find/FindHospital';
 
 const Routes = () => {
   return (
@@ -40,6 +42,8 @@ const Routes = () => {
         <Route exact path="/checkqr" component={PictureAndQR} />
         <Route exact path="/snapshot" component={SnapShot} />
         <Route exact path="/loading" component={Loading} />
+        <Route exact path="/find" component={Find} />
+        <Route exact path="/findHospital" component={FindHospital} />
       </Switch>
       <div className="header_fixed" style={{ marginBottom: '69px' }} />
       <HomeBtn />

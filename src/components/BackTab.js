@@ -32,8 +32,9 @@ const BackIcon = styled.img`
 `;
 
 const BackTitle = styled.div`
+  width: 100%;
   text-align: center;
-  padding: auto 0;
+  padding-right: 70px;
 `;
 
 const Name = styled.h1`
