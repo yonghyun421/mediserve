@@ -63,7 +63,6 @@ const FeedExpert = () => {
           </VideoSection>
         </FeedBox>
       </FeedArea>
-      <HomeBtn />
     </FeedSection>
   );
 };

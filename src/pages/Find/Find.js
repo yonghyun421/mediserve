@@ -27,7 +27,6 @@ const Find = () => {
       </FindSection>
       <FindResult result={name} />
       <Next />
-      <HomeBtn />
     </QnASection>
   );
 };

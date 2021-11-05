@@ -22,10 +22,15 @@ const SortBox = styled.div`
 
 const Sort = styled.div`
   width: 110px;
-  height: 35px;
-  background-color: #5bdde5;
+  padding: 10px 18px;
+  background-color: #e5e5e5;
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &:hover {
+    background-color: #5cdde5;
+    color: white;
+  }
 `;

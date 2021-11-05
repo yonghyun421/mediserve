@@ -27,8 +27,6 @@ const Submit = () => {
           자동으로 추가 차감됩니다.
         </span>
       </SubmitDescBox>
-
-      <HomeBtn />
     </QnASection>
   );
 };
@@ -46,11 +44,15 @@ const QnASection = styled.div`
 `;
 
 const QA = styled.div`
-  letter-spacing: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 35px;
+  padding-bottom: 10px;
   line-height: 22px;
+  letter-spacing: 0;
   white-space: nowrap;
   font-size: 37px;
-  padding-bottom: 10px;
 `;
 
 const Span1 = styled.span`
@@ -95,6 +97,7 @@ const SubmitMsg = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 195px;
 `;
 
 const Msg = styled.h1`
@@ -111,7 +114,7 @@ const SubmitDescBox = styled.div`
   font-weight: 500;
   line-height: 28px;
   letter-spacing: 0;
-  margin: 231px 0 106px 0;
+  margin: 212px 0 106px 0;
 `;
 
 const Point = styled.span`
