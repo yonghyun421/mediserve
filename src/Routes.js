@@ -20,6 +20,9 @@ import SnapShot from './pages/SnapShot/SnapShot';
 import Loading from './pages/SnapShot/Loading';
 import Find from './pages/Find/Find';
 import FindHospital from './pages/Find/FindHospital';
+import Posting from './pages/Posting/Posting';
+import PostingResult from './pages/Posting/PostingResult';
+import PostingChat from './pages/Posting/PostingChat';
 
 const Routes = () => {
   return (
@@ -44,6 +47,9 @@ const Routes = () => {
         <Route exact path="/loading" component={Loading} />
         <Route exact path="/find" component={Find} />
         <Route exact path="/findHospital" component={FindHospital} />
+        <Route exact path="/posting" component={Posting} />
+        <Route exact path="/postingResult" component={PostingResult} />
+        <Route exact path="/postingChat" component={PostingChat} />
       </Switch>
       <div className="header_fixed" style={{ marginBottom: '69px' }} />
       <HomeBtn />
