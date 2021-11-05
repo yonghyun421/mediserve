@@ -22,7 +22,7 @@ const Submit = () => {
         <span>
           상담은 실시간이 아니며,
           <br />
-          추가질문시마다 MDS포인트 2개가
+          추가질문시마다 <Point>MDS포인트 2개</Point>가
           <br />
           자동으로 추가 차감됩니다.
         </span>
@@ -112,4 +112,8 @@ const SubmitDescBox = styled.div`
   line-height: 28px;
   letter-spacing: 0;
   margin: 231px 0 106px 0;
+`;
+
+const Point = styled.span`
+  color: #3db8c0;
 `;
