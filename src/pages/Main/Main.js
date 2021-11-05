@@ -1,9 +1,17 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Content from '../../components/Content/Content';
+import Profile from '../../components/Content/Profile';
+import Rating from '../../components/Content/Rating';
 import styled from 'styled-components';
 
-class Main extends Component {
-  today = () => {
+const Main = () => {
+  const [isModalOn, setIsModalOn] = useState(false);
+
+  const modalToggle = () => {
+    setIsModalOn(!isModalOn);
+  };
+
+  const today = () => {
     const today = new Date();
     let month = `${today.getMonth() + 1}`;
     let day = `${today.getDate()}`;
@@ -15,19 +23,25 @@ class Main extends Component {
     return `${getDate}`;
   };
 
-  render() {
-    return (
-      <Wrapper>
-        <Content />
-        <Replys />
-        <Days>{this.today()}</Days>
-      </Wrapper>
-    );
-  }
-}
+  return (
+    <Wrapper>
+      <Profile
+        modalToggle={modalToggle}
+        isModalOn={isModalOn}
+        Name="Scalpel"
+        Class="M-class"
+        ProfildImg="/images/picture1.png"
+        DoctorIconImg="/images/doctor.png"
+      />
+      <Rating />
+      <Content />
+      <Replys />
+      <Days>{today()}</Days>
+    </Wrapper>
+  );
+};
 
 export default Main;
-
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
