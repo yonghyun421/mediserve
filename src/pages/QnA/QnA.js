@@ -1,30 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Next from '../../components/Next/Next';
+import QnATab from '../../components/QnA/QnATab';
 
 const CATEGORY = [
-  '의 료',
-  '의 약 품',
-  '의학 정보 / 기사',
-  '영 양',
-  '운 동',
-  '기 타',
+  { subject: '의 료', checked: false },
+  { subject: '의 약 품', checked: false },
+  { subject: '의학 정보 / 기사', checked: false },
+  { subject: '영 양', checked: false },
+  { subject: '운 동', checked: false },
+  { subject: '기 타', checked: false },
 ];
 
 const QnA = () => {
+  const [category, setCategory] = useState('');
+
+  const SelectCategory = e => {
+    setCategory(e.target.getAttribute('name'));
+  };
+
   return (
     <QnASection>
-      <QA>
-        <CaretRight src="images/backIcon.png" />
-        <span>Q</span>
-        <Span1>&amp;</Span1>
-        <span>A</span>
-      </QA>
+      <QnATab />
       <QBox>
         <p>상담내용이 어떤 분야 입니까?</p>
       </QBox>
       {CATEGORY.map((category, idx) => (
-        <CategoryBox key={idx}>{category}</CategoryBox>
+        <CategoryBox key={idx} onClick={SelectCategory} name={category.subject}>
+          {category.subject}
+        </CategoryBox>
       ))}
       <Text>상담료로 MDS 토큰을 지불하셔야합니다.</Text>
       <Next />
@@ -44,32 +48,8 @@ const QnASection = styled.div`
   background-color: white;
 `;
 
-const CaretRight = styled.img`
-  position: absolute;
-  width: 10px;
-  left: 20px;
-`;
-
-const QA = styled.div`
-  display: flex;
-  align-items: center;
-  padding-top: 35px;
-  padding-bottom: 10px;
-  line-height: 22px;
-  letter-spacing: 0;
-  white-space: nowrap;
-  font-size: 37px;
-`;
-
-const Span1 = styled.span`
-  font-size: 25px;
-  line-height: 27px;
-`;
-
 const QBox = styled.div`
-  width: 414px;
-  height: 33px;
-  position: relative;
+  padding-bottom: 20px;
   text-align: center;
   margin-top: 61px;
   font-size: 24px;
@@ -95,7 +75,6 @@ const CategoryBox = styled.div`
 `;
 
 const Text = styled.div`
-  width: 414px;
   margin-top: 29px;
   text-align: center;
   font-weight: 700;

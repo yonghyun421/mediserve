@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import HomeBtn from '../../components/HomeBtn';
 
 const Prescription = () => {
   return (

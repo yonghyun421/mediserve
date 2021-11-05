@@ -17,7 +17,7 @@ const SortBox = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-around;
-  padding: 0 28px;
+  padding: 10px 28px;
 `;
 
 const Sort = styled.div`

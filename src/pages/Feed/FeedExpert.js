@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import BackTab from '../../components/BackTab';
-import HomeBtn from '../../components/HomeBtn';
+import Count from './Count';
 import DoctorList from '../QnA/DoctorList';
 import Following from '../../components/Following';
 import Content from './Contents';
+import DocRating from '../../components/DocRating/DocRating';
 
 const CONTENT_IMG = [
   'images/Rectangle 27.png',
@@ -19,17 +20,17 @@ const FeedExpert = () => {
       <BackTab Na="scalpel" De="M-class" />
       <FeedArea>
         <MyInfo>
-          <DoctorList />
+          <DoctorList Feed="Feed" />
         </MyInfo>
         <MyInfoDesc>
           <Follow>
-            <span>게시물 67</span>
-            <span>팔로워 32</span>
-            <span>팔로우 45</span>
+            <Count Title="게시물" Num="67" />
+            <Count Title="팔로워" Num="32" />
+            <Count Title="팔로우" Num="45" />
           </Follow>
           <Rating>
-            <span>상담평가 별별별별별</span>
-            <span>전문가평점 95</span>
+            <Count Title="상담평가" Num="Rate" />
+            <Count Title="전문가평점" Num="95" />
           </Rating>
         </MyInfoDesc>
         <ButtonBox>
@@ -98,7 +99,7 @@ const MyInfoDesc = styled.div`
 
 const Follow = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin-top: 14px;
   padding: 0 28px;
@@ -107,7 +108,7 @@ const Follow = styled.div`
 
 const Rating = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 0 28px;
   width: 414px;

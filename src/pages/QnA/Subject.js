@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { ValignTextBottom } from '../../components/ValignTextBottom';
 import { SUBJECT_CATEGORY } from './SubjectCategory';
 import Next from '../../components/Next/Next';
+import QnATab from '../../components/QnA/QnATab';
 
 const Subject = () => {
+  const [category, setCategory] = useState('');
+
+  const selectSubject = e => {
+    console.log(e.target.getAttribute('name'));
+    setCategory(e.target.getAttribute('name'));
+    console.log(category);
+  };
+
   return (
     <QnASection>
       <FlexCol>
-        <QA>
-          <CaretRight src="images/backIcon.png" />
-          <span>Q</span>
-          <Span1>&amp;</Span1>
-          <span>A (의료)</span>
-        </QA>
+        <QnATab />
         <Text>
           <span>진료과</span>
         </Text>
@@ -21,8 +25,8 @@ const Subject = () => {
       </FlexCol>
       <SubjectSection>
         {SUBJECT_CATEGORY.map((subject, idx) => (
-          <MedicalSubject key={idx}>
-            <span>{subject}</span>
+          <MedicalSubject key={idx} name={subject} onClick={selectSubject}>
+            {subject}
           </MedicalSubject>
         ))}
       </SubjectSection>
@@ -46,43 +50,18 @@ const FlexCol = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 415px;
   min-height: 200px;
   margin-right: 1px;
 `;
 
-const CaretRight = styled.img`
-  position: absolute;
-  width: 10px;
-  left: 20px;
-`;
-
-const QA = styled.div`
-  display: flex;
-  align-items: center;
-  padding-top: 35px;
-  padding-bottom: 10px;
-  white-space: nowrap;
-  font-size: 37px;
-  letter-spacing: 0;
-  line-height: 22px;
-`;
-
-const Span1 = styled.span`
-  font-size: 25px;
-  line-height: 27px;
-`;
-
 const DivideLine = styled.div`
   width: 356px;
-  height: 2px;
+  padding: 1px 0;
   margin-left: 1px;
   background-color: #e5e5e5;
 `;
 
 const Text = styled.div`
-  width: 145px;
-  height: 24px;
   font-weight: 600;
   text-align: center;
   letter-spacing: 0;
@@ -93,7 +72,6 @@ const Text = styled.div`
 `;
 
 const MedicalSubject = styled.div`
-  width: 95px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,20 +85,7 @@ const MedicalSubject = styled.div`
   font-weight: 600;
 `;
 
-const MDS5 = styled.p`
-  ${ValignTextBottom}
-  width: 126px;
-  height: 14px;
-  margin-top: 8px;
-  margin-right: 10px;
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: 13px;
-  white-space: nowrap;
-`;
-
 const SubjectSection = styled.div`
-  width: 380px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin: 0 9px 0 9px;

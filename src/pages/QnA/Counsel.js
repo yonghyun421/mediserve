@@ -1,16 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import Credit from '../../components/Credit/Credit';
+import QnATab from '../../components/QnA/QnATab';
 import DoctorList from './DoctorList';
 
 const Counsel = () => {
   return (
     <QnASection>
-      <QA>
-        <CaretRight src="images/backIcon.png" />
-        <span>Q</span>
-        <Span1>&amp;</Span1>
-        <span>A</span>
-      </QA>
+      <QnATab />
       <Expert>
         <ExpertIcon src="images/people.png" />
         <ExpertTitle>
@@ -22,11 +19,7 @@ const Counsel = () => {
       <Question>
         <QTab>질문 1</QTab>
       </Question>
-      <MdsBox>
-        <Mds>MDS포인트</Mds>
-        <MdsCount>2.5</MdsCount>
-        <Mds>개를 지불 합니다.</Mds>
-      </MdsBox>
+      <Credit />
       <SubmitBox>
         <Submit src="images/submit.png" />
       </SubmitBox>
@@ -46,28 +39,6 @@ const QnASection = styled.div`
   background-color: white;
 `;
 
-const CaretRight = styled.img`
-  position: absolute;
-  width: 10px;
-  left: 20px;
-`;
-
-const QA = styled.div`
-  display: flex;
-  align-items: center;
-  padding-top: 35px;
-  padding-bottom: 10px;
-  line-height: 22px;
-  letter-spacing: 0;
-  white-space: nowrap;
-  font-size: 37px;
-`;
-
-const Span1 = styled.span`
-  font-size: 25px;
-  line-height: 27px;
-`;
-
 const Expert = styled.div`
   position: relative;
   display: flex;
@@ -84,7 +55,7 @@ const ExpertIcon = styled.img`
 const ExpertTitle = styled.div`
   display: flex;
   align-items: flex-end;
-  height: 24px;
+  padding-bottom: 4px;
   width: 178px;
   padding-left: 10px;
   font-size: 20px;
@@ -94,7 +65,7 @@ const ExpertTitle = styled.div`
 const ExpertLine = styled.div`
   position: absolute;
   background-color: #a7ebf0;
-  height: 7px;
+  padding: 3px 0;
   width: 156px;
   left: 20px;
   bottom: -3px;
@@ -108,10 +79,10 @@ const QTab = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
-  height: 40px;
+  padding: 8px 17px;
   border-radius: 15px;
   color: white;
+  font-size: 18px;
   background-color: #646363;
 `;
 
@@ -122,38 +93,6 @@ const Question = styled.div`
   border-radius: 20px;
   background-color: #f5f5f5;
   margin: 31px 0 20px 0;
-`;
-
-const MdsBox = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30px;
-  padding: 0 46px;
-  margin-bottom: 19px;
-`;
-
-const Mds = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  height: 23px;
-  letter-spacing: 0;
-  margin-bottom: 1px;
-  font-size: 20px;
-`;
-
-const MdsCount = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  height: 27px;
-  letter-spacing: 0;
-  width: 60px;
-  margin: 0 5px;
-  background-color: #5cdde5;
-  font-size: 24px;
 `;
 
 const Submit = styled.img`

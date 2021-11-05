@@ -70,25 +70,16 @@ const ExpertTitle = styled.div`
 const ExpertLine = styled.div`
   position: absolute;
   background-color: #a7ebf0;
-  height: 7px;
+  padding: 3px 0;
   width: 156px;
   left: 20px;
   bottom: -3px;
   z-index: 0;
 `;
 
-const BtnBox = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0 32px 14px 0;
-`;
-
 const ChatBox = styled.div`
   position: relative;
   width: 350px;
-  /* height: 62px; */
   border-radius: 20px;
   background: rgba(75, 226, 236, 0.2);
   margin: 31px 0 0 0;
@@ -102,7 +93,6 @@ const ChatTab = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
   border-radius: 15px;
   font-size: 20px;
   line-height: 24px;

@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import BackTab from '../../components/BackTab';
-import HomeBtn from '../../components/HomeBtn';
 import Following from '../../components/Following';
 import Content from './Contents';
 import FeedInfo from '../../components/FeedInfo';
+import Count from './Count';
 
 const CONTENT_IMG = [
   'images/Rectangle 27.png',
@@ -23,14 +23,14 @@ const Feed = () => {
         </MyInfo>
         <MyInfoDesc>
           <Follow>
-            <span>게시물 67</span>
-            <span>팔로워 32</span>
-            <span>팔로우 45</span>
+            <Count Title="게시물" Num="67" />
+            <Count Title="팔로워" Num="32" />
+            <Count Title="팔로우" Num="45" />
           </Follow>
         </MyInfoDesc>
         <ButtonBox>
           <Following content="팔로잉" grade="ama" />
-          <Following content="포스팅 의뢰" grade="ama" />
+          <Following content="메시지" grade="ama" />
         </ButtonBox>
         <FeedHeader>
           <PicTab>
@@ -93,17 +93,9 @@ const MyInfoDesc = styled.div`
 
 const Follow = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin-top: 14px;
-  padding: 0 28px;
-  width: 414px;
-`;
-
-const Rating = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   padding: 0 28px;
   width: 414px;
 `;
