@@ -18,33 +18,36 @@ const ThreedotContent = ({ modalToggle, props }) => {
 };
 
 export default ThreedotContent;
-const ThreedotWrapper = styled.div`
+const ThreedotWrapper = styled.ul`
   position: absolute;
   right: 0;
   border: 1px solid rgba(0, 104, 178, 0.5);
-  z-index: 999;
   align-items: center;
+  z-index: 99999999999;
   background-color: white;
   padding: 0px 9px;
+  height: 212px;
 `;
 
-const Threedotcontents = styled.div`
+const Threedotcontents = styled.li`
   display: flex;
   width: 195px;
   height: 51.5px;
   font-family: 'NanumGothic';
-  font-style: normal;
   font-weight: bold;
   font-size: 16px;
   line-height: 16px;
   align-items: center;
   justify-content: center;
+  z-index: 99999999999;
+  background-color: white;
   &:hover {
     color: #ff0000;
   }
 `;
 const BottomSolid = styled.div`
   border-bottom: 1px solid #e5e5e5;
+  height: 1px;
 `;
 
 const THREEDOTCONTENT = [

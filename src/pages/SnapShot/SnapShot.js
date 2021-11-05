@@ -1,36 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import MainColorBtn from '../../components/MainColorBtn';
-
+import Camera from './Camera';
 const SnapShot = () => {
-  const [isFinishPic, setisFinishPic] = useState(false);
-
-  const cameraToggle = () => {
-    setisFinishPic(!isFinishPic);
-  };
-
   return (
     <Wrapper>
       <Title>처방전 / QR 코드 촬영</Title>
-      <Camera>
-        {isFinishPic ? (
-          <BtnWrapper>
-            <MainColorBtn Body="재촬영" />
-            <Capture
-              src="/images/capture.png"
-              onClick={cameraToggle}
-              style={{ visibility: 'hidden' }}
-            />
-            <MainColorBtn Body="보내기" />
-          </BtnWrapper>
-        ) : (
-          <BtnWrapper>
-            <MainColorBtn Body="취소" />
-            <Capture src="/images/capture.png" onClick={cameraToggle} />
-            <MainColorBtn Body="사진첩" />
-          </BtnWrapper>
-        )}
-      </Camera>
+      <Camera />
     </Wrapper>
   );
 };
@@ -38,31 +13,23 @@ const SnapShot = () => {
 export default SnapShot;
 
 const Wrapper = styled.div`
-  width: 414px;
-  height: 896px;
+  width: 100%;
+  height: 89vh;
+  margin-bottom: 15px;
+  @media (min-width: 0px) and (max-width: 759px) {
+    width: 100%;
+    height: 82vh;
+  }
 `;
+
 const Title = styled.div`
+  text-align: center;
   height: 63px;
-  background: rgba(49, 212, 222, 0.3);
+  padding-top: 16px;
   font-family: 'Roboto';
-  font-style: normal;
   font-weight: bold;
   font-size: 30px;
   line-height: 35px;
   color: #333333;
-  text-align: center;
-  padding-top: 16px;
+  background: rgba(49, 212, 222, 0.3);
 `;
-const Camera = styled.div`
-  height: 100%;
-  background: #c4c4c4;
-  position: relative;
-`;
-const BtnWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  position: absolute;
-  bottom: 20px;
-`;
-const Capture = styled.img``;

@@ -26,10 +26,14 @@ export default HomeBtn;
 
 const Home = styled.div`
   width: 100%;
-  padding-bottom: 20px;
-  position: sticky;
+  @media (min-width: 360p) and (max-width: 759px) {
+    width: 100%;
+  }
+  height: 71px;
+  position: fixed;
   bottom: 0;
   background-color: black;
+  z-index: 9999999999999;
 `;
 
 const HomeMenu = styled.div`

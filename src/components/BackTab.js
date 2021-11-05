@@ -41,7 +41,7 @@ const BackTitle = styled.div`
 `;
 
 const Name = styled.h1`
-  font-size: 30px;
+  font-size: 1.4rem;
   line-height: 29.7px;
   font-weight: 700;
 `;

@@ -1,11 +1,24 @@
-import React, { useState } from 'react';
-import Content from '../../components/Content/Content';
+import React, { useState, useEffect } from 'react';
+import Text from '../../components/Content/Text';
 import Profile from '../../components/Content/Profile';
 import Rating from '../../components/Content/Rating';
+import Replys from '../../components/Content/Replys/Replys';
 import styled from 'styled-components';
 
 const Main = () => {
   const [isModalOn, setIsModalOn] = useState(false);
+  const [feeds, setFeeds] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/feeds.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        setFeeds(data.posting_info);
+      });
+  }, []);
 
   const modalToggle = () => {
     setIsModalOn(!isModalOn);
@@ -23,38 +36,69 @@ const Main = () => {
     return `${getDate}`;
   };
 
+  console.log(feeds);
+
   return (
-    <Wrapper>
-      <Profile
-        modalToggle={modalToggle}
-        isModalOn={isModalOn}
-        Name="Scalpel"
-        Class="M-class"
-        ProfildImg="/images/picture1.png"
-        DoctorIconImg="/images/doctor.png"
-      />
-      <Rating />
-      <Content />
-      <Replys />
-      <Days>{today()}</Days>
-    </Wrapper>
+    <Total>
+      <Wrapper>
+        {feeds?.map(item => {
+          return (
+            <>
+              <Profile
+                modalToggle={modalToggle}
+                isModalOn={isModalOn}
+                Name={item.posting_writer}
+                Class={item.grade}
+                ProfileImg={item.Profile_image}
+                DoctorIconImg="/images/doctor.png"
+              />
+              <YoutubeContainner>
+                <ContentImage alt="content" src={item.posting_image[0]} />
+              </YoutubeContainner>
+              <Rating />
+              <Text />
+              <Replys
+                key={item.posting_id}
+                posting_info={item.posting_info}
+                comment_info={item.comment_info}
+              />
+            </>
+          );
+        })}
+        <Days>{today()}</Days>
+      </Wrapper>
+    </Total>
   );
 };
 
 export default Main;
+
+const Total = styled.div`
+  display: flex;
+  width: 100%;
+`;
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 414px;
+  width: 100%;
 `;
 
-const Replys = styled.div``;
+const YoutubeContainner = styled.div`
+  position: relative;
+  width: 100%;
+  object-fit: cover;
+`;
+
+const ContentImage = styled.img`
+  width: 100%;
+`;
+
 const Days = styled.div`
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
+  font-family: 'Roboto';
   font-size: 12px;
   line-height: 14px;
   color: #646363;
   margin: 8px 13px;
+  height: 10px;
 `;

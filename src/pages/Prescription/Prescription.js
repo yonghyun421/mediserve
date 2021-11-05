@@ -28,7 +28,10 @@ const Prescription = () => {
 export default Prescription;
 
 const QnASection = styled.div`
-  width: 414px;
+  @media (min-width: 360p) and (max-width: 759px) {
+    width: 100%;
+  }
+
   height: 896px;
   position: relative;
   display: flex;

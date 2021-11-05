@@ -13,7 +13,7 @@ const LoadingBar = () => {
   };
 
   const changeActive = (dotNumber, idx) => {
-    if (idx === (dotNumber + 1) % 5) {
+    if (idx === dotNumber % DOTS.length) {
       return true;
     }
   };
@@ -21,6 +21,7 @@ const LoadingBar = () => {
   useEffect(() => {
     plusSec();
   }, []);
+
   return (
     <DotWrapper>
       {DOTS.map((content, idx) => (
@@ -39,9 +40,9 @@ const DotWrapper = styled.div`
 const Dot = styled.div`
   width: 12px;
   height: 12px;
+  margin-right: 24px;
+  border: none;
   border-radius: 50%;
   background-color: ${props => (props.isActive ? '#3DB8C0;' : '#c4c4c4;')};
-  border: none;
-  margin-right: 24px;
 `;
-const DOTS = [1, 2, 3, 4, 5];
+const DOTS = [1, 2, 3, 4, 5, 6];
