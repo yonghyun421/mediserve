@@ -19,9 +19,12 @@ const BackTabSection = styled.div`
   width: 414px;
   height: 71px;
   display: flex;
+  position: sticky;
+  top: 84px;
   justify-content: flex-start;
   align-items: center;
   background: linear-gradient(0deg, #e5e5e5 0%, rgba(245, 245, 245, 0) 100%);
+  z-index: 2;
 `;
 
 const BackIcon = styled.img`
