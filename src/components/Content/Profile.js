@@ -9,6 +9,7 @@ const Profile = ({
   Class,
   ProfileImg,
   DoctorIconImg,
+  isDoctor,
 }) => {
   return (
     <UserInfo>
@@ -20,7 +21,7 @@ const Profile = ({
           <UserName>{Name}</UserName>
           <UserClass>{Class}</UserClass>
         </UserSub>
-        <DoctorIcon alt="Img" src={DoctorIconImg} />
+        {isDoctor && <DoctorIcon alt="Img" src={DoctorIconImg} />}
       </UserLeft>
       <ThreeDotWrapper onClick={modalToggle}>
         <ThreeDot alt="Img" src="/images/dot.png" />
