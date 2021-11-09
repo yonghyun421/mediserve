@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Text from '../../components/Content/Text';
 import Profile from '../../components/Content/Profile';
 import Rating from '../../components/Content/Rating';
@@ -9,8 +9,11 @@ const Main = () => {
   const [isModalOn, setIsModalOn] = useState(false);
   const [feeds, setFeeds] = useState([]);
   const [isReplyOpen, setIsReplyOpen] = useState(false);
+  const [activeReply, setActiveReply] = useState(0);
+  const replyRef = useRef();
+
   useEffect(() => {
-    fetch('http://localhost:3000/data/feeds.json', {
+    fetch('/data/feeds.json', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -23,7 +26,12 @@ const Main = () => {
   };
 
   const replyOpenToggle = () => {
+    // console.log(e.target.getAttribute('name'));
+    // console.log(idx);
+    // setActiveReply(idx);
+    // if (e.target.getAttribute('name') === activeReply) {
     setIsReplyOpen(!isReplyOpen);
+    // }
   };
 
   const today = posting_date => {
@@ -40,7 +48,7 @@ const Main = () => {
   return (
     <Total>
       <Wrapper>
-        {feeds?.map(item => {
+        {feeds?.map((item, idx) => {
           return (
             <>
               <Profile
@@ -49,6 +57,7 @@ const Main = () => {
                 Name={item.posting_writer}
                 Class={item.grade}
                 ProfileImg={item.profile_image}
+                isDoctor={item.isdoctor}
                 DoctorIconImg="/images/doctor.png"
               />
               <YoutubeContainner>
@@ -56,14 +65,20 @@ const Main = () => {
               </YoutubeContainner>
               <Rating />
               <Text content={item.posting_content} />
-              <ReplyWrapper onClick={replyOpenToggle}>
+              <ReplyWrapper>
                 {isReplyOpen ? (
                   <Replys
                     posting_info={item.posting_info}
                     comment_info={item.comment_info}
                   />
                 ) : item.comment_info.length > 0 ? (
-                  <TotalReplyBtn>{`${item.comment_info.length}개의 댓글 전체보기`}</TotalReplyBtn>
+                  <TotalReplyBtn
+                    name={item.posting_id}
+                    ref={replyRef}
+                    onClick={replyOpenToggle}
+                  >
+                    {`${item.comment_info.length}개의 댓글 전체보기`}
+                  </TotalReplyBtn>
                 ) : (
                   ''
                 )}

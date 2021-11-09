@@ -1,21 +1,21 @@
 {
   "posting_info": [
     {
-      "posting_id": 5,
+      "posting_id": 1,
       "posting_writer": "김현진",
       "posting_content": "코로나 비상사태, 2단계 격상되어 비대면 진료상담이 늘고 있다. ㅇ라ㅣㅓㄴㅇ라ㅣㅓ아렁나러ㅣㄴ얼아ㅣㄴ러이나ㅓ리ㅏㄴ어라ㅣㅇ너란이러ㅏㅣㄴ어ㅏㅣ넝리나어란ㅇ러아ㅓ라",
       "posting_image": ["/images/youtube.png"],
       "posting_date": "2021-11-7",
       "comment_info": [
         {
-          "posting_id": 3,
+          "posting_id": 1,
           "comment_id": 6,
           "comment_writer": "하상영",
           "comment_content": "머싓습니당",
           "comment_date": "2021-11-12"
         },
         {
-          "posting_id": 3,
+          "posting_id": 1,
           "comment_id": 6,
           "comment_writer": "이선호",
           "comment_content": "쩐드앙",
@@ -24,10 +24,10 @@
       ],
       "isdoctor": true,
       "grade": "M-Class",
-      "profile_image": "/images/profile.png"
+      "profile_image": "/images/sunny.png"
     },
     {
-      "posting_id": 4,
+      "posting_id": 2,
       "posting_writer": "김용현",
       "posting_content": "내용2-1",
       "posting_image": [
@@ -36,7 +36,7 @@
       "posting_date": "2021-11-9",
       "comment_info": [
         {
-          "posting_id": 4,
+          "posting_id": 2,
           "comment_id": 7,
           "comment_writer": "김현진",
           "comment_content": "댓글66666",
@@ -45,7 +45,7 @@
       ],
       "isdoctor": false,
       "grade": "C-Class",
-      "profile_image": "/images/sunny.png"
+      "profile_image": "/images/hodu.jpeg"
     },
     {
       "posting_id": 3,
@@ -69,7 +69,7 @@
       "profile_image": "/images/Ellipse4.png"
     },
     {
-      "posting_id": 2,
+      "posting_id": 4,
       "posting_writer": "하상영",
       "posting_content": "내용1-2",
       "posting_image": [
@@ -78,14 +78,14 @@
       "posting_date": "2021-10-11",
       "comment_info": [
         {
-          "posting_id": 2,
+          "posting_id": 4,
           "comment_id": 4,
           "comment_writer": "손호영",
           "comment_content": "댓글333333",
           "comment_date": "2021-10-11"
         },
         {
-          "posting_id": 2,
+          "posting_id": 4,
           "comment_id": 9,
           "comment_writer": "김현진",
           "comment_content": "댓글88888",
@@ -97,7 +97,7 @@
       "profile_image": "/images/Ellipse.png"
     },
     {
-      "posting_id": 1,
+      "posting_id": 5,
       "posting_writer": "김수민",
       "posting_content": "내용1-1",
       "posting_image": [
@@ -106,21 +106,21 @@
       "posting_date": "2021-11-2",
       "comment_info": [
         {
-          "posting_id": 1,
+          "posting_id": 5,
           "comment_id": 1,
           "comment_writer": "손호영",
           "comment_content": "댓글111111",
           "comment_date": "2021-10-11"
         },
         {
-          "posting_id": 1,
+          "posting_id": 5,
           "comment_id": 2,
           "comment_writer": "하상영",
           "comment_content": "댓글222222",
           "comment_date": "2021-10-11"
         },
         {
-          "posting_id": 1,
+          "posting_id": 5,
           "comment_id": 3,
           "comment_writer": "이선호",
           "comment_content": "댓글222222",
@@ -129,7 +129,7 @@
       ],
       "isdoctor": false,
       "grade": "M-Class",
-      "profile_image": "/images/hodu.jpeg"
+      "profile_image": "/images/profile.png"
     }
   ]
 }
