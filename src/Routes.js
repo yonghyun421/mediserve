@@ -59,7 +59,7 @@ const Routes = () => {
         <Route exact path="/payment" component={Payment} />
         <Route exact path="/paymentfinish" component={PaymentFinish} />
       </Switch>
-      {/* <div className="header_fixed" style={{ marginBottom: '70px' }} /> */}
+      <div className="header_fixed" style={{ marginBottom: '70px' }} />
       <HomeBtn />
     </Router>
   );

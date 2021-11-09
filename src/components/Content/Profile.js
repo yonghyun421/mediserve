@@ -13,7 +13,9 @@ const Profile = ({
   return (
     <UserInfo>
       <UserLeft>
-        <UserProfile alt="Img" src={ProfileImg} />
+        <PicWrapper>
+          <UserProfile alt="Img" src={ProfileImg} />
+        </PicWrapper>
         <UserSub>
           <UserName>{Name}</UserName>
           <UserClass>{Class}</UserClass>
@@ -45,9 +47,16 @@ const UserLeft = styled.div`
   height: 55px;
 `;
 
+const PicWrapper = styled.div`
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 7px;
+`;
 const UserProfile = styled.img`
-  width: 48px;
-  margin-left: 8px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 `;
 const UserSub = styled.div`

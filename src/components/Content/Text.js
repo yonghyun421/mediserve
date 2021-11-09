@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const Text = () => {
+const Text = ({ content }) => {
   const [limit, setLimit] = useState(40);
   const [seeMoreToggle, setSeeMoreToggle] = useState(true);
 
@@ -20,25 +20,13 @@ const Text = () => {
     <ContentWrapper>
       {seeMoreToggle ? (
         <>
-          <ContentTitle>
-            {
-              toggleText(
-                '코로나 비상사태, 2단계 격상되어 비대면 진료상담이 늘고 있다. ㅇ라ㅣㅓㄴㅇ라ㅣㅓ아렁나러ㅣㄴ얼아ㅣㄴ러이나ㅓ리ㅏㄴ어라ㅣㅇ너란이러ㅏㅣㄴ어ㅏㅣ넝리나어란ㅇ러아ㅓ라',
-                limit
-              ).string
-            }
-          </ContentTitle>
+          <ContentTitle>{toggleText(`${content}`, limit).string}</ContentTitle>
           <SeeMore onClick={clickSeeMore}>...더보기</SeeMore>
         </>
       ) : (
         <>
           <ContentTitle>
-            {
-              toggleText(
-                '코로나 비상사태, 2단계 격상되어 비대면 진료상담이 늘고 있다. ㅇ라ㅣㅓㄴㅇ라ㅣㅓ아렁나러ㅣㄴ얼아ㅣㄴ러이나ㅓ리ㅏㄴ어라ㅣㅇ너란이러ㅏㅣㄴ어ㅏㅣ넝리나어란ㅇ러아ㅓ라',
-                limit
-              ).isShowMore
-            }
+            {toggleText(`${content}`, limit).isShowMore}
           </ContentTitle>
           <SeeMore onClick={clickSeeMore}>접기</SeeMore>
         </>
