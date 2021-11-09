@@ -1,23 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import HomeBtn from '../../components/HomeBtn';
+import QnATab from '../../components/QnA/QnATab';
+import Credit from '../../components/Credit/Credit';
 
 const Submit = () => {
   return (
     <QnASection>
-      <QA>
-        <span>Q</span>
-        <Span1>&amp;</Span1>
-        <span>A</span>
-      </QA>
+      <QnATab />
       <SubmitMsg>
         <Msg>질문이 전송되었습니다.</Msg>
       </SubmitMsg>
-      <MdsBox>
-        <Mds>MDS포인트</Mds>
-        <MdsCount>2.5</MdsCount>
-        <Mds>개가 차감됩니다.</Mds>
-      </MdsBox>
+      <Credit />
       <SubmitDescBox>
         <span>
           상담은 실시간이 아니며,
@@ -43,55 +36,6 @@ const QnASection = styled.div`
   background-color: white;
 `;
 
-const QA = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 35px;
-  padding-bottom: 10px;
-  line-height: 22px;
-  letter-spacing: 0;
-  white-space: nowrap;
-  font-size: 37px;
-`;
-
-const Span1 = styled.span`
-  font-size: 25px;
-  line-height: 27px;
-`;
-
-const MdsBox = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30px;
-  padding: 0 46px;
-  margin-bottom: 19px;
-`;
-
-const Mds = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  height: 23px;
-  letter-spacing: 0;
-  margin-bottom: 1px;
-  font-size: 20px;
-`;
-
-const MdsCount = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  height: 27px;
-  letter-spacing: 0;
-  width: 60px;
-  margin: 0 5px;
-  background-color: #5cdde5;
-  font-size: 24px;
-`;
-
 const SubmitMsg = styled.div`
   width: 100%;
   display: flex;
@@ -101,14 +45,12 @@ const SubmitMsg = styled.div`
 `;
 
 const Msg = styled.h1`
-  height: 30px;
   font-size: 30px;
   font-weight: 700;
   margin: 16px 0;
 `;
 
 const SubmitDescBox = styled.div`
-  width: 236px;
   text-align: center;
   font-size: 16px;
   font-weight: 500;

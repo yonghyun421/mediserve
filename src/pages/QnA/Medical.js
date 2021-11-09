@@ -1,16 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import Next from '../../components/Next/Next';
+import QnATab from '../../components/QnA/QnATab';
 
 const Medical = () => {
   return (
     <QnASection>
-      <QA>
-        <CaretRight src="images/backIcon.png" />
-        <span>Q</span>
-        <Span1>&amp;</Span1>
-        <span>A (의료)</span>
-      </QA>
+      <QnATab />
       <ChoiceSection>
         <ChoiceBox>
           <span>아픈부위 / 궁금한부위로 선택</span>
@@ -45,28 +41,6 @@ const QnASection = styled.div`
   align-items: center;
 `;
 
-const CaretRight = styled.img`
-  position: absolute;
-  left: 20px;
-  width: 10px;
-`;
-
-const QA = styled.div`
-  display: flex;
-  align-items: center;
-  padding-top: 35px;
-  padding-bottom: 10px;
-  white-space: nowrap;
-  font-size: 37px;
-  line-height: 22px;
-  letter-spacing: 0;
-`;
-
-const Span1 = styled.span`
-  font-size: 25px;
-  line-height: 27px;
-`;
-
 const P = styled.p`
   line-height: 20px;
   font-size: 20px;
@@ -80,10 +54,8 @@ const ChoiceBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 360px;
-  height: 120px;
   margin: 10px;
-  padding: 15px 14px;
+  padding: 45px 34px;
   border-radius: 20px;
   box-shadow: 0 0 20px #0000001a;
   font-size: 23px;
@@ -97,11 +69,11 @@ const ChoiceSubject = styled(ChoiceBox)`
 `;
 
 const ChoiceSmallBox = styled.div`
-  width: 170px;
-  height: 85px;
+  /* width: 170px;
+  height: 85px; */
   text-align: center;
-  margin: 5px 10px 5px 5px;
-  padding: 26px 15px;
+  margin: 5px 10px 10px 5px;
+  padding: 21px 25px;
   border-radius: 20px;
   box-shadow: 0 0 20px #0000001a;
   font-size: 13px;
@@ -111,10 +83,10 @@ const ChoiceSmallBox = styled.div`
 const ChoiceSmallSubject = styled(ChoiceSmallBox)`
   color: white;
   background-color: #5cdde5;
+  margin: 5px 5px 10px 10px;
 `;
 
 const FlexRow = styled.div`
-  height: 85px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,7 +94,6 @@ const FlexRow = styled.div`
 `;
 
 const MDS5 = styled.p`
-  height: 14px;
   margin-top: 8px;
   font-weight: 400;
   letter-spacing: 0;

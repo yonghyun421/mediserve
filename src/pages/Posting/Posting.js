@@ -63,7 +63,7 @@ const ExpertTitle = styled.div`
 const ExpertLine = styled.div`
   position: absolute;
   background-color: #a7ebf0;
-  height: 7px;
+  padding: 3px 0;
   width: 156px;
   left: 20px;
   bottom: -3px;

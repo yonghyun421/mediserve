@@ -1,11 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Tab from '../../components/Tab';
-import DoctorList from '../QnA/DoctorList';
-import QBox from '../../components/Box/QBox';
 import PayMsg from '../../components/PayMsg';
-import SmallBtn from '../../components/Box/SmallBtn';
-import HomeBtn from '../../components/HomeBtn';
 
 const PostingResult = () => {
   return (

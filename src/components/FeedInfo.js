@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { ValignTextBottom } from '../components/ValignTextBottom';
 
 const FeedInfo = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const ToggleOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <DocList>
       <DocImg src="images/sunny.png" />
@@ -13,15 +19,14 @@ const FeedInfo = () => {
           </DocName>
         </DocDetailHeader>
         <DocDesc>
-          <p>
-            <span>
-              Hi, I'm Sunny..(본인소개) <br />
-              daily, love, pic etc(기타사항)
-              <br />
-              등등...
-            </span>
-          </p>
-          <More>
+          <Profile isOpen={isOpen}>
+            서울특별시 보라매병원 흉부외과 교수 대한심장혈관외과학회 학술위원
+            서울특별시 보라매병원 흉부외과 교수 대한심장혈관외과학회 학술위원
+            서울특별시 보라매병원 흉부외과 교수 대한심장혈관외과학회 학술위원
+            서울특별시 보라매병원 흉부외과 교수 대한심장혈관외과학회 학술위원
+            서울특별시 보라매병원 흉부외과 교수 대한심장혈관외과학회 학술위원
+          </Profile>
+          <More onClick={ToggleOpen}>
             <span>...더보기</span>
           </More>
         </DocDesc>
@@ -36,11 +41,10 @@ const DocList = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 350px;
-  height: 135px;
+  align-items: flex-start;
+  padding: 15px 0 15px 0;
+  margin: 0 25px;
   border-bottom: 1px solid #3db8c0;
-  padding: 0 25px;
 `;
 
 const DocImg = styled.img`
@@ -61,9 +65,15 @@ const DocDetailHeader = styled.div`
 `;
 
 const DocDesc = styled.div`
-  height: 43px;
-  width: 286px;
+  width: 100%;
   padding-top: 10px;
+  font-size: 14px;
+`;
+
+const Profile = styled.div`
+  width: 80%;
+  height: ${props => (props.isOpen ? '"";' : '55px;')};
+  overflow-y: ${props => (props.isOpen ? '"";' : 'hidden;')};
   font-size: 16px;
   line-height: 20px;
 `;
@@ -78,25 +88,8 @@ const More = styled.div`
   font-size: 12px;
 `;
 
-const Counsel = styled.div`
-  height: 15px;
-  width: 117px;
-  letter-spacing: 0;
-  font-size: 15px;
-`;
-
-const Rating = styled.div`
-  height: 16px;
-  letter-spacing: 0;
-  width: 17px;
-  font-size: 12px;
-`;
-
 const DocName = styled.div`
-  ${ValignTextBottom}
-  height: 18px;
   letter-spacing: 0;
-  width: 61px;
   font-size: 18px;
   font-weight: 700;
 `;

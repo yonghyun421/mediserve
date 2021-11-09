@@ -1,6 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const PHARM_LIST = [
+  '보라매 대학약국',
+  '보라매 서울약국',
+  '새보라매약국',
+  '조은약국',
+  '거리약국',
+];
+
 const FindResult = ({ name }) => {
   return (
     <>
@@ -12,11 +20,9 @@ const FindResult = ({ name }) => {
           <InputBox>
             <Ul>
               <Li>&nbsp;</Li>
-              <Li>보라매 대학약국</Li>
-              <Li>보라매 서울약국</Li>
-              <Li>새보라매약국</Li>
-              <Li>조은약국</Li>
-              <Li>거리약국</Li>
+              {PHARM_LIST.map((pharm, idx) => (
+                <Li key={idx}>{pharm}</Li>
+              ))}
             </Ul>
           </InputBox>
         </FindSection>
@@ -49,17 +55,8 @@ const ResultSection = styled.div`
 const InputBox = styled.div`
   position: relative;
   width: 225px;
-  /* height: 40px; */
   margin-left: 20px;
   background-color: #f5f5f5;
-  /* border: 3px solid #7ae0cc; */
-`;
-
-const Input = styled.input`
-  width: 100%;
-  height: 100%;
-  padding-left: 8px;
-  border: none;
 `;
 
 const FindTitle = styled.div`

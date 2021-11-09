@@ -25,20 +25,18 @@ const HomeBtn = () => {
 export default HomeBtn;
 
 const Home = styled.div`
-  width: 414px;
-  height: 71px;
+  width: 100%;
+  padding-bottom: 20px;
   position: sticky;
   bottom: 0;
-  margin-top: -6px;
   background-color: black;
 `;
 
 const HomeMenu = styled.div`
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 51px;
   background-color: #4ae2eb;
   font-size: 22px;
   font-weight: 800;
@@ -50,13 +48,14 @@ const MenuTabBox = styled.div`
   justify-content: space-between;
   text-align: center;
   width: 300px;
-  height: 22px;
 `;
 
 const MenuTab = styled.div`
   width: 75px;
-  top: 15px;
-  letter-spacing: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 `;
 
 const MoreBtn = styled.img`
@@ -81,7 +80,5 @@ const BtnBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 62px;
-  height: 62px;
-  margin-top: -26px;
+  margin-top: -12px;
 `;
