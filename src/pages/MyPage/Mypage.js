@@ -10,7 +10,7 @@ const Mypage = () => {
     <MyPageTotalWrapper>
       {MYPAGE.map((content, idx) => {
         return (
-          <MyPageWrapper key={idx}>
+          <>
             {MYPAGE[idx] === '커 뮤 니 티' ? (
               <>
                 <CommunityWrapper>
@@ -28,85 +28,83 @@ const Mypage = () => {
                   )}
                 </CommunityWrapper>
                 {isModalOn ? (
-                  <div>
+                  <>
                     {CATEGORY.map(content => (
-                      <div key={content}>
-                        <CategoryContent>{content}</CategoryContent>
-                      </div>
+                      <CategoryContent>{content}</CategoryContent>
                     ))}
-                  </div>
+                  </>
                 ) : null}
               </>
             ) : (
               <MypageContentWrapper>
-                <div>{content}</div>
+                <CommnunityText>{content}</CommnunityText>
                 <DowndropIcon src="/images/next.png" />
               </MypageContentWrapper>
             )}
-          </MyPageWrapper>
+          </>
         );
       })}
     </MyPageTotalWrapper>
   );
 };
 
-const MyPageTotalWrapper = styled.div`
-  width: 414px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+const MyPageTotalWrapper = styled.ul`
+  width: 100%;
+  margin-bottom: 72px;
 `;
 
-const MyPageWrapper = styled.div`
-  width: 414px;
-  font-family: 'Nanum Gothic';
-  font-style: normal;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 16px;
-`;
-const CommunityWrapper = styled.ul`
-  width: 414px;
+const CommunityWrapper = styled.li`
   display: flex;
   justify-content: space-between;
   height: 52px;
   align-items: center;
   border-bottom: 1px solid #c4c4c4;
-  padding: 0px 32px;
+  padding: 20px 32px;
+  font-family: 'Nanum Gothic';
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 16px;
 `;
-const CommnunityText = styled.li`
+
+const CommnunityText = styled.div`
   margin-right: 3px;
 `;
 
 const DowndropIcon = styled.img`
-  z-index: 9999;
   width: 10px;
   height: 20px;
+  z-index: 9999;
 `;
+
 const DowndropIconOpen = styled.img`
   width: 20px;
   height: 10px;
 `;
 
-const MypageContentWrapper = styled.ul`
+const MypageContentWrapper = styled.li`
   display: flex;
   justify-content: space-between;
   height: 52px;
   align-items: center;
   border-bottom: 1px solid #c4c4c4;
-  padding: 0px 32px;
+  padding: 20px 32px;
+  font-family: 'Nanum Gothic';
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 16px;
+  text-align: center;
 `;
+
 const CategoryContent = styled.li`
   display: flex;
   height: 42.2px;
   align-items: center;
+  padding: 1px 48px;
+  margin: 1px 0px;
   font-family: 'NanumGothic';
-  font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 16px;
-  padding: 1px 48px;
-  margin: 1px 0px;
   color: #000000;
   background: #f5f5f5;
 `;

@@ -27,6 +27,11 @@ const Feed = () => {
             <Count Title="팔로워" Num="32" />
             <Count Title="팔로우" Num="45" />
           </Follow>
+          <Rating>
+            <span>상담평가 별별별별별</span>
+            <span>전문가평점</span>
+            <span>95</span>
+          </Rating>
         </MyInfoDesc>
         <ButtonBox>
           <Following content="팔로잉" grade="ama" />
@@ -113,6 +118,14 @@ const FeedHeader = styled.div`
   width: 393px;
   height: 35px;
   margin: 18px 11px 0 11px;
+`;
+
+const Rating = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 28px;
+  width: 414px;
 `;
 
 const PicTab = styled.div`

@@ -1,14 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import BackTab from '../../components/BackTab';
 const PictureAndQR = () => {
   return (
-    <TotalWrapper>
+    <>
+      <BackTab Na="처방전 사진 보내기" />
       <Wrapper>
-        <Wraning>! 처방약 수령시에는 실제 처방전을 제출하셔야합니다.</Wraning>
+        <Wraning>
+          ! 처방약 수령시에는 실제 처방전을 <br />
+          제출하셔야합니다.
+        </Wraning>
         <GuideTitle> {`<사진 등록 가이드>`} </GuideTitle>
         <GuideContent>
-          <p>1. 전체가 보이도록 찎어주세요.</p>
+          <p>1. 전체가 보이도록 찍어주세요.</p>
           <p>2. 한 번에 한 장씩 촬영해주세요.</p>
         </GuideContent>
         <BtnWrapper>
@@ -16,60 +20,63 @@ const PictureAndQR = () => {
           <NextBtn type="submit" src="/images/nextBtn.png" />
         </BtnWrapper>
       </Wrapper>
-    </TotalWrapper>
+    </>
   );
 };
 
 export default PictureAndQR;
 
-const TotalWrapper = styled.div`
-  width: 414px;
-`;
 const Wrapper = styled.div`
-  width: 414px;
-  height: 650px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  padding-bottom: 80px;
 `;
 
 const Wraning = styled.div`
-  font-family: 'NanumGothic';
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 24px;
+  margin-top: 2rem;
   text-align: center;
-  color: #ff0000;
-  margin-top: 2.5rem;
-`;
-const GuideTitle = styled.div`
   font-family: 'NanumGothic';
-  font-style: normal;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 24px;
+  color: #ff0000;
+`;
+
+const GuideTitle = styled.div`
+  text-align: center;
+  margin: 3rem 0rem;
+  font-family: 'NanumGothic';
   font-weight: bold;
   font-size: 24px;
   line-height: 24px;
-  text-align: center;
   color: #014d52;
 `;
+
 const GuideContent = styled.div`
   font-family: 'NanumGothic';
-  font-style: normal;
   font-weight: bold;
   font-size: 18px;
-  line-height: 18px;
+  line-height: 200%;
   text-align: center;
   color: #000000;
 `;
+
 const BtnWrapper = styled.div`
-  margin-top: 2.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 7rem;
 `;
 
 const Personal = styled.p`
+  height: 30px;
   font-family: 'NanumGothic';
-  font-style: normal;
-  font-weight: normal;
   font-size: 14px;
   line-height: 14px;
   text-align: center;
@@ -77,7 +84,6 @@ const Personal = styled.p`
 `;
 
 const NextBtn = styled.img`
-  width: 349px;
-  height: 54px;
-  margin-top: 12px;
+  width: 310px;
+  object-fit: contain;
 `;

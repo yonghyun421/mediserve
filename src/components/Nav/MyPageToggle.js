@@ -15,62 +15,77 @@ const MyPageToggle = () => {
       </ProfileWrapper>
       {MYPAGE.map((content, idx) => {
         return (
-          <MyPageWrapper key={idx}>
+          <>
             {MYPAGE[idx] === '커 뮤 니 티' ? (
               <>
                 <CommunityWrapper>
                   <CommnunityText>커 뮤 니 티</CommnunityText>
-                  <DowndropIcon
-                    src="/images/downdrop.png"
-                    onClick={modalToggle}
-                  />
+                  <div>
+                    <DropdownIcon
+                      src="images/downdrop.png"
+                      onClick={modalToggle}
+                    />
+                  </div>
+                  <BottomSolid />
                 </CommunityWrapper>
+
                 {isModalOn ? (
-                  <CategoryWrapper>
+                  <>
                     {CATEGORY.map(content => (
-                      <CategoryContent key={content}>{content}</CategoryContent>
+                      <CategoryWrapper>
+                        <CategoryContent>{content}</CategoryContent>
+                      </CategoryWrapper>
                     ))}
-                  </CategoryWrapper>
+                  </>
                 ) : null}
               </>
             ) : (
-              <MyPage>{content}</MyPage>
+              <MypageContentWrapper>
+                <CommnunityText>{content}</CommnunityText>
+                <BottomSolid />
+              </MypageContentWrapper>
             )}
-            {idx !== CATEGORY.length ? <BottomSolid /> : null}
-          </MyPageWrapper>
+          </>
         );
       })}
     </MyPageTotalWrapper>
   );
 };
 
-const MyPageTotalWrapper = styled.div`
+const MyPageTotalWrapper = styled.ul`
   position: absolute;
-  z-index: 999;
   right: 0;
+  z-index: 999;
 `;
+
 const ProfileWrapper = styled.div`
-  height: 59px;
-  background: rgba(229, 229, 229, 0.5);
   display: flex;
   justify-content: right;
   align-items: center;
+  height: 59px;
+  background: rgba(229, 229, 229, 0.8);
 `;
+
 const Name = styled.div`
+  margin-right: 9px;
   font-family: 'Nanum Gothic';
-  font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 21px;
-  margin-right: 9px;
   color: #000000;
 `;
+
 const Profile = styled.img``;
 
-const MyPageWrapper = styled.div`
+const CommunityWrapper = styled.ul`
   position: relative;
-  width: 175px;
-  background-color: #ffffff;
+  display: flex;
+  justify-content: right;
+  height: 30px;
+  align-items: center;
+  padding: 10px 5px;
+  text-align: center;
+  background-color: white;
   font-family: 'NanumGothic';
   font-style: normal;
   font-weight: bold;
@@ -78,55 +93,65 @@ const MyPageWrapper = styled.div`
   line-height: 16px;
   color: #0068b3;
 `;
-const MyPage = styled.div`
-  display: flex;
-  justify-content: right;
-  text-align: center;
-  padding: 10px 5px;
-`;
-const CommunityWrapper = styled.ul`
-  display: flex;
-  justify-content: right;
-  padding: 10px 5px;
-`;
+
 const CommnunityText = styled.li`
   margin-right: 3px;
 `;
 
-const DowndropIcon = styled.img`
-  z-index: 9999;
+const DropdownIcon = styled.img`
+  z-index: 9999999999;
 `;
-const CategoryWrapper = styled.ul`
+
+const MypageContentWrapper = styled.li`
   position: relative;
-  height: 145px;
-`;
-const CategoryContent = styled.li`
-  float: right;
-  width: 94px;
   display: flex;
   justify-content: right;
-  height: 25px;
+  height: 30px;
+  width: 175px;
+  align-items: center;
+  text-align: center;
+  padding: 10px 5px;
+  background-color: white;
   font-family: 'NanumGothic';
   font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 14px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
+  color: #0068b3;
+`;
+
+const CategoryWrapper = styled.div`
   display: flex;
-  align-items: flex-end;
-  text-align: right;
-  padding: 5px;
-  margin: 1px 0px;
-  color: #646363;
-  background: rgba(167, 236, 240, 0.2);
+  justify-content: right;
+  background-color: white;
+  padding-top: 1px;
 `;
 
 const BottomSolid = styled.div`
-  border-bottom: 1px solid #e5e5e5;
   position: absolute;
-  width: 136px;
   bottom: 0;
   right: 0;
+  width: 136px;
+  height: 1px;
+  border-bottom: 1px solid #e5e5e5;
 `;
+
+const CategoryContent = styled.li`
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  text-align: right;
+  width: 94px;
+  margin-bottom: 1px;
+  height: 25px;
+  font-size: 14px;
+  line-height: 14px;
+  color: #0068b3;
+  background: rgba(167, 236, 240, 0.2);
+
+  color: #646363;
+`;
+
 const MYPAGE = [
   '내 지 갑',
   'Q&A 답변 확인',

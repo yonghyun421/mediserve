@@ -2,106 +2,109 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Content = props => {
-  const [isModalOn, setIsModalOn] = useState(false);
-
-  const cancelModal = () => {
-    setIsModalOn(false);
-  };
-
   return (
-    <Cancel onClick={cancelModal}>
-      <YoutubeContainner>
-        <img alt="content" src="/images/youtube.png" />
-        <YoutubeMark alt="Img" src="/images/youtubemark.png" />
-      </YoutubeContainner>
-      <ContentSub>
-        <ExpertsRating>
-          전문가 평점
-          <ExpertsRatingBackground />
-          <Score>95</Score>
-        </ExpertsRating>
-        <GoodAndBad>
-          <img alt="goodIcon" src="/images/good.png" />
-          <GoodCount>345</GoodCount>
-          <img alt="badIcon" src="/images/bad.png" />
-          <BadCount>32</BadCount>
-        </GoodAndBad>
-        <BookmarkWrapper>
-          <Bookmark alt="Bookmark" src="/images/bookmark.png" />
-        </BookmarkWrapper>
-      </ContentSub>
-    </Cancel>
+    <ContentSub>
+      <ExpertsRating>
+        <ScoreBackground>전문가 평점</ScoreBackground>
+        <Score>95</Score>
+      </ExpertsRating>
+      <GoodAndBad>
+        <GoodIcon alt="goodIcon" src="/images/good.png" />
+        <GoodCount>345</GoodCount>
+        <BadIcon alt="badIcon" src="/images/bad.png" />
+        <BadCount>32</BadCount>
+      </GoodAndBad>
+      <BookmarkWrapper>
+        <Bookmark alt="Bookmark" src="/images/bookmark.png" />
+      </BookmarkWrapper>
+    </ContentSub>
   );
 };
 
 export default Content;
 
-const YoutubeContainner = styled.div`
-  position: relative;
-  display: flex;
-`;
-const YoutubeMark = styled.img`
-  position: absolute;
-  right: 185px;
-  top: 73px;
-  z-index: 10;
-`;
 const ContentSub = styled.div`
-  display: flex;
   position: relative;
-  justify-content: space-between;
-  padding: 10px;
+  display: flex;
   align-items: center;
-  width: 414px;
-  div {
-    font-family: 'NanumGothic';
-    font-style: normal;
-    font-weight: bold;
-    font-size: 17px;
-    line-height: 17px;
-  }
+  height: 0px;
+  margin-top: 3px;
+  padding: 10px;
 `;
 
-const ExpertsRating = styled.div`
+const ExpertsRating = styled.span`
   display: flex;
-  position: relative;
   width: 131px;
 `;
 
-const ExpertsRatingBackground = styled.div`
-  background-color: #5ddce5;
-  z-index: -1;
-  position: absolute;
-  bottom: 0;
-  height: 11px;
+const ScoreBackground = styled.span`
+  display: flex;
+  align-items: flex-end;
   width: 85px;
-  opacity: 45%;
+  height: 11px;
+  margin-top: 7px;
+  font-family: 'Nanum Gothic';
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 20px;
+  color: #000000;
+  background-color: rgba(75, 226, 236, 0.4);
 `;
 
 const Score = styled.div`
+  display: flex;
+  align-items: flex-end;
   margin-left: 2px;
+  font-family: 'NanumGothic';
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 17px;
 `;
+
 const GoodAndBad = styled.div`
   display: flex;
   width: 131px;
 `;
+
 const GoodCount = styled.div`
   margin: 0px 8px 0px 7px;
+  font-family: 'NanumGothic';
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 17px;
+  display: flex;
+  align-items: flex-end;
 `;
+
 const BadCount = styled.div`
+  display: flex;
+  align-items: flex-end;
   margin-left: 8px;
+  font-family: 'NanumGothic';
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 17px;
 `;
 
 const BookmarkWrapper = styled.div`
   width: 100px;
 `;
+
 const Bookmark = styled.img`
   position: absolute;
   right: 10px;
-  top: 10px;
+  top: 2px;
+  width: 14.95px;
+  height: 20px;
 `;
 
-const Cancel = styled.div`
-  width: 100%;
-  height: 100%;
+const GoodIcon = styled.img`
+  width: 18px;
+  height: 20px;
+`;
+
+const BadIcon = styled.img`
+  width: 18px;
+  height: 20px;
+  margin-top: 2px;
 `;

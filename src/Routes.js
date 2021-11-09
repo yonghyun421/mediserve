@@ -25,6 +25,8 @@ import PostingResult from './pages/Posting/PostingResult';
 import PostingChat from './pages/Posting/PostingChat';
 import Medical from './pages/QnA/Medical';
 import FeedExpert from './pages/Feed/FeedExpert';
+import Payment from './pages/Payment/Payment';
+import PaymentFinish from './pages/Payment/PaymentFinish';
 
 const Routes = () => {
   return (
@@ -32,7 +34,6 @@ const Routes = () => {
       <Nav />
       <Switch>
         <Route exact path="/" component={Main} />
-        <Route exact path="/upload" component={UploadPage} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/mypage" component={MyPage} />
         <Route exact path="/subject" component={Subject} />
@@ -53,9 +54,12 @@ const Routes = () => {
         <Route exact path="/postingResult" component={PostingResult} />
         <Route exact path="/postingChat" component={PostingChat} />
         <Route exact path="/medical" component={Medical} />
+        <Route exact path="/upload" component={UploadPage} />
         <Route exact path="/feedex" component={FeedExpert} />
+        <Route exact path="/payment" component={Payment} />
+        <Route exact path="/paymentfinish" component={PaymentFinish} />
       </Switch>
-      {/* <div className="header_fixed" style={{ marginBottom: '69px' }} /> */}
+      {/* <div className="header_fixed" style={{ marginBottom: '70px' }} /> */}
       <HomeBtn />
     </Router>
   );
