@@ -31,7 +31,7 @@ const Wrapper = styled.form`
 
 const ReplyInputContent = styled.input`
   border: 0;
-  width: 93%;
+  width: 89%;
 `;
 const SendButton = styled.button`
   background-color: white;

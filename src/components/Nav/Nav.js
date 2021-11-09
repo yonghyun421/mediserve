@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import MyPageToggle from './MyPageToggle';
 
@@ -14,7 +15,9 @@ const Nav = () => {
       <NavTop />
       <NavBottom>
         <BottomLeft>
-          <Rectangle93 src="/images/rectangle93.png" />
+          <Link to="/">
+            <Rectangle93 src="/images/rectangle93.png" />
+          </Link>
         </BottomLeft>
         <BottomRight>
           <Vector src="/images/vector.png" />

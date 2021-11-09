@@ -11,7 +11,9 @@ const Replys = ({ comment_info }) => {
   }, []);
 
   const handleDelete = reply => {
-    const replys = totalreplys.filter(item => item.id !== reply.id);
+    const replys = totalreplys.filter(
+      item => item.comment_id !== reply.comment_id
+    );
     setTotalReplys(replys);
   };
 
@@ -42,6 +44,7 @@ const Replys = ({ comment_info }) => {
       {totalreplys.map(reply => {
         return (
           <Reply
+            reply={reply}
             handleDelete={handleDelete}
             comment_writer={reply.comment_writer}
             comment_content={reply.comment_content}

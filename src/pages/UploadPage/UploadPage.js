@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import styled from 'styled-components';
 import Next from '../../components/Next/Next';
 
@@ -10,15 +12,31 @@ const UploadPage = () => {
           <ImageWrapper>
             <UploadImage src="/images/camera.png" />
           </ImageWrapper>
-          <UploadButton>
-            <ImportBtn>이미지 첨부</ImportBtn>
-            <ImportBtn>동영상 첨부</ImportBtn>
-          </UploadButton>
+          <BtnWrapper>
+            <UploadButton>
+              <ImportBtn htmlFor="AddImage">이미지 첨부</ImportBtn>
+              <AddImage
+                multiple="multiple"
+                type="file"
+                formEncType="multipart/form-data"
+              />
+            </UploadButton>
+            <UploadButton>
+              <ImportBtn htmlFor="AddImage">동영상 첨부</ImportBtn>
+              <AddImage
+                multiple="multiple"
+                type="file"
+                formEncType="multipart/form-data"
+              />
+            </UploadButton>
+          </BtnWrapper>
         </UploadTop>
       </UploadTopWrapper>
       <BottomSolid />
       <UploadContent placeholder="내용을 입력해주세요" />
-      <Next Title="등록" />
+      <LinkTo to="/feed">
+        <Next Title="등록" />
+      </LinkTo>
     </UploadWrapper>
   );
 };
@@ -63,27 +81,44 @@ const UploadImage = styled.img`
   height: 87.5px;
 `;
 
-const UploadButton = styled.div`
+const AddImage = styled.input`
+  height: 55px;
+  width: 130px;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 99999;
+`;
+
+const BtnWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   margin-left: 1rem;
   height: 180px;
-  font-family: 'Nanum Gothic';
-  font-weight: bold;
-  font-size: 15px;
-  line-height: 17px;
-  color: #333333;
 `;
 
-const ImportBtn = styled.button`
+const UploadButton = styled.div`
+  position: relative;
+`;
+
+const ImportBtn = styled.label`
   display: block;
-  padding: 0 27px;
-  /* width: 110px; */
-  height: 55px;
+  padding: 1.2rem;
   border: 0px;
   background: #e5e5e5;
   border-radius: 20px;
+  font-family: 'Nanum Gothic';
+  font-weight: bold;
+  font-size: 0.9rem;
+  line-height: 17px;
+
+  color: #333333;
+  @media (min-width: 0px) and (max-width: 410px) {
+    padding: 1rem 0.4rem;
+    font-size: 0.8rem;
+  }
 `;
 
 const BottomSolid = styled.div`
@@ -103,5 +138,7 @@ const UploadContent = styled.textarea`
   font-size: 16px;
   line-height: 18px;
   color: #646363;
-  /* margin-bottom: 10rem; */
+`;
+const LinkTo = styled(Link)`
+  width: 100%;
 `;

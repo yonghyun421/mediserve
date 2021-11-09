@@ -13,10 +13,7 @@ export default MainColorBtn;
 
 const Wrapper = styled.button`
   width: 8rem;
-  @media (min-width: 700px) and (max-width: 10000px) {
-    width: 10rem;
-    height: 3rem;
-  }
+
   height: 3rem;
   background: ${props =>
     props.Body === '취소' || props.Body === '재촬영' || props.Body === '취소'

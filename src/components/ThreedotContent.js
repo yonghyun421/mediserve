@@ -1,12 +1,53 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const ThreedotContent = ({ modalToggle, props }) => {
+import { withRouter } from 'react-router-dom';
+
+const ThreedotContent = ({ modalToggle, props, feed }) => {
+  const shareFeed = () => {
+    console.log('skskskssksk');
+    // Kakao.Link.sendDefault({
+    //   objectType: 'feed',
+    //   content: {
+    //     title: `${feed.posting_content}`,
+    //     description: `${feed.posting_writer}님의 feed입니다.`,
+    //     imageUrl:
+    //       'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+    //     link: {
+    //       mobileWebUrl: 'http://localhost:3000/',
+    //       webUrl: 'http://localhost:3000/',
+    //     },
+    //   },
+    //   social: {
+    //     likeCount: 286,
+    //     commentCount: 45,
+    //     sharedCount: 845,
+    //   },
+    //   buttons: [
+    //     {
+    //       title: '웹으로 보기',
+    //       link: {
+    //         mobileWebUrl: 'http://localhost:3000/',
+    //         webUrl: 'http://localhost:3000/',
+    //       },
+    //     },
+    //     {
+    //       title: '앱으로 보기',
+    //       link: {
+    //         mobileWebUrl: 'http://localhost:3000/',
+    //         webUrl: 'http://localhost:3000/',
+    //       },
+    //     },
+    //   ],
+    // });
+  };
+
   return (
     <ThreedotWrapper>
       {THREEDOTCONTENT.map((content, idx) => {
         return (
           <>
-            <Threedotcontents key={content.id}>
+            <Threedotcontents onClick={shareFeed} key={content.id}>
               {content.title}
             </Threedotcontents>
             {idx !== THREEDOTCONTENT.length ? <BottomSolid /> : null}
@@ -17,7 +58,7 @@ const ThreedotContent = ({ modalToggle, props }) => {
   );
 };
 
-export default ThreedotContent;
+export default withRouter(ThreedotContent);
 const ThreedotWrapper = styled.ul`
   position: absolute;
   right: 0;
@@ -51,8 +92,8 @@ const BottomSolid = styled.div`
 `;
 
 const THREEDOTCONTENT = [
-  { id: 1, title: '신고' },
-  { id: 2, title: '링크복사' },
-  { id: 3, title: '팔로우 취소' },
-  { id: 4, title: '공유하기' },
+  { id: 1, title: '신고', func: '/' },
+  { id: 2, title: '링크복사', func: '/' },
+  { id: 3, title: '팔로우 취소', func: '/' },
+  { id: 4, title: '공유하기', func: 'shareFeed' },
 ];

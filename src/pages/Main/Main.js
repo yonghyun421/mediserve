@@ -1,16 +1,15 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
+
 import Text from '../../components/Content/Text';
 import Profile from '../../components/Content/Profile';
 import Rating from '../../components/Content/Rating';
-import Replys from '../../components/Content/Replys/Replys';
+import TotalReplys from '../../components/Content/Replys/TotalReplys';
 import styled from 'styled-components';
 
-const Main = () => {
-  const [isModalOn, setIsModalOn] = useState(false);
+const Main = props => {
+  console.log(props);
   const [feeds, setFeeds] = useState([]);
-  const [isReplyOpen, setIsReplyOpen] = useState(false);
-  const [activeReply, setActiveReply] = useState(0);
-  const replyRef = useRef();
 
   useEffect(() => {
     fetch('/data/feeds.json', {
@@ -21,18 +20,6 @@ const Main = () => {
         setFeeds(data.posting_info);
       });
   }, []);
-  const modalToggle = () => {
-    setIsModalOn(!isModalOn);
-  };
-
-  const replyOpenToggle = () => {
-    // console.log(e.target.getAttribute('name'));
-    // console.log(idx);
-    // setActiveReply(idx);
-    // if (e.target.getAttribute('name') === activeReply) {
-    setIsReplyOpen(!isReplyOpen);
-    // }
-  };
 
   const today = posting_date => {
     let postingDate = posting_date.split('-');
@@ -52,37 +39,23 @@ const Main = () => {
           return (
             <>
               <Profile
-                modalToggle={modalToggle}
-                isModalOn={isModalOn}
                 Name={item.posting_writer}
                 Class={item.grade}
                 ProfileImg={item.profile_image}
                 isDoctor={item.isdoctor}
                 DoctorIconImg="/images/doctor.png"
+                props={props}
+                feed={item}
               />
               <YoutubeContainner>
                 <ContentImage alt="content" src={item.posting_image[0]} />
               </YoutubeContainner>
               <Rating />
               <Text content={item.posting_content} />
-              <ReplyWrapper>
-                {isReplyOpen ? (
-                  <Replys
-                    posting_info={item.posting_info}
-                    comment_info={item.comment_info}
-                  />
-                ) : item.comment_info.length > 0 ? (
-                  <TotalReplyBtn
-                    name={item.posting_id}
-                    ref={replyRef}
-                    onClick={replyOpenToggle}
-                  >
-                    {`${item.comment_info.length}개의 댓글 전체보기`}
-                  </TotalReplyBtn>
-                ) : (
-                  ''
-                )}
-              </ReplyWrapper>
+              <TotalReplys
+                posting_info={item.posting_info}
+                comment_info={item.comment_info}
+              />
               <Days>{today(item.posting_date)}</Days>
             </>
           );
@@ -92,7 +65,7 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default withRouter(Main);
 
 const Total = styled.div`
   display: flex;
@@ -115,20 +88,6 @@ const ContentImage = styled.img`
   width: 100%;
 `;
 
-const ReplyWrapper = styled.div`
-  padding: 2px 10px 2px 0px;
-  font-size: 20px;
-  margin: 5px 0px;
-`;
-
-const TotalReplyBtn = styled.div`
-  font-family: 'Roboto';
-  font-size: 14px;
-  line-height: 16px;
-  color: #646363;
-  margin-left: 10px;
-  padding: 2px 0px 0px 3px;
-`;
 const Days = styled.div`
   font-family: 'Roboto';
   font-size: 12px;
