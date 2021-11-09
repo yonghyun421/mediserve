@@ -1,39 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Reply from './Reply';
 import ReplyInput from './ReplyInput';
+import styled from 'styled-components';
 
-const Replys = () => {
-  const [replys, setReplys] = useState([]);
+const Replys = ({ comment_info }) => {
+  const [totalreplys, setTotalReplys] = useState([]);
+
+  useEffect(() => {
+    setTotalReplys(comment_info);
+  }, []);
 
   const handleDelete = reply => {
-    const replys = replys.filter(item => item.id !== reply.id);
-    setReplys(replys);
+    const replys = totalreplys.filter(item => item.id !== reply.id);
+    setTotalReplys(replys);
   };
 
   const handleAdd = replyInput => {
     if (replyInput.trim() === '') {
       return;
     }
-
     const replys = [
-      ...replys,
-      { id: Date.now(), userId: '71summsernight', comment: replyInput },
+      ...totalreplys,
+      {
+        comment_content: replyInput,
+        comment_writer: comment_info.comment_writer
+          ? comment_info.comment_writer
+          : '원래는 로그인 유저아이디 들어가야됌 Replys component에서 수정해주기',
+      },
     ];
-    setReplys(replys);
+    setTotalReplys(replys);
   };
 
   const handleAddByEnter = e => {
     if (e.key === 'Enter') {
-      this.handleAdd();
+      handleAdd();
     }
   };
 
   return (
-    <>
-      <Reply handleDelete={handleDelete} />
+    <Wrapper>
+      {totalreplys.map(reply => {
+        return (
+          <Reply
+            handleDelete={handleDelete}
+            comment_writer={reply.comment_writer}
+            comment_content={reply.comment_content}
+          />
+        );
+      })}
       <ReplyInput handleAdd={handleAdd} handleAddByEnter={handleAddByEnter} />
-    </>
+    </Wrapper>
   );
 };
 
 export default Replys;
+const Wrapper = styled.div``;

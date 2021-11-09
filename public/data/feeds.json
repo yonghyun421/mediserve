@@ -5,20 +5,35 @@
       "posting_writer": "김현진",
       "posting_content": "코로나 비상사태, 2단계 격상되어 비대면 진료상담이 늘고 있다. ㅇ라ㅣㅓㄴㅇ라ㅣㅓ아렁나러ㅣㄴ얼아ㅣㄴ러이나ㅓ리ㅏㄴ어라ㅣㅇ너란이러ㅏㅣㄴ어ㅏㅣ넝리나어란ㅇ러아ㅓ라",
       "posting_image": ["/images/youtube.png"],
-      "posting_date": "2021-10-11",
-      "comment_info": [],
+      "posting_date": "2021-11-7",
+      "comment_info": [
+        {
+          "posting_id": 3,
+          "comment_id": 6,
+          "comment_writer": "하상영",
+          "comment_content": "머싓습니당",
+          "comment_date": "2021-11-12"
+        },
+        {
+          "posting_id": 3,
+          "comment_id": 6,
+          "comment_writer": "이선호",
+          "comment_content": "쩐드앙",
+          "comment_date": "2021-10-11"
+        }
+      ],
       "isdoctor": true,
       "grade": "M-Class",
-      "profile_image": "/images/profile.jpeg"
+      "profile_image": "/images/profile.png"
     },
     {
       "posting_id": 4,
       "posting_writer": "김용현",
       "posting_content": "내용2-1",
       "posting_image": [
-        "https://cafe24img.poxo.com/scenerity/web/product/big/20200327/94edcae99664d3d71b83c55fe2140115.jpg"
+        "https://image.ytn.co.kr/general/jpg/2021/1109/202111091008212058_t.jpg"
       ],
-      "posting_date": "2021-10-11",
+      "posting_date": "2021-11-9",
       "comment_info": [
         {
           "posting_id": 4,
@@ -29,36 +44,36 @@
         }
       ],
       "isdoctor": false,
-      "grade": "M-Class",
-      "profile_image": "/images/mongsil.jpeg"
+      "grade": "C-Class",
+      "profile_image": "/images/sunny.png"
     },
     {
       "posting_id": 3,
       "posting_writer": "이선호",
       "posting_content": null,
       "posting_image": [
-        "https://storynine.co.kr/web/product/big/20200224/4908b2264ad9ac46f4d2d7f1e6f77ea0.jpg"
+        "http://health.chosun.com/site/data/img_dir/2020/07/13/2020071303117_0.jpg"
       ],
-      "posting_date": "2021-10-11",
+      "posting_date": "2021-11-1",
       "comment_info": [
         {
           "posting_id": 3,
           "comment_id": 6,
           "comment_writer": "손호영",
           "comment_content": "댓글55555",
-          "comment_date": "2021-10-11"
+          "comment_date": "2021-11-7"
         }
       ],
       "isdoctor": false,
-      "grade": "M-Class",
-      "profile_image": "/images/hodu.jpeg"
+      "grade": "B-Class",
+      "profile_image": "/images/Ellipse4.png"
     },
     {
       "posting_id": 2,
       "posting_writer": "하상영",
       "posting_content": "내용1-2",
       "posting_image": [
-        "https://creamcheese.co.kr/web/product/big/20200111/a684d2cdaa1341b2cb7f0118776ca2c9.jpeg"
+        "https://www.gwhospital.co.kr/_upfiles/board/health/thumb/20201207_0de9499f29a55d5e7cbf0a1c258c22.jpg"
       ],
       "posting_date": "2021-10-11",
       "comment_info": [
@@ -79,16 +94,16 @@
       ],
       "isdoctor": true,
       "grade": "M-Class",
-      "profile_image": "/images/profile.jpeg"
+      "profile_image": "/images/Ellipse.png"
     },
     {
       "posting_id": 1,
       "posting_writer": "김수민",
       "posting_content": "내용1-1",
       "posting_image": [
-        "https://creamcheese.co.kr/web/product/big/20200111/a684d2cdaa1341b2cb7f0118776ca2c9.jpeg"
+        "https://dimg.donga.com/wps/NEWS/IMAGE/2020/08/25/102635619.1.edit.jpg"
       ],
-      "posting_date": "2021-10-11",
+      "posting_date": "2021-11-2",
       "comment_info": [
         {
           "posting_id": 1,
@@ -114,7 +129,7 @@
       ],
       "isdoctor": false,
       "grade": "M-Class",
-      "profile_image": "/images/profile.png"
+      "profile_image": "/images/hodu.jpeg"
     }
   ]
 }
