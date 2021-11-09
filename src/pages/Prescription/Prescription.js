@@ -1,43 +1,42 @@
 import React from 'react';
 import styled from 'styled-components';
+import BackTab from '../../components/BackTab';
+import { Link } from 'react-router-dom';
 
 const Prescription = () => {
   return (
-    <QnASection>
-      <PresBox color="#5CDDE5">
-        <TextBox>
-          <H1 color="#ffffff">처방전 사진 미리보내기</H1>
-          <DescText>약국내 대기 시간을 절약하세요.</DescText>
-        </TextBox>
-      </PresBox>
-      <PresBox color="#E5E5E5">
-        <TextBox>
-          <H1>병원 모바일 앱 서비스</H1>
-          <H1 color="#0068B2">연결하기</H1>
-          <DescText2>
-            회원가입 절차 없이
-            <br />
-            원하는 병원의 서비스를 이용하세요.
-          </DescText2>
-        </TextBox>
-      </PresBox>
-    </QnASection>
+    <>
+      <BackTab />
+      <PressSection>
+        <LinkBtn to="/snapshot">
+          <PresBox color="#5CDDE5">
+            <TextBox>
+              <H1 color="#ffffff">처방전 사진 미리보내기</H1>
+              <DescText>약국내 대기 시간을 절약하세요.</DescText>
+            </TextBox>
+          </PresBox>
+        </LinkBtn>
+        <PresBox color="#E5E5E5">
+          <TextBox>
+            <H1>병원 모바일 앱 서비스</H1>
+            <H1 color="#0068B2">연결하기</H1>
+            <DescText2>
+              회원가입 절차 없이
+              <br />
+              원하는 병원의 서비스를 이용하세요.
+            </DescText2>
+          </TextBox>
+        </PresBox>
+      </PressSection>
+    </>
   );
 };
 
 export default Prescription;
 
-const QnASection = styled.div`
-  @media (min-width: 360p) and (max-width: 759px) {
-    width: 100%;
-  }
-
-  height: 896px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
+const PressSection = styled.div`
+  padding: auto auto;
+  padding-top: 116px;
 `;
 
 const PresBox = styled.div`
@@ -46,7 +45,7 @@ const PresBox = styled.div`
   border-radius: 30px;
   background-color: ${props => props.color};
   display: flex;
-  margin: 11px 0;
+  margin: 11px auto;
   justify-content: center;
   align-items: center;
 `;
@@ -76,4 +75,8 @@ const DescText2 = styled.span`
   font-size: 18px;
   line-height: 25px;
   font-weight: 300;
+`;
+
+const LinkBtn = styled(Link)`
+  text-decoration: none;
 `;

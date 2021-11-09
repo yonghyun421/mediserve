@@ -18,7 +18,7 @@ const MdsBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 46px;
+  padding: 18px 46px;
   margin-bottom: 19px;
 `;
 

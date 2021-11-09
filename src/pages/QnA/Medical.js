@@ -5,7 +5,7 @@ import QnATab from '../../components/QnA/QnATab';
 
 const Medical = () => {
   return (
-    <QnASection>
+    <>
       <QnATab />
       <ChoiceSection>
         <ChoiceBox>
@@ -25,21 +25,12 @@ const Medical = () => {
           </ChoiceSmallBox>
         </FlexRow>
       </ChoiceSection>
-      <Next />
-    </QnASection>
+      <Next Title="NEXT" />
+    </>
   );
 };
 
 export default Medical;
-
-const QnASection = styled.div`
-  width: 414px;
-  height: 896px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 
 const P = styled.p`
   line-height: 20px;
@@ -78,6 +69,7 @@ const ChoiceSmallBox = styled.div`
   box-shadow: 0 0 20px #0000001a;
   font-size: 13px;
   line-height: 13px;
+  width: 100%;
 `;
 
 const ChoiceSmallSubject = styled(ChoiceSmallBox)`

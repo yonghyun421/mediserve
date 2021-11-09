@@ -5,7 +5,6 @@ import Count from './Count';
 import DoctorList from '../QnA/DoctorList';
 import Following from '../../components/Following';
 import Content from './Contents';
-import DocRating from '../../components/DocRating/DocRating';
 
 const CONTENT_IMG = [
   'images/Rectangle 27.png',
@@ -16,7 +15,7 @@ const CONTENT_IMG = [
 
 const FeedExpert = () => {
   return (
-    <FeedSection>
+    <>
       <BackTab Na="scalpel" De="M-class" />
       <FeedArea>
         <MyInfo>
@@ -48,37 +47,27 @@ const FeedExpert = () => {
         </FeedHeader>
         <FeedBox>
           <PicSection>
-            {CONTENT_IMG.map(image => (
-              <Content image={image} />
+            {CONTENT_IMG.map((image, idx) => (
+              <Content key={idx} image={image} />
             ))}
           </PicSection>
           <PicSection>
-            {CONTENT_IMG.map(image => (
-              <Content image={image} />
+            {CONTENT_IMG.map((image, idx) => (
+              <Content key={idx} image={image} />
             ))}
           </PicSection>
           <VideoSection>
-            {CONTENT_IMG.map(image => (
-              <Content image={image} />
+            {CONTENT_IMG.map((image, idx) => (
+              <Content key={idx} image={image} />
             ))}
           </VideoSection>
         </FeedBox>
       </FeedArea>
-    </FeedSection>
+    </>
   );
 };
 
 export default FeedExpert;
-
-const FeedSection = styled.div`
-  width: 414px;
-  height: 896px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-`;
 
 const FeedArea = styled.div`
   width: 100%;
@@ -101,9 +90,9 @@ const Follow = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 14px;
   padding: 0 28px;
   width: 414px;
+  margin: 14px auto 0 auto;
 `;
 
 const Rating = styled.div`
@@ -112,6 +101,7 @@ const Rating = styled.div`
   align-items: center;
   padding: 0 28px;
   width: 414px;
+  margin: 0 auto;
 `;
 
 const ButtonBox = styled.div`
@@ -124,19 +114,19 @@ const ButtonBox = styled.div`
 const FeedHeader = styled.div`
   display: flex;
   text-align: center;
-  width: 393px;
+  width: 100%;
   height: 35px;
   margin: 18px 11px 0 11px;
 `;
 
 const PicTab = styled.div`
-  width: 284px;
+  width: 65%;
   height: 100%;
   border-right: 1px solid #c4c4c4;
 `;
 
 const VideoTab = styled.div`
-  width: 141px;
+  width: 35%;
   height: 100%;
 `;
 
@@ -147,13 +137,13 @@ const FeedBox = styled.div`
 `;
 
 const PicSection = styled.div`
-  width: 130px;
+  width: 33%;
   height: 380px;
   background-color: green;
 `;
 
 const VideoSection = styled.div`
-  width: 130px;
+  width: 33%;
   height: 380px;
   background-color: red;
 `;

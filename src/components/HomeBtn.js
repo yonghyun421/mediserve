@@ -1,28 +1,42 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const HomeBtn = () => {
   return (
-    <Home>
-      <HomeMenu>
-        <MenuTabBox>
-          <MenuTab>
-            <span>HOME</span>
-          </MenuTab>
-          <BtnBox>
-            <MoreBtn src="images/Ellipse 16.png" />
-            <PlusS src="images/Line 13.png" />
-            <PlusG src="images/Line 14.png" />
-          </BtnBox>
-          <MenuTab>
-            <span>Q&A</span>
-          </MenuTab>
-        </MenuTabBox>
-      </HomeMenu>
-    </Home>
+    <>
+      <HomeFixed />
+      <Home>
+        <HomeMenu>
+          <MenuTabBox>
+            <LinkBtn to="/">
+              <MenuTab>
+                <span>HOME</span>
+              </MenuTab>
+            </LinkBtn>
+            <LinkBtn to="/upload">
+              <BtnBox>
+                <MoreBtn src="images/Ellipse 16.png" />
+                <PlusS src="images/Line 13.png" />
+                <PlusG src="images/Line 14.png" />
+              </BtnBox>
+            </LinkBtn>
+            <LinkBtn to="/qna">
+              <MenuTab>
+                <span>Q&A</span>
+              </MenuTab>
+            </LinkBtn>
+          </MenuTabBox>
+        </HomeMenu>
+      </Home>
+    </>
   );
 };
 export default HomeBtn;
+
+const HomeFixed = styled.div`
+  margin-bottom: 100px;
+`;
 
 const Home = styled.div`
   width: 100%;
@@ -50,6 +64,7 @@ const HomeMenu = styled.div`
 const MenuTabBox = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   text-align: center;
   width: 300px;
 `;
@@ -85,4 +100,9 @@ const BtnBox = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: -12px;
+`;
+
+const LinkBtn = styled(Link)`
+  text-decoration: none;
+  color: #ffffff;
 `;

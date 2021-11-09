@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import BackTab from '../../components/BackTab';
+import Next from '../../components/Next/Next';
+
 const PictureAndQR = () => {
   return (
     <>
@@ -17,7 +19,7 @@ const PictureAndQR = () => {
         </GuideContent>
         <BtnWrapper>
           <Personal>개인 정보는 삭제되며, 저장되지 않습니다.</Personal>
-          <NextBtn type="submit" src="/images/nextBtn.png" />
+          <Next Title="NEXT" />
         </BtnWrapper>
       </Wrapper>
     </>
@@ -81,9 +83,4 @@ const Personal = styled.p`
   line-height: 14px;
   text-align: center;
   color: #000000;
-`;
-
-const NextBtn = styled.img`
-  width: 310px;
-  object-fit: contain;
 `;

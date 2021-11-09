@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import DoctorList from './DoctorList';
 import QnATab from '../../components/QnA/QnATab';
+import QBox from '../../components/Box/QBox';
 
 const Answer = () => {
   return (
-    <QnASection>
+    <>
       <QnATab />
       <Expert>
         <ExpertIcon src="images/people.png" />
@@ -15,30 +16,17 @@ const Answer = () => {
         <ExpertLine />
       </Expert>
       <DoctorList />
-      <Question>
-        <QTab>질문 1</QTab>
-      </Question>
-      <AnswerBox>
-        <AnswerTab>답변 1</AnswerTab>
-      </AnswerBox>
+      <QBox Title="질문 1" />
+      <QBox Title="답변 1" />
+      <QBox Title="질문 2" />
       <SubmitBox>
         <Submit src="images/Question.png" />
       </SubmitBox>
-    </QnASection>
+    </>
   );
 };
 
 export default Answer;
-
-const QnASection = styled.div`
-  width: 414px;
-  height: 896px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-`;
 
 const Expert = styled.div`
   position: relative;
@@ -73,29 +61,6 @@ const ExpertLine = styled.div`
   z-index: 0;
 `;
 
-const QTab = styled.div`
-  position: absolute;
-  left: -12px;
-  top: -18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-  height: 40px;
-  border-radius: 15px;
-  color: white;
-  background-color: #646363;
-`;
-
-const Question = styled.div`
-  position: relative;
-  width: 350px;
-  height: 58px;
-  border-radius: 20px;
-  background-color: #f5f5f5;
-  margin: 31px 0 0 0;
-`;
-
 const Submit = styled.img`
   height: 50px;
   width: 150px;
@@ -107,29 +72,6 @@ const SubmitBox = styled.div`
   justify-content: flex-end;
   align-items: center;
   height: 50px;
-  margin-bottom: 18px;
+  margin: 20px 0 100px 0;
   padding-right: 33px;
-`;
-
-const AnswerBox = styled.div`
-  position: relative;
-  width: 350px;
-  height: 200px;
-  border-radius: 20px;
-  background-color: #f5f5f5;
-  margin: 33px 0 161px 0;
-`;
-
-const AnswerTab = styled.div`
-  position: absolute;
-  left: -12px;
-  top: -18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-  height: 40px;
-  border-radius: 15px;
-  color: white;
-  background-color: #5cdde5;
 `;

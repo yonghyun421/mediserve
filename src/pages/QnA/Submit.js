@@ -5,7 +5,7 @@ import Credit from '../../components/Credit/Credit';
 
 const Submit = () => {
   return (
-    <QnASection>
+    <>
       <QnATab />
       <SubmitMsg>
         <Msg>질문이 전송되었습니다.</Msg>
@@ -20,21 +20,11 @@ const Submit = () => {
           자동으로 추가 차감됩니다.
         </span>
       </SubmitDescBox>
-    </QnASection>
+    </>
   );
 };
 
 export default Submit;
-
-const QnASection = styled.div`
-  width: 414px;
-  height: 896px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-`;
 
 const SubmitMsg = styled.div`
   width: 100%;

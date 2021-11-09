@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const QnATab = () => {
   return (
     <QA>
-      <CaretRight src="images/backIcon.png" />
+      <BackBtn to="/">
+        <CaretRight src="images/backIcon.png" />
+      </BackBtn>
       <span>Q</span>
       <Span1>&amp;</Span1>
       <span>A</span>
@@ -21,7 +24,9 @@ const CaretRight = styled.img`
 `;
 
 const QA = styled.div`
+  width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
   padding-top: 35px;
   padding-bottom: 10px;
@@ -34,4 +39,8 @@ const QA = styled.div`
 const Span1 = styled.span`
   font-size: 25px;
   line-height: 27px;
+`;
+
+const BackBtn = styled(Link)`
+  text-decoration: none;
 `;
