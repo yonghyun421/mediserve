@@ -28,7 +28,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   padding: 2px 10px 2px 0px;
   font-size: 20px;
-  height: 10px;
+  height: 15px;
   margin: 5px 0px;
 `;
 const ReplyLeft = styled.div`
@@ -42,6 +42,8 @@ const OwnerId = styled.span`
   padding-right: 3px;
 `;
 const Content = styled.span`
+  width: 100%;
+  word-break: break-all;
   font-size: 14px;
   line-height: 16px;
 `;
