@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Reply = ({ handleDelete, comment_writer, comment_content }) => {
-  console.log(comment_content);
+const Reply = ({ reply, handleDelete, comment_writer, comment_content }) => {
+  const replyDelete = () => {
+    handleDelete(reply);
+  };
+
   return (
     <Wrapper>
       <ReplyLeft>
@@ -12,7 +15,7 @@ const Reply = ({ handleDelete, comment_writer, comment_content }) => {
         <Content>{comment_content}</Content>
       </ReplyLeft>
       <ReplyRight>
-        <DeleteBtn onClick={handleDelete}>X</DeleteBtn>
+        <DeleteBtn onClick={replyDelete}>X</DeleteBtn>
       </ReplyRight>
     </Wrapper>
   );

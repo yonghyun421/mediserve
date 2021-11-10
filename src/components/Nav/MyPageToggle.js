@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import styled from 'styled-components';
 
 const MyPageToggle = () => {
@@ -16,7 +18,7 @@ const MyPageToggle = () => {
       {MYPAGE.map((content, idx) => {
         return (
           <>
-            {MYPAGE[idx] === '커 뮤 니 티' ? (
+            {MYPAGE[idx].title === '커 뮤 니 티' ? (
               <>
                 <CommunityWrapper>
                   <CommnunityText>커 뮤 니 티</CommnunityText>
@@ -40,10 +42,12 @@ const MyPageToggle = () => {
                 ) : null}
               </>
             ) : (
-              <MypageContentWrapper>
-                <CommnunityText>{content}</CommnunityText>
-                <BottomSolid />
-              </MypageContentWrapper>
+              <Link to={content.linkto}>
+                <MypageContentWrapper>
+                  <CommnunityText>{content.title}</CommnunityText>
+                  <BottomSolid />
+                </MypageContentWrapper>
+              </Link>
             )}
           </>
         );
@@ -153,13 +157,13 @@ const CategoryContent = styled.li`
 `;
 
 const MYPAGE = [
-  '내 지 갑',
-  'Q&A 답변 확인',
-  '포스팅 의뢰 확인',
-  '커 뮤 니 티',
-  '고 객 지 원',
-  '설   정',
-  '로 그 아 웃',
+  { title: '내 지 갑', linkto: '/' },
+  { title: 'Q&A 답변 확인', linkto: '/answer' },
+  { title: '포스팅 의뢰 확인', linkto: '/postingChat' },
+  { title: '커 뮤 니 티', linkto: '/' },
+  { title: '고 객 지 원', linkto: '/' },
+  { title: '설   정', linkto: '/' },
+  { title: '로 그 아 웃', linkto: '/' },
 ];
 
 const CATEGORY = ['의사', '환 우 회', '약 사', '의 학 기 자', '영 양 사'];

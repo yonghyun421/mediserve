@@ -9,14 +9,14 @@
       "comment_info": [
         {
           "posting_id": 1,
-          "comment_id": 6,
+          "comment_id": 1,
           "comment_writer": "하상영",
           "comment_content": "머싓습니당",
           "comment_date": "2021-11-12"
         },
         {
           "posting_id": 1,
-          "comment_id": 6,
+          "comment_id": 2,
           "comment_writer": "이선호",
           "comment_content": "쩐드앙",
           "comment_date": "2021-10-11"
@@ -37,7 +37,7 @@
       "comment_info": [
         {
           "posting_id": 2,
-          "comment_id": 7,
+          "comment_id": 1,
           "comment_writer": "김현진",
           "comment_content": "댓글66666",
           "comment_date": "2021-10-11"
@@ -58,7 +58,7 @@
       "comment_info": [
         {
           "posting_id": 3,
-          "comment_id": 6,
+          "comment_id": 2,
           "comment_writer": "손호영",
           "comment_content": "댓글55555",
           "comment_date": "2021-11-7"
@@ -79,14 +79,14 @@
       "comment_info": [
         {
           "posting_id": 4,
-          "comment_id": 4,
+          "comment_id": 3,
           "comment_writer": "손호영",
           "comment_content": "댓글333333",
           "comment_date": "2021-10-11"
         },
         {
           "posting_id": 4,
-          "comment_id": 9,
+          "comment_id": 4,
           "comment_writer": "김현진",
           "comment_content": "댓글88888",
           "comment_date": "2021-10-11"

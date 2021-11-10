@@ -3,19 +3,28 @@ import styled from 'styled-components';
 
 const PaymentFinish = () => {
   return (
-    <Wrapper>
-      <Title>결제가 완료되었습니다.</Title>
-      <Subscript>
-        <TimeWrapper>
-          약 <Time>15</Time>분 후 조제가 완료되오니
-        </TimeWrapper>
-        방문하여 복약상담하세요.
-      </Subscript>
-    </Wrapper>
+    <TotalWrapper>
+      <Wrapper>
+        <Title>결제가 완료되었습니다.</Title>
+        <Subscript>
+          <TimeWrapper>
+            약 <Time>15</Time>분 후 조제가 완료되오니
+          </TimeWrapper>
+          방문하여 복약상담하세요.
+        </Subscript>
+      </Wrapper>
+    </TotalWrapper>
   );
 };
 
 export default PaymentFinish;
+
+const TotalWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+`;
 
 const Wrapper = styled.div`
   display: flex;
@@ -31,6 +40,7 @@ const Title = styled.div`
   font-size: 30px;
   line-height: 30px;
   color: #333333;
+  margin-bottom: 4rem;
 `;
 
 const Subscript = styled.div`

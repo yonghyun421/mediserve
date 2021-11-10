@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ThreedotContent from '../ThreedotContent';
 
 const Profile = ({
-  isModalOn,
-  modalToggle,
+  props,
   Name,
   Class,
   ProfileImg,
   DoctorIconImg,
   isDoctor,
+  feed,
 }) => {
+  const [isModalOn, setIsModalOn] = useState(false);
+  const modalToggle = () => {
+    setIsModalOn(!isModalOn);
+  };
   return (
     <UserInfo>
       <UserLeft>
@@ -19,13 +23,13 @@ const Profile = ({
         </PicWrapper>
         <UserSub>
           <UserName>{Name}</UserName>
-          <UserClass>{Class}</UserClass>
+          {isDoctor && <UserClass>{Class}</UserClass>}
         </UserSub>
         {isDoctor && <DoctorIcon alt="Img" src={DoctorIconImg} />}
       </UserLeft>
-      <ThreeDotWrapper onClick={modalToggle}>
+      <ThreeDotWrapper props={props} onClick={modalToggle}>
         <ThreeDot alt="Img" src="/images/dot.png" />
-        {isModalOn ? <ThreedotContent /> : null}
+        {isModalOn ? <ThreedotContent feed={feed} props={props} /> : null}
       </ThreeDotWrapper>
     </UserInfo>
   );
@@ -66,9 +70,11 @@ const UserSub = styled.div`
   text-align: center;
   padding-top: 10px;
   font-family: 'NanumGothic';
+  margin-right: 5px;
 `;
 const DoctorIcon = styled.img`
   width: 24px;
+  height: 28px;
   color: #014d52;
   object-fit: contain;
 `;
@@ -76,13 +82,11 @@ const UserName = styled.div`
   height: 25px;
   font-weight: bold;
   font-size: 18px;
-  line-height: 18px;
 `;
 const UserClass = styled.div`
   height: 25px;
   color: #014d52;
   font-size: 13px;
-  line-height: 13px;
 `;
 
 const ThreeDotWrapper = styled.div`

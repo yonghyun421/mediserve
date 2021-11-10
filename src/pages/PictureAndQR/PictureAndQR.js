@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import styled from 'styled-components';
 import BackTab from '../../components/BackTab';
 import Next from '../../components/Next/Next';
@@ -7,26 +9,35 @@ const PictureAndQR = () => {
   return (
     <>
       <BackTab Na="처방전 사진 보내기" />
-      <Wrapper>
-        <Wraning>
-          ! 처방약 수령시에는 실제 처방전을 <br />
-          제출하셔야합니다.
-        </Wraning>
-        <GuideTitle> {`<사진 등록 가이드>`} </GuideTitle>
-        <GuideContent>
-          <p>1. 전체가 보이도록 찍어주세요.</p>
-          <p>2. 한 번에 한 장씩 촬영해주세요.</p>
-        </GuideContent>
-        <BtnWrapper>
-          <Personal>개인 정보는 삭제되며, 저장되지 않습니다.</Personal>
-          <Next Title="NEXT" />
-        </BtnWrapper>
-      </Wrapper>
+      <TotalWrapper>
+        <Wrapper>
+          <Warning>
+            ! 처방약 수령시에는 실제 처방전을 <br />
+            제출하셔야합니다.
+          </Warning>
+          <GuideTitle> {`<사진 등록 가이드>`} </GuideTitle>
+          <GuideContent>
+            <p>1. 전체가 보이도록 찍어주세요.</p>
+            <p>2. 한 번에 한 장씩 촬영해주세요.</p>
+          </GuideContent>
+          <BtnWrapper>
+            <Personal>개인 정보는 삭제되며, 저장되지 않습니다.</Personal>
+            <LinkTo to="/snapshot">
+              <Next Title="NEXT" />
+            </LinkTo>
+          </BtnWrapper>
+        </Wrapper>
+      </TotalWrapper>
     </>
   );
 };
 
 export default PictureAndQR;
+const TotalWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const Wrapper = styled.div`
   display: flex;
@@ -37,7 +48,7 @@ const Wrapper = styled.div`
   padding-bottom: 80px;
 `;
 
-const Wraning = styled.div`
+const Warning = styled.div`
   margin-top: 2rem;
   text-align: center;
   font-family: 'NanumGothic';
@@ -83,4 +94,8 @@ const Personal = styled.p`
   line-height: 14px;
   text-align: center;
   color: #000000;
+`;
+
+const LinkTo = styled(Link)`
+  width: 100%;
 `;

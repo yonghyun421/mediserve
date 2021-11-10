@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import styled from 'styled-components';
 import MainColorBtn from '../../components/MainColorBtn';
 
@@ -22,7 +24,9 @@ const Reply = () => {
         <PaymenetConfirm>결제 하시겠습니까?</PaymenetConfirm>
         <BtnWrapper>
           <MainColorBtn Body="취소" />
-          <MainColorBtn Body="확인" />
+          <Link to="/paymentfinish">
+            <MainColorBtn Body="확인" />
+          </Link>
         </BtnWrapper>
       </PaymentWrapper>
     </TotalWrapper>
@@ -35,14 +39,14 @@ const TotalWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 80px 0%;
+  height: 80vh;
 `;
 
 const PaymentWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 `;
 
@@ -86,4 +90,8 @@ const BtnWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 11rem;
+  @media (min-height: 0px) and (max-height: 670px) {
+    margin-top: 6rem;
+  }
 `;

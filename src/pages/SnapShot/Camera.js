@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import Webcam from 'react-webcam';
 import styled from 'styled-components';
 import MainColorBtn from '../../components/MainColorBtn';
@@ -57,7 +59,9 @@ const Camera = () => {
             onClick={cameraToggle}
             style={{ visibility: 'hidden' }}
           />
-          <MainColorBtn Body="보내기" />
+          <Link to="/loading">
+            <MainColorBtn Body="보내기" />
+          </Link>
         </BtnWrapper>
       ) : (
         <BtnWrapper>
