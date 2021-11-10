@@ -5,6 +5,15 @@ import Tab from '../../components/Tab';
 import DocMsg from './DocMsg';
 import PatientMsg from './PatientMsg';
 
+const DOCTOR = {
+  pic: 'images/picture1.png',
+  name: '홍길동',
+  rating: 4,
+  profile:
+    'asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd',
+  job: true,
+};
+
 const PostingChat = () => {
   return (
     <>
@@ -16,7 +25,7 @@ const PostingChat = () => {
         </ExpertTitle>
         <ExpertLine />
       </Expert>
-      <DoctorList />
+      <DoctorList Doctor={DOCTOR} />
       <AcceptMsg>포스팅 의뢰 수락 되었습니다.</AcceptMsg>
       <ChatSection>
         <ChatBox>

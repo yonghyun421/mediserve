@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
-const QnATab = () => {
+const QnATab = ({ history }) => {
+  const goBack = () => {
+    history.goBack();
+  };
+
   return (
     <QA>
-      <BackBtn to="/">
-        <CaretRight src="images/backIcon.png" />
-      </BackBtn>
+      <CaretRight onClick={goBack} src="images/backIcon.png" />
       <span>Q</span>
       <Span1>&amp;</Span1>
       <span>A</span>
@@ -15,7 +18,7 @@ const QnATab = () => {
   );
 };
 
-export default QnATab;
+export default withRouter(QnATab);
 
 const CaretRight = styled.img`
   position: absolute;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import DocRating from '../../components/DocRating/DocRating';
 
-const DoctorList = ({ Feed, Doctor }) => {
+const DoctorList = ({ Doctor, Ex }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [info, setInfo] = useState({});
 
@@ -17,19 +17,19 @@ const DoctorList = ({ Feed, Doctor }) => {
   return (
     <SelectBox>
       <DocList>
-        <DocImg Feed={Feed} src={Doctor.pic} />
+        <DocImg Feed={Doctor.job} src={Doctor.pic} />
         <DocDetailBox>
           <DocDetailHeader>
             <DocName>
               <span>{Doctor.name}</span>
             </DocName>
-            <Rating Feed={Feed}>
+            <Rating Feed={Doctor.job}>
               <Counsel>{Doctor.rating}</Counsel>
               <DocRating />
             </Rating>
           </DocDetailHeader>
           <DocDesc>
-            <Profile isOpen={isOpen} Feed={Feed}>
+            <Profile isOpen={isOpen} Feed={Doctor.job}>
               {Doctor.profile}
             </Profile>
             <More onClick={ToggleOpen}>
@@ -111,7 +111,7 @@ const Counsel = styled.span`
 `;
 
 const Rating = styled.div`
-  display: ${props => (props.Feed ? 'none;' : 'flex;')};
+  display: ${props => (props.Feed ? 'flex;' : 'none;')};
   justify-content: center;
   align-items: baseline;
   letter-spacing: 0;

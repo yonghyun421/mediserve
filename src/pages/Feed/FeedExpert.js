@@ -13,13 +13,22 @@ const CONTENT_IMG = [
   'images/Rectangle 27.png',
 ];
 
+const Doc = {
+  pic: 'images/picture1.png',
+  name: '홍길동',
+  rating: 4,
+  profile:
+    'asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd',
+  job: true,
+};
+
 const FeedExpert = () => {
   return (
     <>
       <BackTab Na="scalpel" De="M-class" />
       <FeedArea>
         <MyInfo>
-          <DoctorList Feed="Feed" />
+          <DoctorList Doctor={Doc} />
         </MyInfo>
         <MyInfoDesc>
           <Follow>

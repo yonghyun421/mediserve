@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import BackTab from '../../components/BackTab';
 import Next from '../../components/Next/Next';
+import QnATab from '../../components/QnA/QnATab';
 import FindResult from './FindResult';
 
 const Find = () => {

@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Next from '../../components/Next/Next';
 import QnATab from '../../components/QnA/QnATab';
+import { Link } from 'react-router-dom';
 
 const CATEGORY = [
-  { subject: '의 료', checked: false },
-  { subject: '의 약 품', checked: false },
-  { subject: '의학 정보 / 기사', checked: false },
-  { subject: '영 양', checked: false },
-  { subject: '운 동', checked: false },
-  { subject: '기 타', checked: false },
+  { id: 1, subject: '의 료', checked: false },
+  { id: 2, subject: '의 약 품', checked: false },
+  { id: 3, subject: '의학 정보 / 기사', checked: false },
+  { id: 4, subject: '영 양', checked: false },
+  { id: 5, subject: '운 동', checked: false },
+  { id: 6, subject: '기 타', checked: false },
 ];
 
 const QnA = () => {
@@ -19,11 +20,14 @@ const QnA = () => {
     setCategory(CATEGORY);
   }, []);
 
-  const SelectCategory = e => {
-    // setCategory(e.target.getAttribute('name'));
-    console.log(e.target.getAttribute('name'));
-    // setCategory(CATEGORY);
-    // 이부분에서 선택한 버튼 checked만 true로 바꿔서 이용해서 배경색 바꿔줘야힘
+  const onToggle = e => {
+    setCategory(
+      Category.map(a =>
+        a.id === Number(e.target.id)
+          ? { ...a, checked: !a.checked }
+          : { ...a, checked: false }
+      )
+    );
   };
 
   return (
@@ -35,16 +39,20 @@ const QnA = () => {
       <CategoryList>
         {Category?.map((category, idx) => (
           <CategoryBox
+            id={category.id}
             key={idx}
-            onClick={SelectCategory}
+            onClick={onToggle}
             name={category.subject}
+            checked={category.checked}
           >
             {category.subject}
           </CategoryBox>
         ))}
       </CategoryList>
       <Text>상담료로 MDS 토큰을 지불하셔야합니다.</Text>
-      <Next Title="NEXT" />
+      <LinkBtn to="/medical">
+        <Next Title="NEXT" />
+      </LinkBtn>
     </>
   );
 };
@@ -62,13 +70,14 @@ const QBox = styled.div`
 const CategoryList = styled.div``;
 
 const CategoryBox = styled.div`
-  width: 50%;
+  width: 60%;
   height: 55px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 10px auto;
-  background-color: #ffffff;
+  background-color: ${props => (props.checked ? '#5bdde5;' : '#ffffff;')};
+  color: ${props => (props.checked ? '#ffffff;' : 'black;')};
   border-radius: 20px;
   box-shadow: 0px 0px 20px #0000001a;
   font-size: 24px;
@@ -87,4 +96,9 @@ const Text = styled.div`
   letter-spacing: 0;
   line-height: 20px;
   white-space: nowrap;
+`;
+
+const LinkBtn = styled(Link)`
+  text-decoration: none;
+  color: #ffffff;
 `;

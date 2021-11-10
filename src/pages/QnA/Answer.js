@@ -4,6 +4,15 @@ import DoctorList from './DoctorList';
 import QnATab from '../../components/QnA/QnATab';
 import QBox from '../../components/Box/QBox';
 
+const DOCTOR = {
+  pic: 'images/picture1.png',
+  name: '홍길동',
+  rating: 4,
+  profile:
+    'asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd',
+  job: true,
+};
+
 const Answer = () => {
   return (
     <>
@@ -15,7 +24,7 @@ const Answer = () => {
         </ExpertTitle>
         <ExpertLine />
       </Expert>
-      <DoctorList />
+      <DoctorList Doctor={DOCTOR} />
       <QBox Title="질문 1" />
       <QBox Title="답변 1" />
       <QBox Title="질문 2" />
