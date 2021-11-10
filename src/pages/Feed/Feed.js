@@ -15,7 +15,7 @@ const CONTENT_IMG = [
 
 const Feed = () => {
   return (
-    <FeedSection>
+    <>
       <BackTab Na="sunny" />
       <FeedArea>
         <MyInfo>
@@ -27,11 +27,6 @@ const Feed = () => {
             <Count Title="팔로워" Num="32" />
             <Count Title="팔로우" Num="45" />
           </Follow>
-          <Rating>
-            <span>상담평가 별별별별별</span>
-            <span>전문가평점</span>
-            <span>95</span>
-          </Rating>
         </MyInfoDesc>
         <ButtonBox>
           <Following content="팔로잉" grade="ama" />
@@ -47,37 +42,27 @@ const Feed = () => {
         </FeedHeader>
         <FeedBox>
           <PicSection>
-            {CONTENT_IMG.map(image => (
-              <Content image={image} />
+            {CONTENT_IMG.map((image, idx) => (
+              <Content key={idx} image={image} />
             ))}
           </PicSection>
           <PicSection>
-            {CONTENT_IMG.map(image => (
-              <Content image={image} />
+            {CONTENT_IMG.map((image, idx) => (
+              <Content key={idx} image={image} />
             ))}
           </PicSection>
           <VideoSection>
-            {CONTENT_IMG.map(image => (
-              <Content image={image} />
+            {CONTENT_IMG.map((image, idx) => (
+              <Content key={idx} image={image} />
             ))}
           </VideoSection>
         </FeedBox>
       </FeedArea>
-    </FeedSection>
+    </>
   );
 };
 
 export default Feed;
-
-const FeedSection = styled.div`
-  width: 414px;
-  height: 896px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-`;
 
 const FeedArea = styled.div`
   width: 100%;
@@ -92,6 +77,9 @@ const MyInfo = styled.div`
 
 const MyInfoDesc = styled.div`
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 16px 0;
   line-height: 25px;
 `;
@@ -115,45 +103,35 @@ const ButtonBox = styled.div`
 const FeedHeader = styled.div`
   display: flex;
   text-align: center;
-  width: 393px;
+  width: 100%;
   height: 35px;
   margin: 18px 11px 0 11px;
 `;
 
-const Rating = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 28px;
-  width: 414px;
-`;
-
 const PicTab = styled.div`
-  width: 284px;
+  width: 65%;
   height: 100%;
   border-right: 1px solid #c4c4c4;
 `;
 
 const VideoTab = styled.div`
-  width: 141px;
+  width: 35%;
   height: 100%;
 `;
 
 const FeedBox = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 0 11px 0 11px;
+  margin: 0 11px 100px 11px;
 `;
 
 const PicSection = styled.div`
-  width: 130px;
-  height: 380px;
+  width: 33%;
   background-color: green;
 `;
 
 const VideoSection = styled.div`
-  width: 130px;
-  height: 380px;
+  width: 33%;
   background-color: red;
 `;
 

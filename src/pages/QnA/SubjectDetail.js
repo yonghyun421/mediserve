@@ -1,36 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import QnATab from '../../components/QnA/QnATab';
 import DoctorList from './DoctorList';
 import SortBtn from './SortBtn';
 
 const SubjectDetail = () => {
+  const [Dlist, setDlist] = useState([]);
+
+  useEffect(() => {
+    fetch('data/doctor.json')
+      .then(res => res.json())
+      .then(data => {
+        setDlist(data.doctors);
+      });
+  }, []);
   return (
-    <QnASection>
+    <>
       <QnATab />
       <Text1>
         <span>흉부외과</span>
       </Text1>
       <Divide />
       <SortBtn />
-      <DoctorList />
-      <DoctorList />
-      <DoctorList />
-      <DoctorList />
-    </QnASection>
+      <DocList>
+        {Dlist.map((doctor, idx) => (
+          <DoctorList Doctor={doctor} key={idx} />
+        ))}
+      </DocList>
+    </>
   );
 };
 
 export default SubjectDetail;
 
-const QnASection = styled.div`
-  width: 414px;
-  height: 896px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
+const DocList = styled.div`
+  margin-bottom: 100px;
 `;
 
 const Text1 = styled.div`
@@ -40,8 +44,8 @@ const Text1 = styled.div`
 `;
 
 const Divide = styled.div`
-  width: 356px;
+  width: 85%;
   padding: 1px 0;
   background-color: #e5e5e5;
-  margin: 24px 0 12px 0;
+  margin: 24px auto 12px auto;
 `;

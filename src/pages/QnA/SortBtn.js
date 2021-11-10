@@ -21,7 +21,7 @@ const SortBox = styled.div`
 `;
 
 const Sort = styled.div`
-  width: 110px;
+  width: 30%;
   padding: 10px 18px;
   background-color: #e5e5e5;
   border-radius: 20px;

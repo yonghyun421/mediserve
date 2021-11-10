@@ -1,36 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import DocRating from '../../components/DocRating/DocRating';
-import { ValignTextBottom } from '../../components/ValignTextBottom';
 
-const DoctorList = ({ Feed }) => {
+const DoctorList = ({ Feed, Doctor }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [info, setInfo] = useState({});
 
   const ToggleOpen = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    setInfo({ Doctor });
+  }, []);
+
   return (
     <SelectBox>
       <DocList>
-        <DocImg Feed={Feed} src="images/picture1.png" />
+        <DocImg Feed={Feed} src={Doctor.pic} />
         <DocDetailBox>
           <DocDetailHeader>
             <DocName>
-              <span>홍길동</span>
+              <span>{Doctor.name}</span>
             </DocName>
             <Rating Feed={Feed}>
-              <Counsel>상담평가</Counsel>
+              <Counsel>{Doctor.rating}</Counsel>
               <DocRating />
             </Rating>
           </DocDetailHeader>
           <DocDesc>
             <Profile isOpen={isOpen} Feed={Feed}>
-              서울특별시 보라매병원 흉부외과 교수 대한심장혈관외과학회 학술위원
-              서울특별시 보라매병원 흉부외과 교수 대한심장혈관외과학회 학술위원
-              서울특별시 보라매병원 흉부외과 교수 대한심장혈관외과학회 학술위원
-              서울특별시 보라매병원 흉부외과 교수 대한심장혈관외과학회 학술위원
-              서울특별시 보라매병원 흉부외과 교수 대한심장혈관외과학회 학술위원
+              {Doctor.profile}
             </Profile>
             <More onClick={ToggleOpen}>
               <span>{isOpen ? '접기' : '...더보기'}</span>
@@ -53,7 +53,7 @@ const SelectBox = styled.div`
 const DocList = styled.div`
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   padding: 15px 0 15px 0;
   margin: 0 25px;
@@ -64,6 +64,7 @@ const DocImg = styled.img`
   width: ${props => (props.Feed ? '107px;' : '81px;')};
   height: ${props => (props.Feed ? '107px;' : '81px;')};
   object-fit: cover;
+  margin-top: 10px;
 `;
 
 const DocDetailBox = styled.div`
@@ -88,6 +89,7 @@ const Profile = styled.div`
   font-size: ${props => (props.Feed ? '16px;' : '14px;')};
   line-height: ${props => (props.Feed ? '20px;' : '14px;')};
   margin-bottom: 10px;
+  word-break: break-word;
 `;
 
 const More = styled.div`
@@ -117,9 +119,8 @@ const Rating = styled.div`
 `;
 
 const DocName = styled.div`
-  ${ValignTextBottom}
   height: 18px;
   letter-spacing: 0;
-  width: 61px;
+
   font-size: 18px;
 `;

@@ -15,7 +15,7 @@ const Tab = ({ Na, De }) => {
 export default Tab;
 
 const BackTabSection = styled.div`
-  width: 414px;
+  width: 100%;
   height: 71px;
   display: flex;
   justify-content: flex-start;

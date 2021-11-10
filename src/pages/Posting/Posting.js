@@ -8,7 +8,7 @@ import PayMsg from '../../components/PayMsg';
 
 const Posting = () => {
   return (
-    <QnASection>
+    <>
       <Tab Na="포스팅 의뢰" />
       <Expert>
         <ExpertIcon src="images/people.png" />
@@ -24,21 +24,11 @@ const Posting = () => {
       <BtnBox>
         <SmallBtn Title="의뢰하기" />
       </BtnBox>
-    </QnASection>
+    </>
   );
 };
 
 export default Posting;
-
-const QnASection = styled.div`
-  width: 414px;
-  height: 896px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-`;
 
 const Expert = styled.div`
   position: relative;
@@ -76,4 +66,5 @@ const BtnBox = styled.div`
   justify-content: flex-end;
   align-items: center;
   padding: 0 32px 14px 0;
+  margin-bottom: 100px;
 `;

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import BackTab from '../../components/BackTab';
-import HomeBtn from '../../components/HomeBtn';
 import Next from '../../components/Next/Next';
 
 const FindHospital = () => {
@@ -13,7 +12,7 @@ const FindHospital = () => {
   };
 
   return (
-    <QnASection>
+    <>
       <BackTab Na="병원 찾기" />
       <FindSection>
         <FindTitle>
@@ -23,22 +22,12 @@ const FindHospital = () => {
           <Input placeholder="보라매병원" onChange={Hospital} />
         </InputBox>
       </FindSection>
-      <Next />
-    </QnASection>
+      <Next Title="NEXT" />
+    </>
   );
 };
 
 export default FindHospital;
-
-const QnASection = styled.div`
-  width: 414px;
-  height: 896px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-`;
 
 const FindSection = styled.div`
   width: 100%;

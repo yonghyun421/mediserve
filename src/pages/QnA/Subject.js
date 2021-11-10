@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { ValignTextBottom } from '../../components/ValignTextBottom';
 import { SUBJECT_CATEGORY } from './SubjectCategory';
 import Next from '../../components/Next/Next';
 import QnATab from '../../components/QnA/QnATab';
@@ -8,14 +7,10 @@ import QnATab from '../../components/QnA/QnATab';
 const Subject = () => {
   const [category, setCategory] = useState('');
 
-  const selectSubject = e => {
-    console.log(e.target.getAttribute('name'));
-    setCategory(e.target.getAttribute('name'));
-    console.log(category);
-  };
+  const selectSubject = e => {};
 
   return (
-    <QnASection>
+    <>
       <FlexCol>
         <QnATab />
         <Text>
@@ -30,21 +25,12 @@ const Subject = () => {
           </MedicalSubject>
         ))}
       </SubjectSection>
-      <Next />
-    </QnASection>
+      <Next Title="NEXT" />
+    </>
   );
 };
 
 export default Subject;
-
-const QnASection = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 414px;
-  height: 896px;
-`;
 
 const FlexCol = styled.div`
   display: flex;
@@ -55,10 +41,10 @@ const FlexCol = styled.div`
 `;
 
 const DivideLine = styled.div`
-  width: 356px;
+  width: 85%;
   padding: 1px 0;
-  margin-left: 1px;
   background-color: #e5e5e5;
+  margin: 24px auto 12px auto;
 `;
 
 const Text = styled.div`
@@ -83,6 +69,10 @@ const MedicalSubject = styled.div`
   font-size: 13px;
   line-height: 13px;
   font-weight: 600;
+
+  &:hover {
+    background: #5cdde6;
+  }
 `;
 
 const SubjectSection = styled.div`

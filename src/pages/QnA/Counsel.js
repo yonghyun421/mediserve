@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import QBox from '../../components/Box/QBox';
 import Credit from '../../components/Credit/Credit';
 import QnATab from '../../components/QnA/QnATab';
 import DoctorList from './DoctorList';
 
 const Counsel = () => {
   return (
-    <QnASection>
+    <>
       <QnATab />
       <Expert>
         <ExpertIcon src="images/people.png" />
@@ -16,28 +17,16 @@ const Counsel = () => {
         <ExpertLine />
       </Expert>
       <DoctorList />
-      <Question>
-        <QTab>질문 1</QTab>
-      </Question>
+      <QBox Title="질문 1" />
       <Credit />
       <SubmitBox>
         <Submit src="images/submit.png" />
       </SubmitBox>
-    </QnASection>
+    </>
   );
 };
 
 export default Counsel;
-
-const QnASection = styled.div`
-  width: 414px;
-  height: 896px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-`;
 
 const Expert = styled.div`
   position: relative;
@@ -70,29 +59,6 @@ const ExpertLine = styled.div`
   left: 20px;
   bottom: -3px;
   z-index: 0;
-`;
-
-const QTab = styled.div`
-  position: absolute;
-  left: -12px;
-  top: -18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 17px;
-  border-radius: 15px;
-  color: white;
-  font-size: 18px;
-  background-color: #646363;
-`;
-
-const Question = styled.div`
-  position: relative;
-  width: 350px;
-  height: 375px;
-  border-radius: 20px;
-  background-color: #f5f5f5;
-  margin: 31px 0 20px 0;
 `;
 
 const Submit = styled.img`

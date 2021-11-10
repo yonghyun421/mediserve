@@ -7,7 +7,7 @@ import PatientMsg from './PatientMsg';
 
 const PostingChat = () => {
   return (
-    <QnASection>
+    <>
       <Tab Na="포스팅 의뢰" />
       <Expert>
         <ExpertIcon src="images/people.png" />
@@ -18,33 +18,25 @@ const PostingChat = () => {
       </Expert>
       <DoctorList />
       <AcceptMsg>포스팅 의뢰 수락 되었습니다.</AcceptMsg>
-      <ChatBox>
-        <ChatTab>대화창</ChatTab>
-        <DocMsg
-          Pic="picture1.png"
-          Text="최신자료를 엑셀로 보내주실 수 있나요?"
-        />
-        <PatientMsg
-          Pic="sunny.png"
-          Text="네, 이메일로 바로 보내드리겠습니다."
-        />
-        <DocMsg Pic="picture1.png" Text="확인 후 포스팅 하겠습니다." />
-      </ChatBox>
-    </QnASection>
+      <ChatSection>
+        <ChatBox>
+          <ChatTab>대화창</ChatTab>
+          <DocMsg
+            Pic="picture1.png"
+            Text="최신자료를 엑셀로 보내주실 수 있나요?"
+          />
+          <PatientMsg
+            Pic="sunny.png"
+            Text="네, 이메일로 바로 보내드리겠습니다."
+          />
+          <DocMsg Pic="picture1.png" Text="확인 후 포스팅 하겠습니다." />
+        </ChatBox>
+      </ChatSection>
+    </>
   );
 };
 
 export default PostingChat;
-
-const QnASection = styled.div`
-  width: 414px;
-  height: 896px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-`;
 
 const Expert = styled.div`
   position: relative;
@@ -77,9 +69,14 @@ const ExpertLine = styled.div`
   z-index: 0;
 `;
 
+const ChatSection = styled.div`
+  width: 100%;
+  padding: 0 40px;
+`;
+
 const ChatBox = styled.div`
   position: relative;
-  width: 350px;
+  width: 100%;
   border-radius: 20px;
   background: rgba(75, 226, 236, 0.2);
   margin: 31px 0 0 0;

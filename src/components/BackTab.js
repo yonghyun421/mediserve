@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const BackTab = ({ Na, De }) => {
   return (
     <BackTabSection>
-      <BackIcon src="images/backIcon.png" />
+      <BackBtn to="/">
+        <BackIcon src="images/backIcon.png" />
+      </BackBtn>
       <BackTitle>
         <Name>{Na}</Name>
         <Desc>{De}</Desc>
@@ -47,3 +50,7 @@ const Name = styled.h1`
 `;
 
 const Desc = styled.span``;
+
+const BackBtn = styled(Link)`
+  text-decoration: none;
+`;

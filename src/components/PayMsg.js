@@ -18,7 +18,7 @@ const MdsBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 45px;
+  margin: 20px auto 20px auto;
   color: #014d52;
 `;
 

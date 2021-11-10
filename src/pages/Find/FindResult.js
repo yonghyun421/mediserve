@@ -69,6 +69,8 @@ const FindTitle = styled.div`
 
 const PharmSection = styled.div`
   width: 100%;
+  padding: 0 40px 0 40px;
+  /* text-align: center; */
 `;
 
 const PharmTitle = styled.div`
@@ -82,7 +84,7 @@ const PharmMap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 350px;
+  width: 100%;
   height: 200px;
   background-color: #c4c4c4;
   margin: 10px auto 30px auto;
