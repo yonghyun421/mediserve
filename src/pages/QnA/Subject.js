@@ -1,13 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { SUBJECT_CATEGORY } from './SubjectCategory';
 import Next from '../../components/Next/Next';
 import QnATab from '../../components/QnA/QnATab';
+import { Link } from 'react-router-dom';
 
 const Subject = () => {
-  const [category, setCategory] = useState('');
+  const [Category, setCategory] = useState([]);
 
-  const selectSubject = e => {};
+  useEffect(() => {
+    setCategory(SUBJECT_CATEGORY);
+  }, []);
+
+  const selectSubject = e => {
+    setCategory(
+      Category.map(a =>
+        a.id === Number(e.target.id)
+          ? { ...a, checked: !a.checked }
+          : { ...a, checked: false }
+      )
+    );
+  };
 
   return (
     <>
@@ -19,13 +32,21 @@ const Subject = () => {
         <DivideLine />
       </FlexCol>
       <SubjectSection>
-        {SUBJECT_CATEGORY.map((subject, idx) => (
-          <MedicalSubject key={idx} name={subject} onClick={selectSubject}>
-            {subject}
+        {Category?.map((subject, idx) => (
+          <MedicalSubject
+            key={idx}
+            id={subject.id}
+            name={subject.subject}
+            onClick={selectSubject}
+            checked={subject.checked}
+          >
+            {subject.subject}
           </MedicalSubject>
         ))}
       </SubjectSection>
-      <Next Title="NEXT" />
+      <LinkBtn to="/detail">
+        <Next Title="NEXT" />
+      </LinkBtn>
     </>
   );
 };
@@ -70,8 +91,13 @@ const MedicalSubject = styled.div`
   line-height: 13px;
   font-weight: 600;
 
+  background-color: ${props => (props.checked ? '#5bdde5;' : '#ffffff;')};
+  /* background-color: #5cdde6; */
+  color: ${props => (props.checked ? '#ffffff;' : 'black;')};
+
   &:hover {
-    background: #5cdde6;
+    background-color: #5cdde6;
+    color: white;
   }
 `;
 
@@ -79,4 +105,9 @@ const SubjectSection = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin: 0 9px 0 9px;
+`;
+
+const LinkBtn = styled(Link)`
+  text-decoration: none;
+  color: #ffffff;
 `;

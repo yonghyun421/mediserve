@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import QnATab from '../../components/QnA/QnATab';
 import DoctorList from './DoctorList';
 import SortBtn from './SortBtn';
+import { Link } from 'react-router-dom';
 
 const SubjectDetail = () => {
   const [Dlist, setDlist] = useState([]);
@@ -24,7 +25,9 @@ const SubjectDetail = () => {
       <SortBtn />
       <DocList>
         {Dlist.map((doctor, idx) => (
-          <DoctorList Doctor={doctor} key={idx} />
+          <LinkBtn to="/posting" key={idx}>
+            <DoctorList Doctor={doctor} />
+          </LinkBtn>
         ))}
       </DocList>
     </>
@@ -48,4 +51,9 @@ const Divide = styled.div`
   padding: 1px 0;
   background-color: #e5e5e5;
   margin: 24px auto 12px auto;
+`;
+
+const LinkBtn = styled(Link)`
+  text-decoration: none;
+  color: black;
 `;

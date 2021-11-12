@@ -31,7 +31,7 @@ const SubmitMsg = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 192px 51px 27px 51px;
+  padding: 192px 40px 27px 40px;
 `;
 
 const Msg = styled.h1`
@@ -41,11 +41,10 @@ const Msg = styled.h1`
 `;
 
 const SubmitDescBox = styled.div`
-  /* width: 236px; */
   text-align: center;
   font-size: 16px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0;
-  margin: 231px 0 106px 0;
+  margin: 198px 0 106px 0;
 `;

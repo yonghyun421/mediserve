@@ -1,17 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const QBox = ({ Title }) => {
+const QBox = ({ Title, Content }) => {
   return (
     <QSection>
       <QTab>{Title}</QTab>
       <Question>
-        이 질문은 쌸라쌸라 어쩌구저쩌구 이 질문은 쌸라쌸라 어쩌구저쩌구 이
-        질문은 쌸라쌸라 어쩌구저쩌구 이 질문은 쌸라쌸라 어쩌구저쩌구 이 질문은
-        쌸라쌸라 어쩌구저쩌구 이 질문은 쌸라쌸라 어쩌구저쩌구이 질문은 쌸라쌸라
-        어쩌구저쩌구 이 질문은 쌸라쌸라 어쩌구저쩌구 이 질문은 쌸라쌸라
-        어쩌구저쩌구 이 질문은 쌸라쌸라 어쩌구저쩌구 이 질문은 쌸라쌸라
-        어쩌구저쩌구 이 질문은 쌸라쌸라 어쩌구저쩌구
+        {Content === 'Q' ? <Request placeholder="내용을 입력해주세요" /> : ''}
       </Question>
     </QSection>
   );
@@ -41,4 +36,12 @@ const Question = styled.div`
   background-color: #f5f5f5;
   margin: 21px 0 0 0;
   padding: 30px;
+`;
+
+const Request = styled.textarea`
+  border: none;
+  resize: none;
+  width: 100%;
+  background-color: #f5f5f5;
+  outline: none;
 `;

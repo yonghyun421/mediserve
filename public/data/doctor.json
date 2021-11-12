@@ -5,42 +5,42 @@
       "name": "홍길동",
       "rating": 4,
       "profile": "asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd",
-      "job": "Feed"
+      "job": true
     },
     {
       "pic": "images/picture1.png",
       "name": "하이데브",
       "rating": 5,
       "profile": "asd",
-      "job": "Feed"
+      "job": true
     },
     {
       "pic": "images/picture1.png",
       "name": "홍길동",
       "rating": 4,
       "profile": "wqweqwe",
-      "job": ""
+      "job": true
     },
     {
       "pic": "images/picture1.png",
       "name": "하이데브",
       "rating": 5,
       "profile": "zxcxvdcv",
-      "job": "Feed"
+      "job": true
     },
     {
       "pic": "images/picture1.png",
       "name": "홍길동",
       "rating": 4,
       "profile": "asdasdsadfsafafasfs",
-      "job": ""
+      "job": true
     },
     {
       "pic": "images/picture1.png",
       "name": "하이데브",
       "rating": 5,
       "profile": "12345r",
-      "job": "Feed"
+      "job": true
     }
   ]
 }

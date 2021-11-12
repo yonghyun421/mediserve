@@ -5,6 +5,16 @@ import Tab from '../../components/Tab';
 import QBox from '../../components/Box/QBox';
 import SmallBtn from '../../components/Box/SmallBtn';
 import PayMsg from '../../components/PayMsg';
+import { Link } from 'react-router-dom';
+
+const Doc = {
+  pic: 'images/picture1.png',
+  name: '홍길동',
+  rating: 4,
+  profile:
+    'asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd',
+  job: true,
+};
 
 const Posting = () => {
   return (
@@ -17,12 +27,14 @@ const Posting = () => {
         </ExpertTitle>
         <ExpertLine />
       </Expert>
-      <DoctorList />
-      <QBox Title="포스팅 의뢰 제목" />
-      <QBox Title="포스팅 의뢰 내용" />
+      <DoctorList Doctor={Doc} />
+      <QBox Title="포스팅 의뢰 제목" Content="A" />
+      <QBox Title="포스팅 의뢰 내용" Content="Q" />
       <PayMsg credit="2.5" />
       <BtnBox>
-        <SmallBtn Title="의뢰하기" />
+        <LinkBtn to="/postingResult">
+          <SmallBtn Title="의뢰하기" />
+        </LinkBtn>
       </BtnBox>
     </>
   );
@@ -67,4 +79,9 @@ const BtnBox = styled.div`
   align-items: center;
   padding: 0 32px 14px 0;
   margin-bottom: 100px;
+`;
+
+const LinkBtn = styled(Link)`
+  text-decoration: none;
+  color: #ffffff;
 `;
