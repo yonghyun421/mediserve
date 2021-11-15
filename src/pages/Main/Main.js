@@ -8,7 +8,6 @@ import TotalReplys from '../../components/Content/Replys/TotalReplys';
 import styled from 'styled-components';
 
 const Main = props => {
-  console.log(props);
   const [feeds, setFeeds] = useState([]);
 
   useEffect(() => {

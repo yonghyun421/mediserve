@@ -1,53 +1,13 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-
 import { withRouter } from 'react-router-dom';
 
 const ThreedotContent = ({ modalToggle, props, feed }) => {
-  const shareFeed = () => {
-    console.log('skskskssksk');
-    // Kakao.Link.sendDefault({
-    //   objectType: 'feed',
-    //   content: {
-    //     title: `${feed.posting_content}`,
-    //     description: `${feed.posting_writer}님의 feed입니다.`,
-    //     imageUrl:
-    //       'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
-    //     link: {
-    //       mobileWebUrl: 'http://localhost:3000/',
-    //       webUrl: 'http://localhost:3000/',
-    //     },
-    //   },
-    //   social: {
-    //     likeCount: 286,
-    //     commentCount: 45,
-    //     sharedCount: 845,
-    //   },
-    //   buttons: [
-    //     {
-    //       title: '웹으로 보기',
-    //       link: {
-    //         mobileWebUrl: 'http://localhost:3000/',
-    //         webUrl: 'http://localhost:3000/',
-    //       },
-    //     },
-    //     {
-    //       title: '앱으로 보기',
-    //       link: {
-    //         mobileWebUrl: 'http://localhost:3000/',
-    //         webUrl: 'http://localhost:3000/',
-    //       },
-    //     },
-    //   ],
-    // });
-  };
-
   return (
     <ThreedotWrapper>
       {THREEDOTCONTENT.map((content, idx) => {
         return (
           <>
-            <Threedotcontents onClick={shareFeed} key={content.id}>
+            <Threedotcontents key={content.id}>
               {content.title}
             </Threedotcontents>
             {idx !== THREEDOTCONTENT.length ? <BottomSolid /> : null}

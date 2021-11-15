@@ -27,10 +27,13 @@ import Medical from './pages/QnA/Medical';
 import FeedExpert from './pages/Feed/FeedExpert';
 import Payment from './pages/Payment/Payment';
 import PaymentFinish from './pages/Payment/PaymentFinish';
+import { Provider } from 'react-redux';
+import store from './store';
 
 const Routes = () => {
   return (
-    <Router>
+    <Router store={store}>
+      {/* <Provider> */}
       <Nav />
       <Switch>
         <Route exact path="/" component={Main} />
@@ -60,6 +63,7 @@ const Routes = () => {
         <Route exact path="/paymentfinish" component={PaymentFinish} />
       </Switch>
       <HomeBtn />
+      {/* </Provider> */}
     </Router>
   );
 };

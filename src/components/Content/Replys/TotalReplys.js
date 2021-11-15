@@ -6,7 +6,6 @@ const TotalReplys = ({ comment_info, posting_info }) => {
   const [isReplyOpen, setIsReplyOpen] = useState(false);
   const replyOpenToggle = () => {
     setIsReplyOpen(!isReplyOpen);
-    console.log(isReplyOpen);
   };
   return (
     <ReplyWrapper>

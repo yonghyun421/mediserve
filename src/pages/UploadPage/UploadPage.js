@@ -1,32 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
 import Next from '../../components/Next/Next';
 
 const UploadPage = () => {
+  const [detailImageFile, setDetailImageFile] = useState(null);
+  const [detailImageUrl, setDetailImageUrl] = useState('images/camera.png');
+
+  const setImageFromFile = event => {
+    let reader = new FileReader();
+    if (event.target.files[0]) {
+      setDetailImageFile(reader.readAsDataURL(event.target.files[0]));
+    }
+    reader.onload = () => {
+      const setImageUrl = reader.result;
+      if (setImageUrl) {
+        setDetailImageUrl(setImageUrl.toString());
+      }
+    };
+  };
+
   return (
     <UploadWrapper>
       <UploadTopWrapper>
         <UploadTop>
           <ImageWrapper>
-            <UploadImage src="/images/camera.png" />
+            <UploadImage src={detailImageUrl} />
           </ImageWrapper>
           <BtnWrapper>
             <UploadButton>
               <ImportBtn htmlFor="AddImage">이미지 첨부</ImportBtn>
               <AddImage
-                multiple="multiple"
                 type="file"
                 formEncType="multipart/form-data"
+                onChange={setImageFromFile}
               />
             </UploadButton>
             <UploadButton>
               <ImportBtn htmlFor="AddImage">동영상 첨부</ImportBtn>
               <AddImage
-                multiple="multiple"
+                name="imgFile"
+                id="imgFile"
                 type="file"
                 formEncType="multipart/form-data"
+                onChange={setImageFromFile}
               />
             </UploadButton>
           </BtnWrapper>
@@ -79,6 +97,7 @@ const ImageWrapper = styled.div`
 const UploadImage = styled.img`
   width: 100px;
   height: 87.5px;
+  object-fit: cover;
 `;
 
 const AddImage = styled.input`

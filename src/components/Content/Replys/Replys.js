@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Reply from './Reply';
 import ReplyInput from './ReplyInput';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 const Replys = ({ comment_info }) => {
@@ -57,6 +58,9 @@ const Replys = ({ comment_info }) => {
     </>
   );
 };
+
+const mapStateToProps = () => {};
+const mapDispatchToProps = () => {};
 
 export default Replys;
 const Wrapper = styled.div`
