@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
 
-const MyPageToggle = () => {
+const MyPageToggle = ({ modalToggle }) => {
   const [isModalOn, setIsModalOn] = useState(false);
-  const modalToggle = () => {
+  const modalToggleDiv = () => {
     setIsModalOn(!isModalOn);
   };
 
@@ -25,7 +25,7 @@ const MyPageToggle = () => {
                   <div>
                     <DropdownIcon
                       src="images/downdrop.png"
-                      onClick={modalToggle}
+                      onClick={modalToggleDiv}
                     />
                   </div>
                   <BottomSolid />
@@ -34,7 +34,7 @@ const MyPageToggle = () => {
                 {isModalOn ? (
                   <>
                     {CATEGORY.map(content => (
-                      <CategoryWrapper>
+                      <CategoryWrapper onClick={modalToggle}>
                         <CategoryContent>{content}</CategoryContent>
                       </CategoryWrapper>
                     ))}
@@ -44,7 +44,9 @@ const MyPageToggle = () => {
             ) : (
               <Link to={content.linkto}>
                 <MypageContentWrapper>
-                  <CommnunityText>{content.title}</CommnunityText>
+                  <CommnunityText onClick={modalToggle}>
+                    {content.title}
+                  </CommnunityText>
                   <BottomSolid />
                 </MypageContentWrapper>
               </Link>
