@@ -29,6 +29,7 @@ import Payment from './pages/Payment/Payment';
 import PaymentFinish from './pages/Payment/PaymentFinish';
 import { Provider } from 'react-redux';
 import store from './store';
+import LiveChat from './pages/Posting/LiveChat/LiveChat';
 
 const Routes = () => {
   return (
@@ -61,6 +62,7 @@ const Routes = () => {
         <Route exact path="/feedex" component={FeedExpert} />
         <Route exact path="/payment" component={Payment} />
         <Route exact path="/paymentfinish" component={PaymentFinish} />
+        {/* <Route exact path="/LiveChat" component={LiveChat} /> */}
       </Switch>
       <HomeBtn />
       {/* </Provider> */}

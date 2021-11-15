@@ -5,6 +5,15 @@ import Credit from '../../components/Credit/Credit';
 import QnATab from '../../components/QnA/QnATab';
 import DoctorList from './DoctorList';
 
+const Doc = {
+  pic: 'images/picture1.png',
+  name: '홍길동',
+  rating: 4,
+  profile:
+    'asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasda',
+  job: true,
+};
+
 const Counsel = () => {
   return (
     <>
@@ -16,7 +25,7 @@ const Counsel = () => {
         </ExpertTitle>
         <ExpertLine />
       </Expert>
-      <DoctorList />
+      <DoctorList Doctor={Doc} />
       <QBox Title="질문 1" />
       <Credit />
       <SubmitBox>

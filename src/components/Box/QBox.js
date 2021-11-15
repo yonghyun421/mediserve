@@ -1,12 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const QBox = ({ Title, Content }) => {
+const QBox = ({ Title, id, writeQuestion, makeQuestion, Content }) => {
   return (
     <QSection>
       <QTab>{Title}</QTab>
       <Question>
-        {Content === 'Q' ? <Request placeholder="내용을 입력해주세요" /> : ''}
+        {id !== 'A' && !Content ? (
+          <Request
+            id={id}
+            onChange={writeQuestion}
+            onKeyDown={makeQuestion}
+            placeholder="내용을 입력해주세요"
+          />
+        ) : (
+          ''
+        )}
+        {Content ? Content : null}
       </Question>
     </QSection>
   );
@@ -35,7 +45,7 @@ const Question = styled.div`
   border-radius: 20px;
   background-color: #f5f5f5;
   margin: 21px 0 0 0;
-  padding: 30px;
+  padding: 30px 20px 20px 20px;
 `;
 
 const Request = styled.textarea`

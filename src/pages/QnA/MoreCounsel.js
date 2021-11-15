@@ -5,6 +5,20 @@ import QnATab from '../../components/QnA/QnATab';
 import Credit from '../../components/Credit/Credit';
 import QBox from '../../components/Box/QBox';
 
+const COUNSEL_PROCESS = {
+  Q: ['상담은 어떻게 진행되나요?'],
+  A: ['저도 모르겠습니다'],
+};
+
+const Doc = {
+  pic: 'images/picture1.png',
+  name: '홍길동',
+  rating: 4,
+  profile:
+    'asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasda',
+  job: true,
+};
+
 const MoreCounsel = () => {
   return (
     <>
@@ -16,9 +30,9 @@ const MoreCounsel = () => {
         </ExpertTitle>
         <ExpertLine />
       </Expert>
-      <DoctorList />
-      <QBox Title="질문 1" />
-      <QBox Title="답변 1" />
+      <DoctorList Doctor={Doc} />
+      <QBox Title="질문 1" Content={COUNSEL_PROCESS.Q[0]} />
+      <QBox Title="답변 1" Content={COUNSEL_PROCESS.A[0]} />
       <QBox Title="질문 2" />
       <Credit />
       <SubmitBox>
