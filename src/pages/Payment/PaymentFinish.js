@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { withRouter } from 'react-router';
+import { useHistory } from 'react-router';
+
 import styled from 'styled-components';
 
-const PaymentFinish = () => {
+const PaymentFinish = props => {
+  const history = useHistory();
+  useEffect(() => {
+    setTimer();
+    console.log(props);
+  }, []);
+
+  const setTimer = () => {
+    setInterval(goToHome, 5000);
+  };
+  const goToHome = () => {
+    history.push('/');
+  };
   return (
     <TotalWrapper>
       <Wrapper>
@@ -17,7 +32,7 @@ const PaymentFinish = () => {
   );
 };
 
-export default PaymentFinish;
+export default withRouter(PaymentFinish);
 
 const TotalWrapper = styled.div`
   display: flex;
