@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 const SubjectDetail = () => {
   const [Dlist, setDlist] = useState([]);
+  const [Subject, setSubject] = useState('');
 
   useEffect(() => {
     fetch('data/doctor.json')
@@ -14,12 +15,14 @@ const SubjectDetail = () => {
       .then(data => {
         setDlist(data.doctors);
       });
+    setSubject(localStorage.getItem('subject'));
+    localStorage.removeItem('subject');
   }, []);
   return (
     <>
       <QnATab />
       <Text1>
-        <span>흉부외과</span>
+        <span>{Subject}</span>
       </Text1>
       <Divide />
       <SortBtn />

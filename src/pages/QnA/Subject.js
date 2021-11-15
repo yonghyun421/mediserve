@@ -20,6 +20,7 @@ const Subject = () => {
           : { ...a, checked: false }
       )
     );
+    localStorage.setItem('subject', e.target.getAttribute('name'));
   };
 
   return (

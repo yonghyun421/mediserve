@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import DoctorList from '../../pages/QnA/DoctorList';
 import Tab from '../../components/Tab';
@@ -12,11 +12,39 @@ const Doc = {
   name: '홍길동',
   rating: 4,
   profile:
-    'asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd',
+    'asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasda',
   job: true,
 };
 
 const Posting = () => {
+  const [question, setQuestion] = useState({ T: '', Q: '' });
+  const [message, setMessage] = useState('');
+
+  const writeQuestion = e => {
+    setMessage(e.target.value);
+    console.log(message);
+  };
+
+  const makeQuestion = e => {
+    setQuestion(question);
+    console.log('before=>', question);
+    const { id, value } = e.target;
+    if (window.event.keyCode === 13) {
+      setQuestion({ ...question, [id]: value });
+      console.log('q=>', question);
+    }
+  };
+
+  const storeQuestion = () => {
+    console.log(question);
+    localStorage.setItem('Question', JSON.stringify({ ...question }));
+    console.log(JSON.parse(localStorage.getItem('Question')));
+  };
+
+  useEffect(() => {
+    setQuestion(question);
+  }, [question]);
+
   return (
     <>
       <Tab Na="포스팅 의뢰" />
@@ -28,12 +56,22 @@ const Posting = () => {
         <ExpertLine />
       </Expert>
       <DoctorList Doctor={Doc} />
-      <QBox Title="포스팅 의뢰 제목" Content="A" />
-      <QBox Title="포스팅 의뢰 내용" Content="Q" />
+      <QBox
+        Title="포스팅 의뢰 제목"
+        id="T"
+        writeQuestion={writeQuestion}
+        makeQuestion={makeQuestion}
+      />
+      <QBox
+        Title="포스팅 의뢰 내용"
+        id="Q"
+        writeQuestion={writeQuestion}
+        makeQuestion={makeQuestion}
+      />
       <PayMsg credit="2.5" />
       <BtnBox>
         <LinkBtn to="/postingResult">
-          <SmallBtn Title="의뢰하기" />
+          <SmallBtn Title="의뢰하기" onClick={storeQuestion()} />
         </LinkBtn>
       </BtnBox>
     </>
