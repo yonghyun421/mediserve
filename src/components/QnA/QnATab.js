@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
 const QnATab = ({ history }) => {
@@ -42,8 +41,4 @@ const QA = styled.div`
 const Span1 = styled.span`
   font-size: 25px;
   line-height: 27px;
-`;
-
-const BackBtn = styled(Link)`
-  text-decoration: none;
 `;

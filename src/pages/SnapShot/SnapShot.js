@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import styled from 'styled-components';
 import Camera from './Camera';
 const SnapShot = () => {

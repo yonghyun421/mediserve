@@ -29,7 +29,7 @@ const SubjectDetail = () => {
       <DocList>
         {Dlist.map((doctor, idx) => (
           <LinkBtn to="/posting" key={idx}>
-            <DoctorList Doctor={doctor} />
+            <DoctorList Doctor={doctor} Title="List" />
           </LinkBtn>
         ))}
       </DocList>

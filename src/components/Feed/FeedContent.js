@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Contents = ({ image }) => {
+const FeedContent = ({ image }) => {
   return (
     <Content>
       <ContentImg src={image} />
@@ -9,7 +9,7 @@ const Contents = ({ image }) => {
   );
 };
 
-export default Contents;
+export default FeedContent;
 
 const Content = styled.div`
   width: 100%;

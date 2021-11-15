@@ -4,13 +4,15 @@ import QBox from '../../components/Box/QBox';
 import Credit from '../../components/Credit/Credit';
 import QnATab from '../../components/QnA/QnATab';
 import DoctorList from './DoctorList';
+import { Link } from 'react-router-dom';
+import SmallBtn from '../../components/Box/SmallBtn';
 
 const Doc = {
   pic: 'images/picture1.png',
   name: '홍길동',
   rating: 4,
   profile:
-    'asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasda',
+    '의사(醫師, medical doctor, physician)는 현대의학의 전문가로서 인체의 질병, 손상, 각종 신체 혹은 정신의 이상을 연구하고 진단, 치료함으로써 인간의 건강을 증진하고 유지하며 회복시키는 일을 수행하는 사람을 말한다.',
   job: true,
 };
 
@@ -29,7 +31,9 @@ const Counsel = () => {
       <QBox Title="질문 1" />
       <Credit />
       <SubmitBox>
-        <Submit src="images/submit.png" />
+        <LinkBtn to="/counselSubmit">
+          <SmallBtn Title="전송하기" />
+        </LinkBtn>
       </SubmitBox>
     </>
   );
@@ -70,11 +74,6 @@ const ExpertLine = styled.div`
   z-index: 0;
 `;
 
-const Submit = styled.img`
-  height: 50px;
-  width: 150px;
-`;
-
 const SubmitBox = styled.div`
   width: 100%;
   display: flex;
@@ -83,4 +82,9 @@ const SubmitBox = styled.div`
   height: 50px;
   margin-bottom: 18px;
   padding-right: 33px;
+`;
+
+const LinkBtn = styled(Link)`
+  text-decoration: none;
+  color: #ffffff;
 `;

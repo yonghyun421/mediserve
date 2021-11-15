@@ -27,19 +27,19 @@ const LiveChat = () => {
     let className = '';
 
     // 타입에 따라 적용할 클래스를 다르게 지정
-    switch (data.type) {
-      case 'message':
-        className = 'other';
-        break;
+    // switch (data.type) {
+    //   case 'message':
+    //     className = 'other';
+    //     break;
 
-      case 'connect':
-        className = 'connect';
-        break;
+    //   case 'connect':
+    //     className = 'connect';
+    //     break;
 
-      case 'disconnect':
-        className = 'disconnect';
-        break;
-    }
+    //   case 'disconnect':
+    //     className = 'disconnect';
+    //     break;
+    // }
 
     message.classList.add(className);
     message.appendChild(node);

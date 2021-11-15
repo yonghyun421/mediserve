@@ -4,42 +4,43 @@
       "pic": "images/picture1.png",
       "name": "홍길동",
       "rating": 4,
-      "profile": "asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd",
+      "profile": "의사(醫師, medical doctor, physician)는 현대의학의 전문가로서 인체의 질병, 손상, 각종 신체 혹은 정신의 이상을 연구하고 진단, 치료함으로써 인간의 건강을 증진하고 유지하며 회복시키는 일을 수행하는 사람을 말한다.",
+
       "job": true
     },
     {
       "pic": "images/picture1.png",
       "name": "하이데브",
-      "rating": 5,
-      "profile": "asd",
+      "rating": 2,
+      "profile": "진단 및 치료를 위하여 내과적· 외과적 기구 및 장비를 사용하고 처방된 치료와 건강상의 유의점을 환자에게 충고한다. 의학실험을 수행하고, 외과수술을 집도하고, 특수",
       "job": true
     },
     {
       "pic": "images/picture1.png",
-      "name": "홍길동",
+      "name": "Steve",
       "rating": 4,
-      "profile": "wqweqwe",
+      "profile": "의사(醫師, medical doctor, physician)는 현대의학의 전문가로서 인체의 질병, 손상, 각종 신체 혹은 정신의 이상을 연구하고 진단, 치료함으로써 인간의 건강을 증진하고 유지하며 회복시키는 일을 수행하는 사람을 말한다.",
       "job": true
     },
     {
       "pic": "images/picture1.png",
-      "name": "하이데브",
+      "name": "Mike",
       "rating": 5,
-      "profile": "zxcxvdcv",
+      "profile": "소중한 생명과 건강을 지키는 성실하고 참된 의사가 되겠습니다. 의료 상담 관심의료진. 허선 과장_썸네일. 건강검진센터 허선 과장. 처음 마음으로 항상 성실하게.",
       "job": true
     },
     {
       "pic": "images/picture1.png",
-      "name": "홍길동",
+      "name": "Anthony",
       "rating": 4,
-      "profile": "asdasdsadfsafafasfs",
+      "profile": " [보건,의료 관련] - 의사 직업소개 동영상 ... 본 동영상은 직업들을 효율적으로 알리기 위해 '한국교용정보원'이 2007년부터 2013년까지 제작한 직업동영상 ...",
       "job": true
     },
     {
       "pic": "images/picture1.png",
-      "name": "하이데브",
+      "name": "Tom",
       "rating": 5,
-      "profile": "12345r",
+      "profile": " [보건,의료 관련] - 의사 직업소개 동영상 ... 본 동영상은 직업들을 효율적으로 알리기 위해 '한국교용정보원'이 2007년부터 2013년까지 제작한 직업동영상 ...",
       "job": true
     }
   ]
