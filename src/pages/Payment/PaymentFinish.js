@@ -8,11 +8,10 @@ const PaymentFinish = props => {
   const history = useHistory();
   useEffect(() => {
     setTimer();
-    console.log(props);
   }, []);
 
   const setTimer = () => {
-    setInterval(goToHome, 5000);
+    setInterval(goToHome, 2000);
   };
   const goToHome = () => {
     history.push('/');

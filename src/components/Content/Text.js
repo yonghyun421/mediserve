@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Text = ({ content }) => {
-  const [limit, setLimit] = useState(40);
+  const [limit, setLimit] = useState(55);
   const [seeMoreToggle, setSeeMoreToggle] = useState(true);
 
   const toggleText = (str, limit) => {
@@ -58,14 +58,14 @@ const ContentTitle = styled.div`
 
 const SeeMore = styled.button`
   position: absolute;
-  height: 10px;
-  width: 62px;
+  width: 65px;
   border: 0;
-  right: 20px;
-  bottom: 0;
+  right: 15px;
+  bottom: -15;
   z-index: 10000000;
   color: #646363;
   background-color: white;
   font-family: 'Roboto';
   font-size: 14px;
+  text-align: right;
 `;

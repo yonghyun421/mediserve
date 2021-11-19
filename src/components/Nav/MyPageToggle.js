@@ -16,42 +16,35 @@ const MyPageToggle = ({ modalToggle }) => {
         <Profile src="/images/Ellipse4.png" />
       </ProfileWrapper>
       {MYPAGE.map((content, idx) => {
-        return (
+        return content.title === '커 뮤 니 티' ? (
           <>
-            {MYPAGE[idx].title === '커 뮤 니 티' ? (
-              <>
-                <CommunityWrapper>
-                  <CommnunityText>커 뮤 니 티</CommnunityText>
-                  <div>
-                    <DropdownIcon
-                      src="images/downdrop.png"
-                      onClick={modalToggleDiv}
-                    />
-                  </div>
-                  <BottomSolid />
-                </CommunityWrapper>
-
-                {isModalOn ? (
-                  <>
-                    {CATEGORY.map(content => (
-                      <CategoryWrapper onClick={modalToggle}>
-                        <CategoryContent>{content}</CategoryContent>
-                      </CategoryWrapper>
-                    ))}
-                  </>
-                ) : null}
-              </>
-            ) : (
-              <Link to={content.linkto}>
-                <MypageContentWrapper>
-                  <CommnunityText onClick={modalToggle}>
-                    {content.title}
-                  </CommnunityText>
-                  <BottomSolid />
-                </MypageContentWrapper>
-              </Link>
-            )}
+            <CommunityWrapper>
+              <CommnunityText>커 뮤 니 티</CommnunityText>
+              <div>
+                <DropdownIcon
+                  src="images/downdrop.png"
+                  onClick={modalToggleDiv}
+                />
+              </div>
+              <BottomSolid />
+            </CommunityWrapper>
+            {isModalOn
+              ? CATEGORY.map((content, idx) => (
+                  <CategoryWrapper key={idx} onClick={modalToggle}>
+                    <CategoryContent>{content}</CategoryContent>
+                  </CategoryWrapper>
+                ))
+              : null}
           </>
+        ) : (
+          <Link to={content.linkto}>
+            <MypageContentWrapper>
+              <CommnunityText onClick={modalToggle}>
+                {content.title}
+              </CommnunityText>
+              <BottomSolid />
+            </MypageContentWrapper>
+          </Link>
         );
       })}
     </MyPageTotalWrapper>
@@ -62,6 +55,7 @@ const MyPageTotalWrapper = styled.ul`
   position: absolute;
   right: 0;
   z-index: 999;
+  background-color: white;
 `;
 
 const ProfileWrapper = styled.div`
@@ -138,7 +132,8 @@ const BottomSolid = styled.div`
   bottom: 0;
   right: 0;
   width: 136px;
-  height: 1px;
+  /* height: 1px; */
+  background-color: white;
   border-bottom: 1px solid #e5e5e5;
 `;
 
@@ -148,14 +143,12 @@ const CategoryContent = styled.li`
   align-items: center;
   text-align: right;
   width: 94px;
-  margin-bottom: 1px;
   height: 25px;
   font-size: 14px;
+  padding-right: 14px;
   line-height: 14px;
   color: #0068b3;
   background: rgba(167, 236, 240, 0.2);
-
-  color: #646363;
 `;
 
 const MYPAGE = [
