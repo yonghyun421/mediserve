@@ -25,8 +25,8 @@ const Mypage = () => {
             </CommunityWrapper>
             {isModalOn ? (
               <>
-                {CATEGORY.map(content => (
-                  <CategoryContent>{content}</CategoryContent>
+                {CATEGORY.map((content, idx) => (
+                  <CategoryContent key={idx}>{content}</CategoryContent>
                 ))}
               </>
             ) : null}

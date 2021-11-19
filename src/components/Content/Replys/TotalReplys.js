@@ -9,9 +9,10 @@ const TotalReplys = ({ comment_info, posting_info }) => {
   };
   return (
     <ReplyWrapper>
-      {isReplyOpen ? (
+      {isReplyOpen && (
         <Replys posting_info={posting_info} comment_info={comment_info} />
-      ) : comment_info.length > 0 ? (
+      )}
+      {comment_info.length > 0 ? (
         <TotalReplyBtn onClick={replyOpenToggle}>
           {`${comment_info.length}개의 댓글 전체보기`}
         </TotalReplyBtn>

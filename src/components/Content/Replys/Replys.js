@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Reply from './Reply';
 import ReplyInput from './ReplyInput';
-import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 const Replys = ({ comment_info }) => {
@@ -43,9 +42,10 @@ const Replys = ({ comment_info }) => {
   return (
     <>
       <Wrapper>
-        {totalreplys.map(reply => {
+        {totalreplys.map((reply, index) => {
           return (
             <Reply
+              key={index}
               reply={reply}
               handleDelete={handleDelete}
               comment_writer={reply.comment_writer}
@@ -58,11 +58,8 @@ const Replys = ({ comment_info }) => {
     </>
   );
 };
-
-const mapStateToProps = () => {};
-const mapDispatchToProps = () => {};
-
 export default Replys;
 const Wrapper = styled.div`
   margin-bottom: 30px;
+  margin-top: 15px;
 `;

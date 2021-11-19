@@ -25,7 +25,7 @@ const LoadingBar = () => {
   return (
     <DotWrapper>
       {DOTS.map((content, idx) => (
-        <Dot isActive={changeActive(dotNumber, idx)} />
+        <Dot key={idx} isActive={changeActive(dotNumber, idx)} />
       ))}
     </DotWrapper>
   );
