@@ -9,7 +9,9 @@ const PHARM_LIST = [
   '거리약국',
 ];
 
-const FindResult = ({ name }) => {
+const FindResult = ({ result }) => {
+  const sortList = PHARM_LIST.filter(hos => hos.includes(result));
+
   return (
     <>
       <ResultSection>
@@ -19,8 +21,7 @@ const FindResult = ({ name }) => {
           </FindTitle>
           <InputBox>
             <Ul>
-              <Li>&nbsp;</Li>
-              {PHARM_LIST.map((pharm, idx) => (
+              {sortList.map((pharm, idx) => (
                 <Li key={idx}>{pharm}</Li>
               ))}
             </Ul>

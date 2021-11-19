@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import BackTab from '../../components/BackTab';
 import Count from './Count';
 import DoctorList from '../QnA/DoctorList';
 import Following from '../../components/Following';
-import Content from './Contents';
+import PicSection from '../../components/Feed/PicSection';
+import VideoSection from '../../components/Feed/VideoSection';
 
 const CONTENT_IMG = [
-  'images/Rectangle 27.png',
-  'images/Rectangle 30.png',
-  'images/Rectangle 33.png',
-  'images/Rectangle 27.png',
+  {
+    pic: [
+      'images/Rectangle 27.png',
+      'images/Rectangle 30.png',
+      'images/Rectangle 33.png',
+      'images/Rectangle 27.png',
+    ],
+    video: [
+      'images/Rectangle 27.png',
+      'images/Rectangle 30.png',
+      'images/Rectangle 33.png',
+      'images/Rectangle 27.png',
+    ],
+  },
 ];
 
 const Doc = {
@@ -18,17 +30,24 @@ const Doc = {
   name: '홍길동',
   rating: 4,
   profile:
-    'asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd',
-  job: true,
+    '의사(醫師, medical doctor, physician)는 현대의학의 전문가로서 인체의 질병, 손상, 각종 신체 혹은 정신의 이상을 연구하고 진단, 치료함으로써 인간의 건강을 증진하고 유지하며 회복시키는 일을 수행하는 사람을 말한다.',
+  isFollowing: false,
 };
 
 const FeedExpert = () => {
+  const [info, setInfo] = useState({});
+
+  const isfollowing = useSelector(state => state.following.isfollowing);
+
+  useEffect(() => {
+    setInfo(Doc);
+  }, [info.isFollowing]);
   return (
     <>
       <BackTab Na="scalpel" De="M-class" />
       <FeedArea>
         <MyInfo>
-          <DoctorList Doctor={Doc} />
+          <DoctorList Doctor={Doc} Feed="Feed" />
         </MyInfo>
         <MyInfoDesc>
           <Follow>
@@ -42,7 +61,11 @@ const FeedExpert = () => {
           </Rating>
         </MyInfoDesc>
         <ButtonBox>
-          <Following content="팔로잉" />
+          <Following
+            content={isfollowing ? '팔로우 취소' : '팔로잉'}
+            isFollowing={isfollowing}
+            Follow="Follow"
+          />
           <Following content="포스팅 의뢰" />
           <Following content="상담신청" />
         </ButtonBox>
@@ -55,21 +78,9 @@ const FeedExpert = () => {
           </VideoTab>
         </FeedHeader>
         <FeedBox>
-          <PicSection>
-            {CONTENT_IMG.map((image, idx) => (
-              <Content key={idx} image={image} />
-            ))}
-          </PicSection>
-          <PicSection>
-            {CONTENT_IMG.map((image, idx) => (
-              <Content key={idx} image={image} />
-            ))}
-          </PicSection>
-          <VideoSection>
-            {CONTENT_IMG.map((image, idx) => (
-              <Content key={idx} image={image} />
-            ))}
-          </VideoSection>
+          <PicSection Contents={CONTENT_IMG[0].pic} />
+          <PicSection Contents={CONTENT_IMG[0].pic} />
+          <VideoSection Contents={CONTENT_IMG[0].video} />
         </FeedBox>
       </FeedArea>
     </>
@@ -145,32 +156,8 @@ const FeedBox = styled.div`
   margin: 0 11px 0 11px;
 `;
 
-const PicSection = styled.div`
-  width: 33%;
-  height: 380px;
-  background-color: green;
-`;
-
-const VideoSection = styled.div`
-  width: 33%;
-  height: 380px;
-  background-color: red;
-`;
-
 const TabImg = styled.img`
   width: 29px;
   height: 29px;
   object-fit: scale-down;
 `;
-
-// const Content = styled.div`
-//   width: 130px;
-//   height: 110px;
-//   margin: 0.5px;
-// `;
-
-// const ContentImg = styled.img`
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-// `;

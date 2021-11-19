@@ -1,17 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import BackTab from '../../components/BackTab';
 import Next from '../../components/Next/Next';
-import QnATab from '../../components/QnA/QnATab';
 import FindResult from './FindResult';
 
 const Find = () => {
   const [name, setName] = useState('');
+  const [result, setResult] = useState('');
 
   // input 창에 입력된 병원이름 받기
   const Hospital = e => {
     setName(e.target.value);
   };
+
+  const searchHospital = e => {
+    if (window.event.keyCode === 13) {
+      setResult(name);
+    }
+  };
+
+  useEffect(() => {
+    setResult(name);
+  }, [name]);
 
   return (
     <>
@@ -21,10 +31,14 @@ const Find = () => {
           <span>병원 검색</span>
         </FindTitle>
         <InputBox>
-          <Input placeholder="보라매병원" onChange={Hospital} />
+          <Input
+            placeholder="보라매병원"
+            onChange={Hospital}
+            onKeyDow={searchHospital}
+          />
         </InputBox>
       </FindSection>
-      <FindResult result={name} />
+      <FindResult result={result} />
       <Next Title="NEXT" />
     </>
   );

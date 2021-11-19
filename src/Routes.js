@@ -28,44 +28,48 @@ import FeedExpert from './pages/Feed/FeedExpert';
 import Payment from './pages/Payment/Payment';
 import PaymentFinish from './pages/Payment/PaymentFinish';
 import { Provider } from 'react-redux';
-import store from './store';
-import LiveChat from './pages/Posting/LiveChat/LiveChat';
+import store from './redux/store';
 
 const Routes = () => {
   return (
-    <Router store={store}>
-      {/* <Provider> */}
-      <Nav />
-      <Switch>
-        <Route exact path="/" component={Main} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/mypage" component={MyPage} />
-        <Route exact path="/subject" component={Subject} />
-        <Route exact path="/detail" component={SubjectDetail} />
-        <Route exact path="/counsel" component={Counsel} />
-        <Route exact path="/submit" component={Submit} />
-        <Route exact path="/answer" component={Answer} />
-        <Route exact path="/more" component={MoreCounsel} />
-        <Route exact path="/prescription" component={Prescription} />
-        <Route exact path="/qna" component={QnA} />
-        <Route exact path="/feed" component={Feed} />
-        <Route exact path="/checkqr" component={PictureAndQR} />
-        <Route exact path="/snapshot" component={SnapShot} />
-        <Route exact path="/loading" component={Loading} />
-        <Route exact path="/find" component={Find} />
-        <Route exact path="/findHospital" component={FindHospital} />
-        <Route exact path="/posting" component={Posting} />
-        <Route exact path="/postingResult" component={PostingResult} />
-        <Route exact path="/postingChat" component={PostingChat} />
-        <Route exact path="/medical" component={Medical} />
-        <Route exact path="/upload" component={UploadPage} />
-        <Route exact path="/feedex" component={FeedExpert} />
-        <Route exact path="/payment" component={Payment} />
-        <Route exact path="/paymentfinish" component={PaymentFinish} />
-        {/* <Route exact path="/LiveChat" component={LiveChat} /> */}
-      </Switch>
-      <HomeBtn />
-      {/* </Provider> */}
+    <Router>
+      <Provider store={store}>
+        <Nav />
+        <Switch>
+          {/* Main */}
+          <Route exact path="/" component={Main} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/mypage" component={MyPage} />
+          {/* Q&A */}
+          <Route exact path="/qna" component={QnA} />
+          <Route exact path="/medical" component={Medical} />
+          <Route exact path="/subject" component={Subject} />
+          <Route exact path="/detail" component={SubjectDetail} />
+          <Route exact path="/counsel" component={Counsel} />
+          <Route exact path="/answer" component={Answer} />
+          <Route exact path="/counselSubmit" component={Submit} />
+          <Route exact path="/counselMore" component={MoreCounsel} />
+          {/* 처방 */}
+          <Route exact path="/prescription" component={Prescription} />
+          <Route exact path="/checkqr" component={PictureAndQR} />
+          <Route exact path="/snapshot" component={SnapShot} />
+          <Route exact path="/loading" component={Loading} />
+          <Route exact path="/payment" component={Payment} />
+          <Route exact path="/paymentfinish" component={PaymentFinish} />
+          {/* 검색 */}
+          <Route exact path="/find" component={Find} />
+          <Route exact path="/findHospital" component={FindHospital} />
+          {/* 포스팅 */}
+          <Route exact path="/upload" component={UploadPage} />
+          <Route exact path="/posting" component={Posting} />
+          <Route exact path="/postingResult" component={PostingResult} />
+          <Route exact path="/postingChat" component={PostingChat} />
+          {/* Feed */}
+          <Route exact path="/feed" component={Feed} />
+          <Route exact path="/feedex" component={FeedExpert} />
+        </Switch>
+        <HomeBtn />
+      </Provider>
     </Router>
   );
 };

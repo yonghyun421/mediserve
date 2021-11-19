@@ -21,24 +21,19 @@ const Posting = () => {
   const [message, setMessage] = useState('');
 
   const writeQuestion = e => {
-    setMessage(e.target.value);
-    console.log(message);
+    setMessage(e.target.value.trim());
   };
 
   const makeQuestion = e => {
     setQuestion(question);
-    console.log('before=>', question);
     const { id, value } = e.target;
     if (window.event.keyCode === 13) {
       setQuestion({ ...question, [id]: value });
-      console.log('q=>', question);
     }
   };
 
   const storeQuestion = () => {
-    console.log(question);
     localStorage.setItem('Question', JSON.stringify({ ...question }));
-    console.log(JSON.parse(localStorage.getItem('Question')));
   };
 
   useEffect(() => {

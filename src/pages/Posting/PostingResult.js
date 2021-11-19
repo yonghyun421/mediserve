@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Tab from '../../components/Tab';
 import PayMsg from '../../components/PayMsg';
 
-const PostingResult = () => {
+const PostingResult = ({ history }) => {
+  const goToMain = () => {
+    history.push('/');
+  };
+
+  const makeDelay = () => {
+    setInterval(goToMain, 1000);
+  };
+
+  useEffect(() => {
+    makeDelay();
+  }, []);
+
   return (
     <>
       <Tab Na="포스팅 의뢰" />

@@ -24,12 +24,12 @@ app.use('/js', express.static('./src/pages/Posting/LiveChat'));
 
 /* Get 방식으로 / 경로에 접속하면 실행 됨 */
 app.get('/LiveChat', function (request, response) {
-  fs.readFile('./src/pages/Posting/LiveChat/LiveChat.js', function (err, data) {
+  fs.readFile('LiveChat.js', 'utf8', function (err, data) {
     if (err) {
       response.send('에러');
     } else {
-      response.writeHead(200, { 'Content-Type': 'text/html' });
-      response.write(data);
+      response.writeHead(200, { 'Content-Type': 'text/javascript' });
+      // response.write(data);
       response.end();
     }
   });

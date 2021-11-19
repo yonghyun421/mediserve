@@ -92,9 +92,9 @@ const UserClass = styled.div`
 const ThreeDotWrapper = styled.div`
   position: absolute;
   right: 0;
-  top:0
+  top: 0;
   z-index: 9999;
-  padding:0px 10px;
+  padding: 0px 10px;
 `;
 
 const ThreeDot = styled.img`

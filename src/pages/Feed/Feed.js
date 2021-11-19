@@ -1,25 +1,53 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import BackTab from '../../components/BackTab';
 import Following from '../../components/Following';
-import Content from './Contents';
-import FeedInfo from '../../components/FeedInfo';
+import FeedInfo from '../../components/Feed/FeedInfo';
 import Count from './Count';
+import PicSection from '../../components/Feed/PicSection';
+import VideoSection from '../../components/Feed/VideoSection';
 
 const CONTENT_IMG = [
-  'images/Rectangle 27.png',
-  'images/Rectangle 30.png',
-  'images/Rectangle 33.png',
-  'images/Rectangle 27.png',
+  {
+    pic: [
+      'images/Rectangle 27.png',
+      'images/Rectangle 30.png',
+      'images/Rectangle 33.png',
+      'images/Rectangle 27.png',
+    ],
+    video: [
+      'images/Rectangle 27.png',
+      'images/Rectangle 30.png',
+      'images/Rectangle 33.png',
+      'images/Rectangle 27.png',
+    ],
+  },
 ];
 
+const Ordinary = {
+  pic: 'images/sunny.png',
+  name: 'sunny',
+  profile:
+    '서울특별시 보라매병원 흉부외과 교수 대한심장혈관외과학회 학술위원서울특별시 보라매병원 흉부외과 교수 대한심장혈관외과학회 학술위원서울특별시 보라매병원 흉부외과 교수 대한심장혈관외과학회 학술위원서울특별시 보라매병원 흉부외과 교수 대한심장혈관외과학회 학술위원 서울특별시 보라매병원 흉부외과 교수 대한심장혈관외과학회 학술위원',
+  isFollowing: false,
+};
+
 const Feed = () => {
+  const [info, setInfo] = useState({});
+
+  const isfollowing = useSelector(state => state.following.isfollowing);
+
+  useEffect(() => {
+    setInfo(Ordinary);
+  }, [info.isFollowing]);
+
   return (
     <>
       <BackTab Na="sunny" />
       <FeedArea>
         <MyInfo>
-          <FeedInfo />
+          <FeedInfo Ordinary={Ordinary} />
         </MyInfo>
         <MyInfoDesc>
           <Follow>
@@ -29,7 +57,12 @@ const Feed = () => {
           </Follow>
         </MyInfoDesc>
         <ButtonBox>
-          <Following content="팔로잉" grade="ama" />
+          <Following
+            content={isfollowing ? '팔로우 취소' : '팔로잉'}
+            grade="ama"
+            isFollowing={isfollowing}
+            Follow="Follow"
+          />
           <Following content="메시지" grade="ama" />
         </ButtonBox>
         <FeedHeader>
@@ -41,21 +74,9 @@ const Feed = () => {
           </VideoTab>
         </FeedHeader>
         <FeedBox>
-          <PicSection>
-            {CONTENT_IMG.map((image, idx) => (
-              <Content key={idx} image={image} />
-            ))}
-          </PicSection>
-          <PicSection>
-            {CONTENT_IMG.map((image, idx) => (
-              <Content key={idx} image={image} />
-            ))}
-          </PicSection>
-          <VideoSection>
-            {CONTENT_IMG.map((image, idx) => (
-              <Content key={idx} image={image} />
-            ))}
-          </VideoSection>
+          <PicSection Contents={CONTENT_IMG[0].pic} />
+          <PicSection Contents={CONTENT_IMG[0].pic} />
+          <VideoSection Contents={CONTENT_IMG[0].video} />
         </FeedBox>
       </FeedArea>
     </>
@@ -125,30 +146,8 @@ const FeedBox = styled.div`
   margin: 0 11px 100px 11px;
 `;
 
-const PicSection = styled.div`
-  width: 33%;
-  background-color: green;
-`;
-
-const VideoSection = styled.div`
-  width: 33%;
-  background-color: red;
-`;
-
 const TabImg = styled.img`
   width: 29px;
   height: 29px;
   object-fit: scale-down;
 `;
-
-// const Content = styled.div`
-//   width: 130px;
-//   height: 110px;
-//   margin: 0.5px;
-// `;
-
-// const ContentImg = styled.img`
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-// `;
