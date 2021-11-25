@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const MainColorBtn = ({ Body }) => {
+const MainColorBtn = ({ Body, backToCamera }) => {
   return (
-    <Wrapper Body={Body}>
+    <Wrapper onClick={backToCamera} Body={Body}>
       <Title>{Body}</Title>
     </Wrapper>
   );

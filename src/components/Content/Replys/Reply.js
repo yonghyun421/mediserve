@@ -29,7 +29,7 @@ const Wrapper = styled.div`
   padding: 2px 10px 2px 0px;
   font-size: 20px;
   height: 15px;
-  margin: 5px 0px;
+  margin: 3px 0px;
 `;
 const ReplyLeft = styled.div`
   margin-left: 10px;
