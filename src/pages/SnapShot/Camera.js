@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import Webcam from 'react-webcam';
 import styled from 'styled-components';
 import MainColorBtn from '../../components/MainColorBtn';
@@ -20,8 +19,14 @@ const Camera = () => {
     capture();
   };
 
+  const backToCamera = () => {
+    setisFinishPic(false);
+    setImageSrc(null);
+  };
+
   return (
     <WebcamWrapper>
+      {console.log(imageSrc)}
       {!imageSrc && (
         <Webcam
           ref={webcamRef}
@@ -53,7 +58,7 @@ const Camera = () => {
       )}
       {isFinishPic ? (
         <BtnWrapper>
-          <MainColorBtn Body="재촬영" />
+          <MainColorBtn Body="재촬영" backToCamera={backToCamera} />
           <Capture
             src="/images/capture.png"
             onClick={cameraToggle}

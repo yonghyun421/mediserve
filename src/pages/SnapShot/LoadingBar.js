@@ -4,6 +4,10 @@ import styled from 'styled-components';
 const LoadingBar = () => {
   let [dotNumber, setDotNumber] = useState(0);
 
+  useEffect(() => {
+    plusSec();
+  }, []);
+
   const countplus = () => {
     setDotNumber(dotNumber++);
   };
@@ -17,11 +21,6 @@ const LoadingBar = () => {
       return true;
     }
   };
-
-  useEffect(() => {
-    plusSec();
-  }, []);
-
   return (
     <DotWrapper>
       {DOTS.map((content, idx) => (

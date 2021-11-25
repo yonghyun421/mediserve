@@ -27,8 +27,7 @@ export default ReplyInput;
 const Wrapper = styled.form`
   display: flex;
   justify-content: space-between;
-  padding: 2px;
-  margin: 10px 7px 0px 10px;
+  margin: 0px 15px;
   font-size: 20px;
 `;
 
