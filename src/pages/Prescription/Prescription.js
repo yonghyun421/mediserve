@@ -8,7 +8,7 @@ const Prescription = () => {
     <>
       <BackTab />
       <PressSection>
-        <LinkBtn to="/snapshot">
+        <LinkBtn to="/checkqr">
           <PresBox color="#5CDDE5">
             <TextBox>
               <H1 color="#ffffff">처방전 사진 미리보내기</H1>

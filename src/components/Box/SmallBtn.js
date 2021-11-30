@@ -1,15 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { connect } from 'react-redux';
-import { mdscharger, mdsrecharger, counselcharger } from '../../redux';
 
-const SmallBtn = ({ Title, mds, mdscharger, counselcharger }) => {
-  return Title === '의뢰하기' ? (
-    <Button onClick={() => mdscharger()}>{Title}</Button>
-  ) : (
-    <Button onClick={() => counselcharger()}>{Title}</Button>
-  );
+const SmallBtn = ({ Title }) => {
+  return <Button>{Title}</Button>;
 };
+
+export default SmallBtn;
 
 const Button = styled.div`
   display: flex;
@@ -23,17 +19,3 @@ const Button = styled.div`
   font-weight: 700;
   color: white;
 `;
-
-const mapStateToProps = ({ mdspoint }) => {
-  return {
-    mds: mdspoint.mds,
-  };
-};
-
-const mapDispatchToProps = {
-  mdscharger,
-  mdsrecharger,
-  counselcharger,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(SmallBtn);

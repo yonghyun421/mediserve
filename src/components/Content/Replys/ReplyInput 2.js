@@ -12,7 +12,11 @@ const ReplyInput = ({ handleAdd, handleAddByEnter }) => {
 
   return (
     <Wrapper onSubmit={onSubmit}>
-      <ReplyInputContent type="text" ref={inputRef} />
+      <ReplyInputContent
+        placeholder="댓글 입력하기.."
+        type="text"
+        ref={inputRef}
+      />
       <SendButton onKeyPress={handleAddByEnter}>게시</SendButton>
     </Wrapper>
   );
@@ -23,18 +27,19 @@ export default ReplyInput;
 const Wrapper = styled.form`
   display: flex;
   justify-content: space-between;
-  padding: 2px 10px 2px 0px;
-  margin: 20px 10px 0px 10px;
-  border: 1px solid lightgrey;
+  padding: 2px;
+  margin: 10px 7px 0px 10px;
   font-size: 20px;
 `;
 
 const ReplyInputContent = styled.input`
   border: 0;
   width: 89%;
+  outline: none;
 `;
 const SendButton = styled.button`
   background-color: white;
+  padding: 0px 0px;
   border: 0;
   color: #4ae2eb;
 `;
